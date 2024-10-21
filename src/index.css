@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-size: 10px;
+  font-family: "Azeret Mono", monospace;
+  font-optical-sizing: auto;
+}
