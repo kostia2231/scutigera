@@ -10,14 +10,14 @@ export default function Cart() {
     id: item.id,
     quantity: item.quantity,
   }));
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <>
-      <div className="m-20 flex justify-between">
+      <div className="flex justify-between m-20">
         <div className="flex flex-col gap-1 w-[50%]">
-          {cart.map((product) => (
-            <CartProduct key={product.id} product={product} />
+          {cart.map((product, index) => (
+            <CartProduct key={product.id} product={product} count={index + 1} />
           ))}
         </div>
         <div className="w-[50%] pl-1 flex flex-col gap-1">

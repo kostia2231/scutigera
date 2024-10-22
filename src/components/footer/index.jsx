@@ -3,7 +3,7 @@ import S from "../../assets/svg/Scutigera.svg";
 export default function Footer() {
   return (
     <>
-      <div className="flex items-center justify-center flex-col gap-2">
+      <div className="flex flex-col items-center justify-center gap-1">
         <div>
           <img className="w-[450px]" src={S} alt="" />
         </div>

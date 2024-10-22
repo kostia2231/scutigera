@@ -7,7 +7,7 @@ export default function AddToCartButton({ items }) {
   const clearCart = useCartStore((state) => state.clearCart);
 
   const [loading, setLoading] = useState(false);
-  console.log(items);
+  // console.log(items);
   const handleAddToCartAndCheckout = async () => {
     setLoading(true);
     try {
@@ -29,7 +29,7 @@ export default function AddToCartButton({ items }) {
   return (
     <>
       <button
-        className="ml-auto"
+        className="ml-auto hover:underline"
         onClick={handleAddToCartAndCheckout}
         disabled={loading}
       >

@@ -8,7 +8,7 @@ export default function Main() {
   // console.log("Main", products);
   // console.log(products);
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 mb-20">
       {products?.map((item) => (
         <Product key={item.node.id} item={item.node} />
       ))}

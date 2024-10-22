@@ -6,5 +6,6 @@ body {
   font-size: 10px;
   font-family: "Azeret Mono", monospace;
   font-optical-sizing: auto;
-  opacity: 0.7;
+  /* color: rgba(0, 0, 0, 0.6); */
+  opacity: 0.8;
 }

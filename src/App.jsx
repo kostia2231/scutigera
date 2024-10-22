@@ -6,8 +6,9 @@ import Cart from "./pages/cart";
 
 function App() {
   return (
-    <div className="min-h-screen grid grid-rows-[auto,1fr,auto] m-1">
+    <div className="flex flex-col min-h-screen m-1">
       <Navbar />
+      {/* className="flex-1" */}
       <main>
         <Routes>
           <Route path="/" element={<Main />} />
