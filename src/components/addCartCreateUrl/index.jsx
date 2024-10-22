@@ -3,7 +3,7 @@ import { addToCart, getCheckoutUrl } from "../../utils/shopify";
 
 export default function AddToCartButton({ items }) {
   const [loading, setLoading] = useState(false); // Состояние для управления загрузкой
-
+  console.log(items);
   const handleAddToCartAndCheckout = async () => {
     setLoading(true); // Включаем индикатор загрузки
     try {

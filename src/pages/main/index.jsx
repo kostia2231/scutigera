@@ -5,6 +5,8 @@ export default function Main() {
   const { data } = useProducts();
   const products = data?.data.products.edges;
 
+  console.log("Main", products);
+
   console.log(products);
   return (
     <div className="flex flex-col gap-1">

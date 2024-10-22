@@ -9,17 +9,20 @@ export const handler = async (event, context) => {
     pathRewrite: {
       "^/api": "", // Убираем /api из запроса
     },
-    onProxyReq: (proxyReq, req, res) => {
+    onProxyReq: (proxyReq) => {
       // Установка заголовков, если необходимо
       proxyReq.setHeader("Content-Type", "application/json");
-      proxyReq.setHeader("X-Special-Header", "foobar");
+      proxyReq.setHeader(
+        "X-Shopify-Storefront-Access-Token",
+        import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN
+      );
     },
-    onProxyRes: (proxyRes, req, res) => {
-      // Здесь можно изменить ответ от API перед тем, как отправить его клиенту
+    onProxyRes: (_proxyRes, _req, res) => {
+      // Можно изменить ответ от API перед тем, как отправить его клиенту
+      res.setHeader("Access-Control-Allow-Origin", "*"); // Настройки CORS
     },
   });
 
-  // Обработка POST-запросов
   return new Promise((resolve, reject) => {
     // Используем функцию для обработки запроса
     proxyMiddleware(event, context, (err) => {

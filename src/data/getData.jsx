@@ -10,7 +10,7 @@ export const useProducts = () => {
     queryFn: async () => {
       try {
         const response = await axios.get(
-          "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy",
+          "http://localhost:8888/api/api/2024-10/graphql.json",
           {
             headers: {
               "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
@@ -18,29 +18,43 @@ export const useProducts = () => {
             params: {
               query: `
               {
-                products(first: 10) {
-                  edges {
-                    node {
-                      id
-                      title
-                      priceRange {
-                        minVariantPrice {
-                          amount
+                    products(first: 10) {
+                      edges {
+                        node {
+                          id
+                          title
+                          priceRange {
+                            minVariantPrice {
+                              amount
+                            }
+                          }
+                          featuredImage {
+                            url
+                            altText
+                          }
+                          variants(first: 10) {
+                            edges {
+                              node {
+                                id
+                                title
+                                priceV2 {
+                                  amount
+                                  currencyCode
+                                }
+                                availableForSale
+                              }
+                            }
+                          }
                         }
-                      }
-                      featuredImage {
-                        url
-                        altText
                       }
                     }
                   }
-                }
-              }
+
               `,
             },
           }
         );
-
+        console.log(response.data);
         return response.data;
       } catch (error) {
         console.error("Error fetching products:", error);

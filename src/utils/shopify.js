@@ -5,7 +5,7 @@ const storefrontAccessToken = import.meta.env
 // const endpoint = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
 
 const graphQLClient = new GraphQLClient(
-  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy",
+  "http://localhost:8888/api/api/2024-10/graphql.json",
   {
     headers: {
       "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
@@ -45,20 +45,24 @@ export async function getProducts() {
 
 export async function addToCart(items) {
   const createCartMutation = gql`
-    mutation createCart($cartInput: CartInput) {
+    mutation createCart($cartInput: CartInput!) {
       cartCreate(input: $cartInput) {
         cart {
           id
-          lines {
-            id
-            quantity
-            merchandise {
-              ... on ProductVariant {
+          lines(first: 10) {
+            edges {
+              node {
                 id
-                title
-                priceV2 {
-                  amount
-                  currencyCode
+                quantity
+                merchandise {
+                  ... on ProductVariant {
+                    id
+                    title
+                    priceV2 {
+                      amount
+                      currencyCode
+                    }
+                  }
                 }
               }
             }
@@ -70,7 +74,7 @@ export async function addToCart(items) {
 
   const lines = items.map((item) => ({
     quantity: parseInt(item.quantity),
-    merchandiseId: item.productId,
+    merchandiseId: item.id,
   }));
 
   const variables = {
@@ -82,7 +86,8 @@ export async function addToCart(items) {
   try {
     return await graphQLClient.request(createCartMutation, variables);
   } catch (error) {
-    throw new Error(error);
+    console.error("Error creating cart:", error);
+    throw new Error("Failed to create cart. " + error.message);
   }
 }
 
