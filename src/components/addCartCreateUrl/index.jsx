@@ -1,26 +1,28 @@
 import { useState } from "react";
 import { addToCart, getCheckoutUrl } from "../../utils/shopify";
+import PropTypes from "prop-types";
+import useCartStore from "../../store/storeCart";
 
 export default function AddToCartButton({ items }) {
-  const [loading, setLoading] = useState(false); // Состояние для управления загрузкой
+  const clearCart = useCartStore((state) => state.clearCart);
+
+  const [loading, setLoading] = useState(false);
   console.log(items);
   const handleAddToCartAndCheckout = async () => {
-    setLoading(true); // Включаем индикатор загрузки
+    setLoading(true);
     try {
-      // 1. Добавляем товар в корзину
       const cartResponse = await addToCart(items);
       const cartId = cartResponse.cartCreate.cart.id;
 
-      // 2. Получаем ссылку на оформление заказа
       const checkoutResponse = await getCheckoutUrl(cartId);
       const checkoutUrl = checkoutResponse.cart.checkoutUrl;
 
-      // 3. Перенаправляем пользователя на страницу оплаты
-      window.location.href = checkoutUrl;
+      window.open(checkoutUrl, "_blank");
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false); // Отключаем индикатор загрузки
+      setLoading(false);
+      clearCart();
     }
   };
 
@@ -29,10 +31,14 @@ export default function AddToCartButton({ items }) {
       <button
         className="ml-auto"
         onClick={handleAddToCartAndCheckout}
-        disabled={loading} // Отключаем кнопку при загрузке
+        disabled={loading}
       >
-        {loading ? "loading..." : "PROCEED TO CHECKOUT"}
+        {loading ? "PROCEEDING..." : "PROCEED TO CHECKOUT"}
       </button>
     </>
   );
 }
+
+AddToCartButton.propTypes = {
+  items: PropTypes.array,
+};

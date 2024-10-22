@@ -3,7 +3,7 @@ import useCartStore from "../../store/storeCart";
 
 export default function Product({ item }) {
   const addItem = useCartStore((state) => state.addItem);
-  // console.log(item.variants.edges[0].node.id);
+  // console.log("item", item);
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -12,6 +12,7 @@ export default function Product({ item }) {
         id: item.variants.edges[0].node.id,
         title: item.title,
         price: item.priceRange.minVariantPrice.amount,
+        //добавить сюда логику для получения размера
         img: null,
       });
     }
