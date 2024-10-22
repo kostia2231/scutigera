@@ -4,7 +4,7 @@ const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 const endpoint = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
 
-const graphQLClient = new GraphQLClient(endpoint, {
+const graphQLClient = new GraphQLClient(`${endpoint}/api/graphql`, {
   headers: {
     "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
   },
@@ -40,26 +40,42 @@ export async function getProducts() {
   }
 }
 
-export async function addToCart(itemId, quantity) {
+export async function addToCart(items) {
   const createCartMutation = gql`
     mutation createCart($cartInput: CartInput) {
       cartCreate(input: $cartInput) {
         cart {
           id
+          lines {
+            id
+            quantity
+            merchandise {
+              ... on ProductVariant {
+                id
+                title
+                priceV2 {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
         }
       }
     }
   `;
+
+  const lines = items.map((item) => ({
+    quantity: parseInt(item.quantity),
+    merchandiseId: item.productId,
+  }));
+
   const variables = {
     cartInput: {
-      lines: [
-        {
-          quantity: parseInt(quantity),
-          merchandiseId: itemId,
-        },
-      ],
+      lines,
     },
   };
+
   try {
     return await graphQLClient.request(createCartMutation, variables);
   } catch (error) {

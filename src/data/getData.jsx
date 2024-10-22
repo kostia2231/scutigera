@@ -9,12 +9,14 @@ export const useProducts = () => {
     queryKey: ["products"],
     queryFn: async () => {
       try {
-        const response = await axios.get("/api/api/2024-10/graphql.json", {
-          headers: {
-            "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
-          },
-          params: {
-            query: `
+        const response = await axios.get(
+          "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json",
+          {
+            headers: {
+              "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
+            },
+            params: {
+              query: `
               {
                 products(first: 10) {
                   edges {
@@ -35,8 +37,9 @@ export const useProducts = () => {
                 }
               }
               `,
-          },
-        });
+            },
+          }
+        );
 
         return response.data;
       } catch (error) {

@@ -1,9 +1,16 @@
 import useCartStore from "../../store/storeCart";
 import CartProduct from "../../components/cartProduct";
+import AddToCartButton from "../../components/addCartCreateUrl";
 
 export default function Cart() {
   const cart = useCartStore((state) => state.cart);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
+
+  const cartData = cart.map((item) => ({
+    id: item.id,
+    quantity: item.quantity,
+  }));
+  console.log(cartData);
 
   return (
     <div className="m-20 flex justify-between">
@@ -19,7 +26,7 @@ export default function Cart() {
         <div className="flex justify-between">
           SHIPPING <div>Calculated at checkout</div>
         </div>
-        <button className="ml-auto">PROCEED TO CHECKOUT</button>
+        <AddToCartButton items={cartData} />
       </div>
     </div>
   );
