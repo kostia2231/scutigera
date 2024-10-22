@@ -54,6 +54,13 @@ const useCartStore = create(
         };
       }),
     getCartCount: () => get().totalCount,
+
+    getTotalPrice: () => {
+      return get().cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+    },
   }))
 );
 
