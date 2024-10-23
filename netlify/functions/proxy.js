@@ -3,7 +3,7 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 const storefrontAccessToken = "fadea130624b0a2c3c6789d6e9329c01";
 
 export const handler = async (event, context) => {
-  const targetUrl = "http://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
+  const targetUrl = "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
 
   const proxyMiddleware = createProxyMiddleware({
     target: targetUrl,
