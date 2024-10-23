@@ -2,6 +2,8 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 
 export const handler = async (event, context) => {
   const targetUrl = "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
+  const storefrontAccessToken = import.meta.env
+    .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
   const proxyMiddleware = createProxyMiddleware({
     target: targetUrl,
@@ -14,7 +16,7 @@ export const handler = async (event, context) => {
       proxyReq.setHeader("Content-Type", "application/json");
       proxyReq.setHeader(
         "X-Shopify-Storefront-Access-Token",
-        import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN
+        storefrontAccessToken // Используем переменную среды для токена
       );
     },
     onProxyRes: (_proxyRes, _req, res) => {
@@ -24,8 +26,28 @@ export const handler = async (event, context) => {
   });
 
   return new Promise((resolve, reject) => {
-    // Используем функцию для обработки запроса
-    proxyMiddleware(event, context, (err) => {
+    // Симулируем HTTP запрос в AWS Lambda
+    const fakeReq = {
+      method: event.httpMethod,
+      url: event.path,
+      headers: event.headers,
+      body: event.body,
+    };
+
+    const fakeRes = {
+      setHeader: (name, value) => {
+        context.res.setHeader(name, value);
+      },
+      end: (body) => {
+        resolve({
+          statusCode: 200,
+          body: body || "",
+        });
+      },
+      statusCode: 200,
+    };
+
+    proxyMiddleware(fakeReq, fakeRes, (err) => {
       if (err) {
         reject({
           statusCode: 500,
@@ -33,11 +55,6 @@ export const handler = async (event, context) => {
             error: "Proxy middleware error",
             details: err.message,
           }),
-        });
-      } else {
-        resolve({
-          statusCode: 200,
-          body: JSON.stringify({ message: "Proxy middleware executed" }),
         });
       }
     });
