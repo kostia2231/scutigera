@@ -83,8 +83,12 @@ export async function addToCart(items) {
     },
   };
 
+  console.log("Variables for cart creation:", variables); // Логируем переменные
+
   try {
-    return await graphQLClient.request(createCartMutation, variables);
+    const result = await graphQLClient.request(createCartMutation, variables);
+    console.log("Cart creation result:", result); // Логируем результат
+    return result;
   } catch (error) {
     console.error("Error creating cart:", error);
     throw new Error("Failed to create cart. " + error.message);
