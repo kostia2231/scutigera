@@ -9,7 +9,7 @@ export const useProducts = () => {
     queryKey: ["products"],
     queryFn: async () => {
       try {
-        const response = await axios.post(URL_, {
+        const response = await axios.get(URL_, {
           query: `
             {
               products(first: 10) {
