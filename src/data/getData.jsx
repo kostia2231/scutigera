@@ -54,8 +54,8 @@ export const useProducts = () => {
               `,
           },
         });
-        // console.log(response.data);
-        return response.data;
+        console.log(response?.data);
+        return response?.data;
       } catch (error) {
         console.error("Error fetching products:", error);
         throw new Error("Failed to fetch products.");
