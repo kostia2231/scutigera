@@ -3,7 +3,7 @@ import { gql, GraphQLClient } from "graphql-request";
 const storefrontAccessToken = "fadea130624b0a2c3c6789d6e9329c01";
 
 const URL_ =
-  "https://idyllic-concha-a54637.netlify.app/api/2024-10/graphql.json";
+  "https://idyllic-concha-a54637.netlify.app/api/api/2024-10/graphql.json";
 // const URL_LOCAL = "http://localhost:8888/api/api/2024-10/graphql.json";
 
 const graphQLClient = new GraphQLClient(URL_, {
@@ -11,7 +11,6 @@ const graphQLClient = new GraphQLClient(URL_, {
     "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
   },
 });
-console.log("Token2:", import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
 
 export async function getProducts() {
   const getAllProductsQuery = gql`
