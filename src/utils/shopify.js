@@ -5,7 +5,7 @@ const storefrontAccessToken = import.meta.env
 // const endpoint = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
 
 const graphQLClient = new GraphQLClient(
-  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxyPost/api/2024-10/graphql.json",
+  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json",
   {
     headers: {
       "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
@@ -95,16 +95,21 @@ export async function addToCart(items) {
     },
   };
 
-  console.log("Variables for cart creation:", JSON.stringify(variables, null, 2)); // Log variables as pretty JSON
+  console.log(
+    "Variables for cart creation:",
+    JSON.stringify(variables, null, 2)
+  ); // Log variables as pretty JSON
 
   try {
     // Make the request to create the cart
     const result = await graphQLClient.request(createCartMutation, variables);
-    
+
     // Check for GraphQL errors
     if (result.errors) {
       console.error("GraphQL errors:", result.errors);
-      throw new Error("GraphQL errors occurred: " + JSON.stringify(result.errors));
+      throw new Error(
+        "GraphQL errors occurred: " + JSON.stringify(result.errors)
+      );
     }
 
     console.log("Cart creation result:", JSON.stringify(result, null, 2)); // Log result as pretty JSON
@@ -114,7 +119,6 @@ export async function addToCart(items) {
     throw new Error("Failed to create cart. " + error.message);
   }
 }
-
 
 export async function updateCart(cartId, itemId, quantity) {
   const updateCartMutation = gql`
