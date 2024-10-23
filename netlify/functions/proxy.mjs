@@ -5,7 +5,7 @@ export const handler = async (event, context) => {
   const storefrontAccessToken = import.meta.env
     .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
   const storefrontAccessTokenSERVER =
-    process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+    process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
   const proxyMiddleware = createProxyMiddleware({
     target: targetUrl,

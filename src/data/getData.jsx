@@ -5,8 +5,7 @@ import process from "process";
 const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
-const storefrontAccessTokenSERVER =
-  process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const storefrontAccessTokenSERVER = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 export const useProducts = () => {
   return useQuery({

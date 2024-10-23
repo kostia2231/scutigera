@@ -4,8 +4,7 @@ import process from "process";
 const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 // const endpoint = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
-const storefrontAccessTokenSERVER =
-  process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const storefrontAccessTokenSERVER = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 const graphQLClient = new GraphQLClient(
   "http://localhost:8888/api/api/2024-10/graphql.json",
