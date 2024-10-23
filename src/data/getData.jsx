@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const URL_ =
-  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy";
+const URL_ = "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
 
 export const useProducts = () => {
   return useQuery({
