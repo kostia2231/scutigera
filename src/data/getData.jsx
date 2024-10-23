@@ -10,7 +10,7 @@ const URL_ =
   "https://idyllic-concha-a54637.netlify.app/api/2024-10/graphql.json";
 // const URL_LOCAL = "http://localhost:8888/api/api/2024-10/graphql.json";
 
-console.log("Token1:", process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
+console.log("TokenPro:", process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
 
 export const useProducts = () => {
   return useQuery({

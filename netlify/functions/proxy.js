@@ -1,9 +1,7 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
 import process from "process";
 
-const storefrontAccessToken =
-  import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN ||
-  process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const storefrontAccessToken = process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 console.log("TokenProxy:", storefrontAccessToken);
 
