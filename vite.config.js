@@ -7,9 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json",
+        target: "https://4hmm5a-ih.myshopify.com", 
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""), 
       },
     },
   },

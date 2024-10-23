@@ -1,9 +1,7 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
 
-const storefrontAccessToken = "fadea130624b0a2c3c6789d6e9329c01"; // Ваш токен доступа
-
 export const handler = async (event, context) => {
-  const targetUrl = "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json"; // URL Shopify
+  const targetUrl = "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
 
   const proxyMiddleware = createProxyMiddleware({
     target: targetUrl,
@@ -11,32 +9,22 @@ export const handler = async (event, context) => {
     pathRewrite: {
       "^/api": "", // Убираем /api из запроса
     },
-    onProxyReq: (proxyReq, req) => {
-      // Установка заголовков для запроса
+    onProxyReq: (proxyReq) => {
+      // Установка заголовков, если необходимо
       proxyReq.setHeader("Content-Type", "application/json");
       proxyReq.setHeader(
         "X-Shopify-Storefront-Access-Token",
-        storefrontAccessToken
+        import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN
       );
-
-      // Если запрос содержит тело, добавьте его
-      if (req.body) {
-        const bodyData = JSON.stringify(req.body);
-        proxyReq.write(bodyData);
-      }
     },
     onProxyRes: (_proxyRes, _req, res) => {
-      // Настройки CORS
-      res.setHeader("Access-Control-Allow-Origin", "*");
-      res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Content-Type, X-Shopify-Storefront-Access-Token"
-      );
+      // Можно изменить ответ от API перед тем, как отправить его клиенту
+      res.setHeader("Access-Control-Allow-Origin", "*"); // Настройки CORS
     },
   });
 
   return new Promise((resolve, reject) => {
-    // Обработка запроса
+    // Используем функцию для обработки запроса
     proxyMiddleware(event, context, (err) => {
       if (err) {
         reject({
