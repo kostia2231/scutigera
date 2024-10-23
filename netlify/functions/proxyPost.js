@@ -63,18 +63,35 @@ export const handler = async (event) => {
       });
 
       res.on("end", () => {
-        const parsedData = JSON.parse(responseData);
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          resolve({
-            statusCode: res.statusCode,
-            body: JSON.stringify(parsedData),
-          });
-        } else {
+        try {
+          // Check if responseData is empty before parsing
+          if (!responseData) {
+            throw new Error("No response received from server");
+          }
+
+          const parsedData = JSON.parse(responseData);
+
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve({
+              statusCode: res.statusCode,
+              body: JSON.stringify(parsedData),
+            });
+          } else {
+            reject({
+              statusCode: res.statusCode,
+              body: JSON.stringify({
+                error: "Request failed",
+                details: parsedData,
+              }),
+            });
+          }
+        } catch (error) {
+          console.error("Error parsing response data:", error);
           reject({
-            statusCode: res.statusCode,
+            statusCode: 500,
             body: JSON.stringify({
-              error: "Request failed",
-              details: parsedData,
+              error: "Failed to parse response data",
+              details: error.message,
             }),
           });
         }
