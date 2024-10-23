@@ -1,8 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import process from "process";
 
 const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+
+const storefrontAccessTokenSERVER =
+  process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 export const useProducts = () => {
   return useQuery({
@@ -13,7 +17,8 @@ export const useProducts = () => {
           "http://localhost:8888/api/api/2024-10/graphql.json",
           {
             headers: {
-              "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
+              "X-Shopify-Storefront-Access-Token":
+                storefrontAccessToken || storefrontAccessTokenSERVER,
             },
             params: {
               query: `
