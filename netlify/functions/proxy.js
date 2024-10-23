@@ -1,75 +1,49 @@
-import { createProxyMiddleware } from "http-proxy-middleware";
+import https from "https";
 
-export const handler = async (event, context) => {
-  console.log("Function invoked");
+export const handler = async (event) => {
+  const data = JSON.stringify({
+    query: event.body.query, // Получаем запрос из тела события
+  });
 
-  const targetUrl = "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
+  const options = {
+    hostname: "4hmm5a-ih.myshopify.com",
+    path: "/api/2024-10/graphql.json",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Shopify-Storefront-Access-Token": import.meta.env
+        .SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+      "Content-Length": data.length,
+    },
+  };
 
-  try {
-    const proxyMiddleware = createProxyMiddleware({
-      target: targetUrl,
-      changeOrigin: true,
-      pathRewrite: {
-        "^/api": "",
-      },
-      onProxyReq: (proxyReq, req) => {
-        console.log("Proxying request to:", targetUrl);
-        console.log("Original request URL:", req.url);
+  return new Promise((resolve, reject) => {
+    const req = https.request(options, (res) => {
+      let responseData = "";
 
-        proxyReq.setHeader("Content-Type", "application/json");
-        proxyReq.setHeader(
-          "X-Shopify-Storefront-Access-Token",
-          import.meta.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
-        );
-      },
-      onProxyRes: (_proxyRes, _req, res) => {
-        console.log("Received response from Shopify API");
-        res.setHeader("Access-Control-Allow-Origin", "*");
-      },
-    });
+      res.on("data", (chunk) => {
+        responseData += chunk;
+      });
 
-    return new Promise((resolve, reject) => {
-      const fakeReq = {
-        method: event.httpMethod,
-        url: event.path,
-        headers: event.headers,
-        body: event.body,
-      };
-
-      const fakeRes = {
-        setHeader: (name, value) => {
-          context.res.setHeader(name, value);
-        },
-        end: (body) => {
-          resolve({
-            statusCode: 200,
-            body: body || "",
-          });
-        },
-        statusCode: 200,
-      };
-
-      proxyMiddleware(fakeReq, fakeRes, (err) => {
-        if (err) {
-          console.error("Proxy error:", err);
-          reject({
-            statusCode: 500,
-            body: JSON.stringify({
-              error: "Proxy middleware error",
-              details: err.message,
-            }),
-          });
-        }
+      res.on("end", () => {
+        resolve({
+          statusCode: res.statusCode,
+          body: responseData,
+        });
       });
     });
-  } catch (error) {
-    console.error("Function error:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: "Server error",
-        details: error.message,
-      }),
-    };
-  }
+
+    req.on("error", (error) => {
+      reject({
+        statusCode: 500,
+        body: JSON.stringify({
+          error: "Request error",
+          details: error.message,
+        }),
+      });
+    });
+
+    req.write(data);
+    req.end();
+  });
 };
