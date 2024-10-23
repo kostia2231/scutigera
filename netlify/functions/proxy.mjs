@@ -16,10 +16,10 @@ export const handler = async (event, context) => {
     onProxyReq: (proxyReq) => {
       // Установка заголовков, если необходимо
       proxyReq.setHeader("Content-Type", "application/json");
-      proxyReq.setHeader({
-        "X-Shopify-Storefront-Access-Token":
-          storefrontAccessToken || storefrontAccessTokenSERVER,
-      });
+      proxyReq.setHeader(
+        "X-Shopify-Storefront-Access-Token",
+        storefrontAccessToken || storefrontAccessTokenSERVER
+      );
     },
     onProxyRes: (_proxyRes, _req, res) => {
       // Можно изменить ответ от API перед тем, как отправить его клиенту
