@@ -1,5 +1,4 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
-// import process from "process";
 
 const storefrontAccessToken = "fadea130624b0a2c3c6789d6e9329c01";
 
@@ -12,7 +11,11 @@ export const handler = async (event, context) => {
     pathRewrite: {
       "^/api": "", // Убираем /api из запроса
     },
-    onProxyReq: (proxyReq) => {
+    onProxyReq: (proxyReq, req) => {
+      // Логируем информацию о запросе
+      console.log("Original request URL:", req.url); // Логируем оригинальный URL запроса
+      console.log("Target URL:", targetUrl); // Логируем целевой URL
+
       // Установка заголовков, если необходимо
       proxyReq.setHeader("Content-Type", "application/json");
       proxyReq.setHeader(
@@ -30,7 +33,6 @@ export const handler = async (event, context) => {
   });
 
   return new Promise((resolve, reject) => {
-    // Используем функцию для обработки запроса
     proxyMiddleware(event, context, (err) => {
       if (err) {
         reject({
