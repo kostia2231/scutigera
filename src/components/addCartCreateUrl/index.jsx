@@ -12,6 +12,9 @@ export default function AddToCartButton({ items }) {
     setLoading(true);
     try {
       const cartResponse = await addToCart(items);
+      //???
+      console.log(cartResponse);
+
       const cartId = cartResponse.cartCreate.cart.id;
 
       const checkoutResponse = await getCheckoutUrl(cartId);

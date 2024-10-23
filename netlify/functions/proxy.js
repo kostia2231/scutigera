@@ -1,6 +1,6 @@
 import https from "https";
 
-export const handler = async (event) => {
+export const handler = async () => {
   const query = `
     {
       products(first: 10) {

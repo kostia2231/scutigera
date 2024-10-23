@@ -10,7 +10,7 @@ export default function Cart() {
     id: item.id,
     quantity: item.quantity,
   }));
-  // console.log(cart);
+
 
   return (
     <>
