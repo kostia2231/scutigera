@@ -37,7 +37,7 @@ export default function Product({ item }) {
   return (
     <>
       <div className="flex items-center justify-between max-[640px]:flex-col">
-        <div className="p-20 flex gap-20 justify-between w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:pt-0 px-0">
+        <div className="p-20 flex gap-20 justify-between w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:pt-0 max-[640px]:px-0">
           <div className="flex flex-col gap-2">
             {item.title} {item.priceRange.minVariantPrice.amount}€
             <div className="flex gap-1">
