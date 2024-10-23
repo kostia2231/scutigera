@@ -9,7 +9,8 @@ export const handler = async (event, context) => {
     pathRewrite: {
       "^/api": "", // Убираем /api из запроса
     },
-    onProxyReq: (proxyReq) => {
+    onProxyReq: (proxyReq, req) => {
+      console.log("Original request URL:", req.url);
       // Установка заголовков, если необходимо
       proxyReq.setHeader("Content-Type", "application/json");
       proxyReq.setHeader(
