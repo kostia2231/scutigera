@@ -14,7 +14,7 @@ const graphQLClient = new GraphQLClient(URL_, {
     "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
   },
 });
-console.log("Token2:", storefrontAccessToken);
+console.log("Token2:", import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN);
 
 export async function getProducts() {
   const getAllProductsQuery = gql`
