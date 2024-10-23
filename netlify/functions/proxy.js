@@ -72,7 +72,6 @@ export const handler = async () => {
       });
     });
 
-    // Отправляем тело запроса (GraphQL query)
     req.write(JSON.stringify({ query }));
     req.end();
   });

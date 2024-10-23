@@ -5,16 +5,11 @@ import useCartStore from "../../store/storeCart";
 
 export default function AddToCartButton({ items }) {
   const clearCart = useCartStore((state) => state.clearCart);
-
   const [loading, setLoading] = useState(false);
-  // console.log(items);
   const handleAddToCartAndCheckout = async () => {
     setLoading(true);
     try {
       const cartResponse = await addToCart(items);
-      //???
-      console.log(cartResponse);
-
       const cartId = cartResponse.cartCreate.cart.id;
 
       const checkoutResponse = await getCheckoutUrl(cartId);
