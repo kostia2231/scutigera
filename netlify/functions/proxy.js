@@ -1,4 +1,5 @@
 import https from "https";
+import process from "process";
 
 export const handler = async (event) => {
   const data = JSON.stringify({
@@ -11,8 +12,8 @@ export const handler = async (event) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-Shopify-Storefront-Access-Token": import.meta.env
-        .SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+      "X-Shopify-Storefront-Access-Token":
+        process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
       "Content-Length": data.length,
     },
   };
