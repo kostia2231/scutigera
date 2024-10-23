@@ -5,14 +5,15 @@ const storefrontAccessToken =
   import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN ||
   process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
-const graphQLClient = new GraphQLClient(
-  "https://idyllic-concha-a54637.netlify.app/api/api/2024-10/graphql.json",
-  {
-    headers: {
-      "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
-    },
-  }
-);
+const URL_ =
+  "https://idyllic-concha-a54637.netlify.app/api/2024-10/graphql.json";
+const URL_LOCAL = "http://localhost:8888/api/api/2024-10/graphql.json";
+
+const graphQLClient = new GraphQLClient(URL_, {
+  headers: {
+    "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
+  },
+});
 
 export async function getProducts() {
   const getAllProductsQuery = gql`
