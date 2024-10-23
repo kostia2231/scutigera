@@ -20,7 +20,7 @@ export default function Cart() {
             <CartProduct key={product.id} product={product} count={index + 1} />
           ))}
         </div>
-        <div className="w-[50%] pl-1 flex flex-col gap-1 max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:p-0">
+        <div className="w-[50%] pl-1 flex flex-col gap-1 max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:p-0 max-[640px]:pb-20">
           <div className="flex justify-between">
             TOTAL <div>{getTotalPrice()}.0€</div>
           </div>
