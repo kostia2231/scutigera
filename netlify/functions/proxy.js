@@ -1,5 +1,4 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
-
 const storefrontAccessToken = "fadea130624b0a2c3c6789d6e9329c01";
 
 export const handler = async (event, context) => {
@@ -9,14 +8,12 @@ export const handler = async (event, context) => {
     target: targetUrl,
     changeOrigin: true,
     pathRewrite: {
-      "^/api": "", // Убираем /api из запроса
+      "^/api": "",
     },
     onProxyReq: (proxyReq, req) => {
-      // Логируем информацию о запросе
-      console.log("Original request URL:", req.url); // Логируем оригинальный URL запроса
-      console.log("Target URL:", targetUrl); // Логируем целевой URL
+      console.log("Original request URL:", req.url);
+      console.log("Target URL:", targetUrl);
 
-      // Установка заголовков, если необходимо
       proxyReq.setHeader("Content-Type", "application/json");
       proxyReq.setHeader(
         "X-Shopify-Storefront-Access-Token",
@@ -24,11 +21,11 @@ export const handler = async (event, context) => {
       );
     },
     onProxyRes: (_proxyRes, _req, res) => {
-      res.setHeader("Access-Control-Allow-Origin", "*"); // Настройки CORS
+      res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader(
         "Access-Control-Allow-Headers",
         "Content-Type, X-Shopify-Storefront-Access-Token"
-      ); // Разрешаем заголовки
+      );
     },
   });
 
