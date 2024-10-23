@@ -12,7 +12,7 @@ export const useProducts = () => {
     queryFn: async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8888/api/api/2024-10/graphql.json",
+          "http://idyllic-concha-a54637.netlify.app/api/api/2024-10/graphql.json",
           {
             headers: {
               "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
