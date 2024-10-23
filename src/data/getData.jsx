@@ -54,7 +54,7 @@ export const useProducts = () => {
             },
           }
         );
-
+        
         return response.data;
       } catch (error) {
         console.error("Error fetching products:", error);

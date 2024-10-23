@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
 import { useState } from "react";
+import { products } from "../../productsClientData";
 
 export default function Product({ item }) {
+  const matchedProduct = products.find((product) => product.id === item.id);
   const addItem = useCartStore((state) => state.addItem);
   console.log(item);
   const [selectedVariantId, setSelectedVariantId] = useState(
@@ -35,8 +37,8 @@ export default function Product({ item }) {
   return (
     <>
       <div className="flex items-center justify-between">
-        <div className="p-20 flex gap-4 justify-between w-[50%]">
-          <div>
+        <div className="p-20 flex gap-20 justify-between w-[50%]">
+          <div className="flex flex-col gap-2">
             {item.title} {item.priceRange.minVariantPrice.amount}€
             <div className="flex gap-1">
               IN:
@@ -46,6 +48,7 @@ export default function Product({ item }) {
                   onClick={() => {
                     setSelectedVariantId(variant.id);
                     setSelectedSize(variant.size);
+                    console.log(variant.size);
                   }}
                   className={`${
                     selectedVariantId === variant.id
@@ -53,20 +56,101 @@ export default function Product({ item }) {
                       : "bg-white text-black"
                   }`}
                 >
-                  {variant.size.toUpperCase()}
+                  {variant.size}
                 </button>
               ))}
             </div>
-            <div className="flex">
-              <div>DIMENSIONS (cm):</div>
-              <div>SIZE RECS:</div>
+            <div className="flex gap-4">
+              <div>
+                <div className="flex">
+                  <div>DIMENSIONS (cm):</div>
+                </div>
+                <div className="flex gap-2">
+                  {/* названия */}
+                  <div>
+                    <div>Size</div>
+                    <div>Chest</div>
+                    {matchedProduct.dimensions.waist && (
+                      <>
+                        <div>Waist</div>
+                      </>
+                    )}
+                    <div>Length</div>
+                  </div>
+                  {/* первая колонка */}
+                  <div
+                    className={`${
+                      selectedSize === "Medium" || selectedSize === "Large"
+                        ? "opacity-20"
+                        : null
+                    }`}
+                  >
+                    <div>{matchedProduct.dimensions.size.first}</div>
+                    <div>{matchedProduct.dimensions.chest.first}</div>
+                    {matchedProduct.dimensions.waist && (
+                      <>
+                        <div>{matchedProduct.dimensions.waist.first}</div>
+                      </>
+                    )}
+                    <div>{matchedProduct.dimensions.length.first}</div>
+                  </div>
+                  {/* вторая колонка */}
+                  <div
+                    className={`${
+                      selectedSize === "Small" ? "opacity-20" : null
+                    }`}
+                  >
+                    <div>{matchedProduct.dimensions.size.second}</div>
+                    <div>{matchedProduct.dimensions.chest.second}</div>
+                    {matchedProduct.dimensions.waist && (
+                      <>
+                        <div>{matchedProduct.dimensions.waist.second}</div>
+                      </>
+                    )}
+                    <div>{matchedProduct.dimensions.length.second}</div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex">
+                  <div>SIZE RECS:</div>
+                </div>
+                <div
+                  className={`${
+                    selectedSize === "Medium" || selectedSize === "Large"
+                      ? "opacity-20"
+                      : null
+                  }`}
+                >
+                  <div>{matchedProduct.dimensions.size.first}</div>
+                  <div>{matchedProduct.sizeRecommendations.first}</div>
+                </div>
+                <div
+                  className={`${
+                    selectedSize === "Small" ? "opacity-20" : null
+                  }`}
+                >
+                  <div>{matchedProduct.dimensions.size.second}</div>
+                  <div>{matchedProduct.sizeRecommendations.second}</div>
+                </div>
+              </div>
             </div>
-            <div>SIZE RECS:</div>
-            <div>PRODUCT DETAILS:</div>
+            <div>
+              PRODUCT DETAILS:
+              {matchedProduct && (
+                <div>
+                  {matchedProduct.details.fit},{" "}
+                  {matchedProduct.details.material}.
+                </div>
+              )}
+            </div>
             <div>Made in Ukraine.</div>
           </div>
           <div>
-            <button className="hover:underline" onClick={handleAddToCart}>
+            <button
+              className="inline-block w-[75px] hover:bg-black hover:text-white active:opacity-70"
+              onClick={handleAddToCart}
+            >
               ADD TO CART
             </button>
           </div>

@@ -42,17 +42,24 @@ export default function CartProduct({ product, count }) {
         <div className="flex justify-between">
           QUANTITY
           <div className="flex gap-2">
-            <button onClick={handleRemoveItem}>-</button>
+            <button
+              className="hover:bg-black hover:text-white active:opacity-70"
+              onClick={handleRemoveItem}
+            >
+              -
+            </button>
             {product.quantity}
-            <button onClick={handleAddToCart}>+</button>
+            <button
+              className="hover:bg-black hover:text-white active:opacity-70"
+              onClick={handleAddToCart}
+            >
+              +
+            </button>
           </div>
         </div>
         <div className="flex justify-between">
           SUBTOTAL <div>{product.quantity * product.price}.0€</div>
         </div>
-        {/* <div className="flex justify-between mt-auto">
-          <p>---</p> <p>---</p> <p>---</p>
-        </div> */}
       </div>
     </div>
   );
