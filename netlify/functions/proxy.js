@@ -5,7 +5,7 @@ const storefrontAccessToken =
   process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 export const handler = async (event, context) => {
-  const targetUrl = "http://4hmm5a-ih.myshopify.com";
+  const targetUrl = "http://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
 
   const proxyMiddleware = createProxyMiddleware({
     target: targetUrl,

@@ -8,7 +8,7 @@ const storefrontAccessToken =
 
 const URL_ =
   "https://idyllic-concha-a54637.netlify.app/api/api/2024-10/graphql.json";
-const URL_LOCAL = "http://localhost:8888/api/api/2024-10/graphql.json";
+// const URL_LOCAL = "http://localhost:8888/api/api/2024-10/graphql.json";
 
 export const useProducts = () => {
   return useQuery({
