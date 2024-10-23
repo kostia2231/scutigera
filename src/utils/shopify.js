@@ -1,9 +1,6 @@
 import { gql, GraphQLClient } from "graphql-request";
-import process from "process";
 
-const storefrontAccessToken =
-  import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN ||
-  process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const storefrontAccessToken = "fadea130624b0a2c3c6789d6e9329c01";
 
 const URL_ =
   "https://idyllic-concha-a54637.netlify.app/api/2024-10/graphql.json";
