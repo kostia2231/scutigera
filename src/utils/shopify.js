@@ -5,7 +5,7 @@ const storefrontAccessToken = import.meta.env
 // const endpoint = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
 
 const graphQLClient = new GraphQLClient(
-  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api",
+  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json",
   {
     headers: {
       "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
