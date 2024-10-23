@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import process from "process";
 
-const storefrontAccessToken = import.meta.env
-  .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const storefrontAccessToken =
+  import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN ||
+  process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 export const useProducts = () => {
   return useQuery({
