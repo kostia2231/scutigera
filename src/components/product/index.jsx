@@ -6,19 +6,16 @@ import { products } from "../../productsClientData";
 export default function Product({ item }) {
   const matchedProduct = products.find((product) => product.id === item.id);
   const addItem = useCartStore((state) => state.addItem);
-  console.log(item);
   const [selectedVariantId, setSelectedVariantId] = useState(
     item.variants.edges[0].node.id
   );
   const [selectedSize, setSelectedSize] = useState(
     item.variants.edges[0].node.title
   );
-
   const variants = item.variants.edges.map((v) => ({
     size: v.node.title,
     id: v.node.id,
   }));
-  console.log(variants);
 
   const handleAddToCart = (e) => {
     e.preventDefault();
