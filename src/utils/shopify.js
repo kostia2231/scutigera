@@ -1,17 +1,14 @@
 import { gql, GraphQLClient } from "graphql-request";
-import process from "process";
 
 const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 // const endpoint = import.meta.env.VITE_SHOPIFY_STORE_DOMAIN;
-const storefrontAccessTokenSERVER = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 const graphQLClient = new GraphQLClient(
-  "https://localhost:8888/api/api/2024-10/graphql.json",
+  "http://localhost:8888/api/api/2024-10/graphql.json",
   {
     headers: {
-      "X-Shopify-Storefront-Access-Token":
-        storefrontAccessToken || storefrontAccessTokenSERVER,
+      "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
     },
   }
 );
