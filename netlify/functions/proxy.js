@@ -1,8 +1,11 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
 import process from "process";
+
 const storefrontAccessToken =
   import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN ||
   process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+
+console.log("TokenProxy:", storefrontAccessToken);
 
 export const handler = async (event, context) => {
   const targetUrl = "http://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json";
