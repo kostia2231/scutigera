@@ -22,8 +22,11 @@ export const handler = async (event, context) => {
       );
     },
     onProxyRes: (_proxyRes, _req, res) => {
-      // Можно изменить ответ от API перед тем, как отправить его клиенту
       res.setHeader("Access-Control-Allow-Origin", "*"); // Настройки CORS
+      res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Content-Type, X-Shopify-Storefront-Access-Token"
+      ); // Разрешаем заголовки
     },
   });
 
