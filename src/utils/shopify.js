@@ -44,6 +44,7 @@ export async function getProducts() {
 }
 
 export async function addToCart(items) {
+  // GraphQL mutation for creating a cart
   const createCartMutation = gql`
     mutation createCart($cartInput: CartInput!) {
       cartCreate(input: $cartInput) {
@@ -72,10 +73,21 @@ export async function addToCart(items) {
     }
   `;
 
-  const lines = items.map((item) => ({
-    quantity: parseInt(item.quantity),
-    merchandiseId: item.id,
-  }));
+  // Validate items input
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new Error("Invalid items input: must be a non-empty array");
+  }
+
+  // Map items to the format expected by the GraphQL mutation
+  const lines = items.map((item) => {
+    if (!item.id || !item.quantity) {
+      throw new Error("Each item must have an id and quantity");
+    }
+    return {
+      quantity: parseInt(item.quantity, 10), // Specify base 10 for clarity
+      merchandiseId: item.id,
+    };
+  });
 
   const variables = {
     cartInput: {
@@ -83,17 +95,26 @@ export async function addToCart(items) {
     },
   };
 
-  console.log("Variables for cart creation:", variables); // Логируем переменные
+  console.log("Variables for cart creation:", JSON.stringify(variables, null, 2)); // Log variables as pretty JSON
 
   try {
+    // Make the request to create the cart
     const result = await graphQLClient.request(createCartMutation, variables);
-    console.log("Cart creation result:", result); // Логируем результат
-    return result;
+    
+    // Check for GraphQL errors
+    if (result.errors) {
+      console.error("GraphQL errors:", result.errors);
+      throw new Error("GraphQL errors occurred: " + JSON.stringify(result.errors));
+    }
+
+    console.log("Cart creation result:", JSON.stringify(result, null, 2)); // Log result as pretty JSON
+    return result; // Return the result
   } catch (error) {
     console.error("Error creating cart:", error);
     throw new Error("Failed to create cart. " + error.message);
   }
 }
+
 
 export async function updateCart(cartId, itemId, quantity) {
   const updateCartMutation = gql`
