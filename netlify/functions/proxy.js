@@ -1,9 +1,40 @@
 import https from "https";
 
 export const handler = async (event) => {
-  const data = JSON.stringify({
-    query: event.body.query, // Получаем запрос из тела события
-  });
+  const query = `
+    {
+      products(first: 10) {
+        edges {
+          node {
+            id
+            title
+            priceRange {
+              minVariantPrice {
+                amount
+              }
+            }
+            featuredImage {
+              url
+              altText
+            }
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                  priceV2 {
+                    amount
+                    currencyCode
+                  }
+                  availableForSale
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
 
   const options = {
     hostname: "4hmm5a-ih.myshopify.com",
@@ -12,7 +43,6 @@ export const handler = async (event) => {
     headers: {
       "Content-Type": "application/json",
       "X-Shopify-Storefront-Access-Token": "fadea130624b0a2c3c6789d6e9329c01",
-      "Content-Length": data.length,
     },
   };
 
@@ -42,7 +72,8 @@ export const handler = async (event) => {
       });
     });
 
-    req.write(data);
+    // Отправляем тело запроса (GraphQL query)
+    req.write(JSON.stringify({ query }));
     req.end();
   });
 };
