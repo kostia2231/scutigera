@@ -5,10 +5,8 @@ export default function Main() {
   const { data } = useProducts();
   const products = data?.data.products.edges;
 
-  // console.log("Main", products);
-  // console.log(products);
   return (
-    <div className="flex flex-col gap-1 mb-20">
+    <div className="flex flex-col gap-1 mb-2">
       {products?.map((item) => (
         <Product key={item.node.id} item={item.node} />
       ))}
