@@ -26,13 +26,13 @@ export default function CartProduct({ product, count }) {
   };
 
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 max-[640px]:mx-2 max-[640px]:justify-between">
       <div>{count}</div>
       <div
-        className="bg-cover bg-center w-[250px] h-[300px] opacity-100"
+        className="bg-cover bg-center w-[250px] h-[300px] opacity-100 max-[640px]:h-[250px] max-[640px]:w-[180px]"
         style={{ backgroundImage: `url("${product.img}")` }}
       ></div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 max-[640px]:w-[180px]">
         <div className="flex gap-2">
           <div> {product.title}</div> <div>{product.price}€</div>
         </div>
