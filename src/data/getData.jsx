@@ -10,7 +10,7 @@ export const useProducts = () => {
     queryFn: async () => {
       try {
         const response = await axios.post(
-          "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json",
+          "https://scutigera.net/.netlify/functions/proxy/api/2024-10/graphql.json",
           {
             query: `
               {
@@ -54,7 +54,7 @@ export const useProducts = () => {
             },
           }
         );
-        
+
         return response.data;
       } catch (error) {
         console.error("Error fetching products:", error);
