@@ -3,7 +3,7 @@ import https from "https";
 export const handler = async () => {
   const query = `
     {
-      products(first: 10) {
+      products(first: 10, sortKey: PRODUCT_TYPE, reverse: false) {
         edges {
           node {
             id
