@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { addToCart, getCheckoutUrl } from "../../utils/shopify";
 import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
@@ -24,16 +24,6 @@ export default function AddToCartButton({ items }) {
       clearCart();
     }
   };
-
-  useEffect(() => {
-    console.log(`
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀𝜗𝜚
-
-    𝜗𝜚 YOUR DATA IS STOLEN, SRY 𝜗𝜚
-    
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀𝜗𝜚
-    `);
-  }, []);
 
   return (
     <>

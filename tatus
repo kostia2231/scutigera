@@ -1,0 +1,305 @@
+[33mcommit 7a674739a2912461b7c45d0ac79795f19757dd2f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Your Name <you@example.com>
+Date:   Sat Oct 26 01:28:47 2024 +0200
+
+    just for fun
+
+[33mcommit a80b4d172bebf48e8f9f3ec9ccf6af1f9f7f64b4[m
+Author: Your Name <you@example.com>
+Date:   Sat Oct 26 01:14:44 2024 +0200
+
+    textProduct: fixed
+
+[33mcommit 3c65fb658fd42feb7b982ff4ba7b6cd917068ce4[m
+Author: Your Name <you@example.com>
+Date:   Sat Oct 26 00:56:36 2024 +0200
+
+    code review: 0.1
+
+[33mcommit 7e528faaf0469bfff1daf5ce13a2949fffb02e2c[m
+Author: Your Name <you@example.com>
+Date:   Sat Oct 26 00:36:31 2024 +0200
+
+    bug fixed: redirection
+
+[33mcommit 8fd043076d75b6e56ea5ade1debbd327b7bca48b[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 23:56:40 2024 +0200
+
+    Sorting by P_TYPE: added:2
+
+[33mcommit 41926ba0053deefa3a66d620661d9108379b9108[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 23:54:46 2024 +0200
+
+    Sorting by P_TYPE: added
+
+[33mcommit c59dfc526db6fb3bb2384159ce777f8c6dc94420[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 23:42:33 2024 +0200
+
+    domain updt_TROUBLE: isWorking
+
+[33mcommit c4c6146141f587036f67332d9762c1547c1f393e[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 15:29:28 2024 +0200
+
+    domain updt_TROUBLE: back to alias
+
+[33mcommit 67f482ca7a691cbd4205e7f9fef0c3700f61c0d9[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 14:44:33 2024 +0200
+
+    domain updt
+
+[33mcommit c79313685e68613f99b239d4643d8a1b5020a0de[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 14:41:48 2024 +0200
+
+    Routing Troubleshooting test_3
+
+[33mcommit 6009d861603a87bced66aa61a38362da5419fdc3[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 14:35:07 2024 +0200
+
+    Routing Troubleshooting test_2
+
+[33mcommit c5428b2f77b1aac641ea74580782e1f593d74090[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 14:32:27 2024 +0200
+
+    Routing Troubleshooting test
+
+[33mcommit bce2932dcb0640a2512e6d1bd1d2be84b26ac4df[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 13:26:35 2024 +0200
+
+    Navbar: transparency & no hover:mobile
+
+[33mcommit ff75042a049e9d644954a5e2be58d99ef976d243[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 13:19:30 2024 +0200
+
+    Change Buy Mechanic: checkoutUrl opens in current window
+
+[33mcommit b3d8b1e40068ea95a4fdea469799b286efb3dc9c[m
+Author: Your Name <you@example.com>
+Date:   Fri Oct 25 13:15:15 2024 +0200
+
+    UI: changes V.2.0
+
+[33mcommit 5d68b752fdd563cb39a06bfdec0d4fcf52a6bc2f[m
+Author: Your Name <you@example.com>
+Date:   Thu Oct 24 12:13:18 2024 +0200
+
+    UI: mobile responsive fix
+
+[33mcommit 543359bb071a065a143ec6fa54f9fd0b47b7e378[m
+Author: Your Name <you@example.com>
+Date:   Thu Oct 24 00:52:32 2024 +0200
+
+    ConsolLogs: deleted
+
+[33mcommit 132298dcfa41edfe2e3f308632f9597a96e6ebb6[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 22:32:13 2024 +0200
+
+    Mobile Media Querry_2
+
+[33mcommit 24d0d0f33df17fd507ae122f0acd7ddc0a448613[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 22:14:10 2024 +0200
+
+    Mobile Media Querry_1
+
+[33mcommit 153d327f9523ce9fa4f9bcee0da610212c532737[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 22:09:47 2024 +0200
+
+    Mobile Media Querry
+
+[33mcommit 7ad6f682c9dfd310aaf0c8b7d223cf1afe30b8fb[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 20:39:40 2024 +0200
+
+    UI: update
+
+[33mcommit 8a1584c7a637f66db6731527d31bea1a41b19828[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 18:20:33 2024 +0200
+
+    proxy settings 0.20: MAIN SHOP FUNC(s) IS WORKING
+
+[33mcommit 02e424e5205fe9fbaabe8ec603dd1dbb159c4ddb[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 18:13:56 2024 +0200
+
+    proxy settings 0.19
+
+[33mcommit 2c8427b691ae3778af82fbaf68f6669e796d59e6[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 18:05:41 2024 +0200
+
+    proxy settings 0.18
+
+[33mcommit 98e63049dbb4954cf3dc77df35f974e11cf75013[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 18:00:23 2024 +0200
+
+    proxy settings 0.17
+
+[33mcommit fbbc5e2cc43f2ac12a0c03d57299f84a04db5b52[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:58:24 2024 +0200
+
+    proxy settings 0.16
+
+[33mcommit 21e8a82089101dc32e28818d03a21b79a63fad56[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:53:21 2024 +0200
+
+    proxy settings 0.15
+
+[33mcommit d4090ec8df4e5ddb402fb77abe544e82c7d318e1[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:45:12 2024 +0200
+
+    proxy settings 0.14
+
+[33mcommit 033cbcffe10115a97aa0498d2047e5b94e67d960[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:39:49 2024 +0200
+
+    proxy settings 0.13
+
+[33mcommit 35fbcd15862f15174cfac24262edc6afe60bd9f8[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:28:56 2024 +0200
+
+    proxy settings 0.11
+
+[33mcommit e462c2f9f475081706983196e211c56195732806[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:26:28 2024 +0200
+
+    proxy settings 0.10
+
+[33mcommit d4d85ec284e29d959627845ca6590b49742783d7[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:22:50 2024 +0200
+
+    proxy settings 0.9
+
+[33mcommit 9eb55bf6121adb4bfa55858f0951e21012961309[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:21:22 2024 +0200
+
+    proxy settings 0.8
+
+[33mcommit ee1dc66aca1db0182ba3c44307974e670a979710[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:19:55 2024 +0200
+
+    proxy settings 0.7
+
+[33mcommit 9666ea8bb5add8d120dd5c9709ca4e50e12c062d[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:13:36 2024 +0200
+
+    proxy settings 0.6
+
+[33mcommit 664fe0be3d9a006256a8e5389d367d3be2b766a4[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:09:27 2024 +0200
+
+    proxy settings 0.5
+
+[33mcommit 9b4cb20d38595e34f939c7e187f9ca2df3d75533[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:05:36 2024 +0200
+
+    proxy settings 0.4
+
+[33mcommit 38722c2e77063361d97fc70c4a8e4209c810f13c[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:04:24 2024 +0200
+
+    proxy settings 0.3
+
+[33mcommit d330e32cae4cc74733d4547ba48f5e5dcaf5ef1f[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:01:58 2024 +0200
+
+    proxy settings 0.2
+
+[33mcommit e7a81a8de51a8e276daea9c2cc2eaa977377b689[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 17:00:12 2024 +0200
+
+    proxy settings 0.1
+
+[33mcommit ee5316e07f0282812a9c6043ae27b55f6167d558[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 16:55:11 2024 +0200
+
+    reset
+
+[33mcommit 248033bd3bc7a96de0a495298bf4b65d1e8c1327[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 16:02:26 2024 +0200
+
+    test proxy 2.1
+
+[33mcommit 11abb1fcbd21fb4e89310a01f1e2f7f10d70ec06[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 16:00:59 2024 +0200
+
+    test proxy 2.0
+
+[33mcommit a7907702fbf32c8727bb86222b8c676bad833e29[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:59:43 2024 +0200
+
+    test proxy 1.9
+
+[33mcommit 1e02cd7554c8e90259b40c993d35eab7abbfc07d[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:55:20 2024 +0200
+
+    test proxy 1.8
+
+[33mcommit c9737a50cc9bcffcd459a122934ba45d9092d892[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:49:08 2024 +0200
+
+    test proxy 1.7
+
+[33mcommit 327044bd54332c36770eeee9716802dcc3c50da5[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:41:43 2024 +0200
+
+    test proxy 1.6
+
+[33mcommit ae0d75f28deaadb5510be9366c71d39b8dbfa4b2[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:39:04 2024 +0200
+
+    test proxy 1.5
+
+[33mcommit 2bd74097ca30a3f97256c5010b2dc445b83b6e0b[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:33:22 2024 +0200
+
+    test proxy 1.4
+
+[33mcommit 47b03b80e714081141502bc38a1b957d91ab288a[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:29:06 2024 +0200
+
+    test proxy 1.3
+
+[33mcommit 921aa8b72315ecc4d24c091e9f3aed18188e8627[m
+Author: Your Name <you@example.com>
+Date:   Wed Oct 23 15:26:04 2024 +0200
+
+    test proxy 1.2(совершенно безот
