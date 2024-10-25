@@ -7,16 +7,14 @@ export default function Main() {
   const products = data?.data.products.edges;
 
   useEffect(() => {
-    console.log(
-      console.clear(),
-      `
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀𝜗𝜚
-
-    𝜗𝜚 YOUR DATA IS STOLEN, SRY 𝜗𝜚
-    
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀𝜗𝜚
-    `
-    );
+    console.clear();
+    console.log(`
+  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀𝜗𝜚
+  
+      𝜗𝜚 YOUR DATA IS STOLEN, SRY 𝜗𝜚
+      
+  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀𝜗𝜚
+    `);
   }, []);
 
   return (
