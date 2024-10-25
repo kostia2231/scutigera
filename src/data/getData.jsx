@@ -14,7 +14,7 @@ export const useProducts = () => {
           {
             query: `
               {
-                products(first: 10) {
+                products(first: 10, sortKey: PRODUCT_TYPE, reverse: false) {
                   edges {
                     node {
                       id
