@@ -1,3 +1,5 @@
+// пожалуйста не забудь провернуть refactor
+
 import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
 import { useState } from "react";
