@@ -18,7 +18,7 @@ export default function AddToCartButton({ items }) {
 
       window.open(checkoutUrl, "_self");
     } catch (error) {
-      console.log(error);
+      console.log("Error while check-out: ", error);
     } finally {
       setLoading(false);
       clearCart();

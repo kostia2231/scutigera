@@ -5,7 +5,6 @@ import AddToCartButton from "../../components/addCartCreateUrl";
 export default function Cart() {
   const cart = useCartStore((state) => state.cart);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
-
   const cartData = cart.map((item) => ({
     id: item.id,
     quantity: item.quantity,
