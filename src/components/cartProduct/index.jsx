@@ -26,14 +26,14 @@ export default function CartProduct({ product, count }) {
   };
 
   return (
-    <div className="flex gap-1 max-[640px]:mx-2 max-[640px]:justify-between">
+    <div className="flex gap-1 max-[640px]:mx-4 max-[640px]:justify-between">
       <div>{count}</div>
       <div
         className="bg-cover bg-center w-[250px] h-[300px] opacity-100 max-[640px]:h-[250px] max-[640px]:w-[180px]"
         style={{ backgroundImage: `url("${product.img}")` }}
       ></div>
       <div className="flex flex-col gap-1 max-[640px]:w-[180px]">
-        <div className="flex gap-2">
+        <div className="flex justify-between gap-2">
           <div> {product.title}</div> <div>{product.price}€</div>
         </div>
         <div className="flex justify-between">
@@ -41,24 +41,25 @@ export default function CartProduct({ product, count }) {
         </div>
         <div className="flex justify-between">
           QUANTITY
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <button
-              className="hover:bg-black hover:text-white active:opacity-70"
+              className="underline-offset-2 hover:underline active:opacity-70"
               onClick={handleRemoveItem}
             >
-              -
+              LESS
             </button>
-            {product.quantity}
+            ({product.quantity})
             <button
-              className="hover:bg-black hover:text-white active:opacity-70"
+              className="underline-offset-2 hover:underline active:opacity-70"
               onClick={handleAddToCart}
             >
-              +
+              MORE
             </button>
           </div>
         </div>
         <div className="flex justify-between">
-          SUBTOTAL <div>{product.quantity * product.price}.0€</div>
+          SUBTOTAL{" "}
+          <div className="font-bold">{product.quantity * product.price}.0€</div>
         </div>
       </div>
     </div>

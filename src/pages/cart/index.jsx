@@ -10,7 +10,6 @@ export default function Cart() {
     id: item.id,
     quantity: item.quantity,
   }));
-  // console.log(cart);
 
   return (
     <>
@@ -20,9 +19,9 @@ export default function Cart() {
             <CartProduct key={product.id} product={product} count={index + 1} />
           ))}
         </div>
-        <div className="w-[50%] pl-1 flex flex-col gap-1 max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:p-0 max-[640px]:pb-20 max-[640px]:px-2">
+        <div className="w-[50%] pl-1 flex flex-col gap-1 max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:p-0 max-[640px]:pb-20 max-[640px]:px-4">
           <div className="flex justify-between">
-            TOTAL <div>{getTotalPrice()}.0€</div>
+            TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>
           </div>
           <div className="z-10 flex justify-between">
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
@@ -33,7 +32,7 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        <div className="border-b border-black-20 max-[640px]:order-2 mb-5 mx-2 "></div>
+        <div className="border-b border-black-20 max-[640px]:order-2 mb-5 mx-4"></div>
       </div>
     </>
   );

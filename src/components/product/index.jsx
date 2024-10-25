@@ -34,9 +34,14 @@ export default function Product({ item }) {
   return (
     <>
       <div className="flex items-center justify-between max-[640px]:flex-col">
-        <div className="p-20 flex gap-20 justify-between w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:pt-0 max-[640px]:px-0 max-[640px]:gap-2">
+        <div className="p-20 flex gap-20 justify-between w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:py-0 max-[640px]:px-0 max-[640px]:gap-2">
           <div className="flex flex-col gap-2">
-            {item.title} {item.priceRange.minVariantPrice.amount}€
+            <div className="flex gap-2">
+              {item.title}
+              <div className="font-bold">
+                {item.priceRange.minVariantPrice.amount}€
+              </div>
+            </div>
             <div className="flex gap-1">
               IN:
               {variants.map((variant) => (
@@ -49,8 +54,8 @@ export default function Product({ item }) {
                   }}
                   className={`${
                     selectedVariantId === variant.id
-                      ? "bg-black text-white"
-                      : "bg-white text-black"
+                      ? "bg-transparent text-black font-bold underline-offset-2 underline opacity-65"
+                      : "bg-white text-black opacity-30"
                   }`}
                 >
                   {variant.size}
@@ -140,12 +145,12 @@ export default function Product({ item }) {
                   {matchedProduct.details.material}.
                 </div>
               )}
+              <div>Made in Ukraine.</div>
             </div>
-            <div>Made in Ukraine.</div>
           </div>
           <div>
             <button
-              className="inline-block w-[75px] hover:bg-black hover:text-white active:opacity-70"
+              className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-2 font-bold"
               onClick={handleAddToCart}
             >
               ADD TO CART
