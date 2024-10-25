@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Main from "./pages/main";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
@@ -13,6 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/404" element={<Main />} />
         </Routes>
       </main>
       <Footer />
