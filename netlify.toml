@@ -5,3 +5,7 @@
   to = "/.netlify/functions/proxy"
   status = 200
   conditions = { Language = ["en"] } 
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 302
