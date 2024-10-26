@@ -8,7 +8,7 @@ export default function Main() {
 
   let isScreamer = useRef(false);
   useEffect(() => {
-    if (!isScreamer) {
+    if (isScreamer.current === false) {
       console.log(`
 
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
