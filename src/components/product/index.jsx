@@ -162,7 +162,7 @@ export default function Product({ item }) {
             </div>
           </div>
         </div>
-        <div className="w-[50%] max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:py-4 max-[640px]:h-[70vh]">
+        <div className="w-[50%] max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:py-4">
           <ImgSlider imgUrls={imgUrls} />
         </div>
       </div>
