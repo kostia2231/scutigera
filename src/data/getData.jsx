@@ -10,7 +10,9 @@ export const useProducts = () => {
     queryFn: async () => {
       try {
         const response = await axios.post(
-          "https://scutigera.net/.netlify/functions/proxy/api/2024-10/graphql.json",
+          // "https://scutigera.net/.netlify/functions/proxy/api/2024-10/graphql.json",
+
+          "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json",
           {
             query: `
               {
@@ -24,6 +26,16 @@ export const useProducts = () => {
                           amount
                         }
                       }
+
+                            images(first: 10) {
+                            edges {
+                              node {
+                                url
+                                altText
+                                }
+                              }
+                            }
+
                       featuredImage {
                         url
                         altText

@@ -43,14 +43,14 @@ export default function CartProduct({ product, count }) {
           QUANTITY
           <div className="flex gap-1">
             <button
-              className="underline-offset-2 hover:underline active:opacity-70"
+              className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70"
               onClick={handleRemoveItem}
             >
               LESS
             </button>
             ({product.quantity})
             <button
-              className="underline-offset-2 hover:underline active:opacity-70"
+              className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70"
               onClick={handleAddToCart}
             >
               MORE
@@ -58,7 +58,7 @@ export default function CartProduct({ product, count }) {
           </div>
         </div>
         <div className="flex justify-between">
-          SUBTOTAL{" "}
+          SUBTOTAL
           <div className="font-bold">{product.quantity * product.price}.0€</div>
         </div>
       </div>

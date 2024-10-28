@@ -7,6 +7,7 @@ export default function AddToCartButton({ items }) {
   const clearCart = useCartStore((state) => state.clearCart);
 
   const [loading, setLoading] = useState(false);
+  // console.log(items);
   const handleAddToCartAndCheckout = async () => {
     setLoading(true);
     try {
@@ -16,9 +17,9 @@ export default function AddToCartButton({ items }) {
       const checkoutResponse = await getCheckoutUrl(cartId);
       const checkoutUrl = checkoutResponse.cart.checkoutUrl;
 
-      window.open(checkoutUrl, "_self");
+      window.open(checkoutUrl, "_blank");
     } catch (error) {
-      console.log("Error while check-out: ", error);
+      console.log(error);
     } finally {
       setLoading(false);
       clearCart();
@@ -28,7 +29,7 @@ export default function AddToCartButton({ items }) {
   return (
     <>
       <button
-        className="ml-auto font-bold underline-offset-2 hover:underline active:opacity-70"
+        className="ml-auto font-bold underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70"
         onClick={handleAddToCartAndCheckout}
         disabled={loading}
       >

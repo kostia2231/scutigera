@@ -31,7 +31,7 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        <div className="border-b border-black-20 max-[640px]:order-2 mb-5 mx-4"></div>
+        <div className="border-b border-black-20 max-[640px]:order-2 mb-5 mx-4 hidden max-[640px]:block"></div>
       </div>
     </>
   );

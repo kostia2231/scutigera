@@ -1,24 +1,10 @@
-// пожалуйста не забудь провернуть refactor
-
 import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
 import { useState } from "react";
 import { products } from "../../productsClientData";
+import { ImgSlider } from "../imgSlider";
 
 export default function Product({ item }) {
-  const matchedProduct = products.find((product) => product.id === item.id);
-  const addItem = useCartStore((state) => state.addItem);
-  const [selectedVariantId, setSelectedVariantId] = useState(
-    item.variants.edges[0].node.id
-  );
-  const [selectedSize, setSelectedSize] = useState(
-    item.variants.edges[0].node.title
-  );
-  const variants = item.variants.edges.map((v) => ({
-    size: v.node.title,
-    id: v.node.id,
-  }));
-
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -32,6 +18,21 @@ export default function Product({ item }) {
       });
     }
   };
+  const matchedProduct = products.find((product) => product.id === item.id);
+  const addItem = useCartStore((state) => state.addItem);
+  const [selectedVariantId, setSelectedVariantId] = useState(
+    item.variants.edges[0].node.id
+  );
+  const [selectedSize, setSelectedSize] = useState(
+    item.variants.edges[0].node.title
+  );
+  const variants = item.variants.edges.map((v) => ({
+    size: v.node.title,
+    id: v.node.id,
+  }));
+  const imgUrls = item.images.edges.map((i) => ({
+    url: i.node.url,
+  }));
 
   return (
     <>
@@ -46,7 +47,7 @@ export default function Product({ item }) {
             </div>
             <div className="right-0 ml-auto">
               <button
-                className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-2 font-bold"
+                className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold"
                 onClick={handleAddToCart}
               >
                 ADD TO CART
@@ -54,8 +55,8 @@ export default function Product({ item }) {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-1">
-              IN:
+            <div className="flex gap-2">
+              SIZE:
               {variants.map((variant) => (
                 <button
                   key={variant.id}
@@ -66,7 +67,7 @@ export default function Product({ item }) {
                   }}
                   className={`${
                     selectedVariantId === variant.id
-                      ? "bg-transparent text-black font-bold underline-offset-2 underline opacity-65"
+                      ? "bg-transparent text-black font-bold underline-offset-[3px] decoration-[1.5px] underline opacity-65"
                       : "bg-white text-black opacity-30"
                   }`}
                 >
@@ -74,7 +75,7 @@ export default function Product({ item }) {
                 </button>
               ))}
             </div>
-            <div className="flex gap-4 max-[1124px]:flex-col max-[640px]:flex-row">
+            <div className="flex gap-2 max-[1124px]:flex-col max-[640px]:flex-row">
               <div>
                 <div className="flex">
                   <div>DIMENSIONS (cm):</div>
@@ -161,10 +162,9 @@ export default function Product({ item }) {
             </div>
           </div>
         </div>
-        <div
-          className="bg-cover bg-center h-[100vh] w-[50%] max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:h-[70vh]"
-          style={{ backgroundImage: `url("${item.featuredImage.url}")` }}
-        ></div>
+        <div className="w-[50%] max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:py-4">
+          <ImgSlider imgUrls={imgUrls} />
+        </div>
       </div>
     </>
   );

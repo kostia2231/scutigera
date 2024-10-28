@@ -13,6 +13,14 @@ export const handler = async () => {
                 amount
               }
             }
+                            images(first: 10) {
+                            edges {
+                              node {
+                                url
+                                altText
+                                }
+                              }
+                            }
             featuredImage {
               url
               altText
