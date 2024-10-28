@@ -9,7 +9,7 @@ function App() {
     <div className="flex flex-col min-h-screen m-1 max-[640px]:m-0">
       <Navbar />
       {/* className="flex-1" */}
-      <main>
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/cart" element={<Cart />} />
