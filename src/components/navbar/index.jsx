@@ -6,13 +6,13 @@ export default function Navbar() {
   return (
     <div className="flex gap-2 fixed w-[50%] justify-between pr-2 max-[640px]:w-[100%] max-[640px]:bg-white max-[640px]:px-4 max-[640px]:py-4 z-30 ml-1 mt-1 max-[640px]:m-0">
       <NavLink
-        className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline transition-all delay-75 max-[640px]:active:bg-gray-100"
+        className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
         to="/"
       >
         SCUTIGERA
       </NavLink>
       <NavLink
-        className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline transition-all delay-75 max-[640px]:active:bg-gray-100"
+        className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
         to="/cart"
       >
         CART({count})

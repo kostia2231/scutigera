@@ -47,7 +47,7 @@ export default function Product({ item }) {
             </div>
             <div className="right-0 ml-auto">
               <button
-                className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:hover:no-underline transition-all delay-75 max-[640px]:active:bg-gray-100"
+                className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold"
                 onClick={handleAddToCart}
               >
                 ADD TO CART
