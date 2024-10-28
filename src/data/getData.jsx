@@ -12,7 +12,7 @@ export const useProducts = () => {
         const response = await axios.post(
           // "https://scutigera.net/.netlify/functions/proxy/api/2024-10/graphql.json",
 
-          "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json",
+          "https://scutigera.online/.netlify/functions/proxy/api/2024-10/graphql.json",
           {
             query: `
               {
