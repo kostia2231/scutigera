@@ -12,11 +12,11 @@ export default function Main() {
         <motion.div
           key={item.node.id}
           style={{ willChange: "opacity, transform" }}
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.5 }}
           animate={{ opacity: 1 }}
           transition={{
             duration: 0.4,
-            delay: index * 0.1,
+            delay: index * 0.2,
             ease: "easeOut",
           }}
         >
