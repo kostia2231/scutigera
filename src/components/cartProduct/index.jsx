@@ -33,7 +33,7 @@ export default function CartProduct({ product, count }) {
         style={{ backgroundImage: `url("${product.img}")` }}
       ></div>
       <div className="flex flex-col gap-1 max-[640px]:w-[180px]">
-        <div className="flex justify-between gap-2">
+        <div className="flex justify-between gap-4">
           <div> {product.title}</div> <div>{product.price}€</div>
         </div>
         <div className="flex justify-between">
