@@ -22,7 +22,7 @@ export default function Cart() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.6,
                   delay: index * 0.2,
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
