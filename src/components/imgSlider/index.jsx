@@ -10,7 +10,7 @@ export function ImgSlider({ imgUrls }) {
 
   return (
     <>
-      <div className="mb-1">
+      <div className="mb-1 max-[640px]:mb-0">
         <img
           className="cursor-pointer"
           onClick={showNextImg}
