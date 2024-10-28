@@ -6,11 +6,9 @@ import Cart from "./pages/cart";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen m-1 max-[640px]:m-0">
-      {/* className="flex-1" */}
-      <main className="flex-grow">
+    <div className="flex flex-col m-1 max-[640px]:m-0 ">
+      <main className="flex flex-col justify-between">
         <Navbar />
-
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/cart" element={<Cart />} />
