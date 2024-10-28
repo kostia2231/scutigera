@@ -7,19 +7,22 @@ export default function Main() {
   const products = data?.data.products.edges;
 
   return (
-    <motion.div
-      style={{ willChange: "opacity, transform" }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.6,
-        ease: "easeInOut",
-      }}
-      className="flex flex-col max-[640px]:mx-4 max-[640px]:pt-[31px] pb-10"
-    >
-      {products?.map((item) => (
-        <Product key={item.node.id} item={item.node} />
+    <div className="flex flex-col max-[640px]:mx-4 max-[640px]:pt-[31px] pb-10">
+      {products?.map((item, index) => (
+        <motion.div
+          key={item.node.id}
+          style={{ willChange: "opacity, transform" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.4,
+            delay: index * 0.1,
+            ease: "easeOut",
+          }}
+        >
+          <Product item={item.node} />
+        </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 }
