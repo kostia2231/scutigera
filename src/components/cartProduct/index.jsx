@@ -27,7 +27,7 @@ export default function CartProduct({ product, count }) {
 
   return (
     <div className="flex gap-1 max-[640px]:mx-4 max-[640px]:justify-between">
-      <div>{count}</div>
+      <div>{count}:</div>
       <div
         className="bg-cover bg-center w-[250px] h-[300px] opacity-100 max-[640px]:h-[250px] max-[640px]:w-[180px]"
         style={{ backgroundImage: `url("${product.img}")` }}
