@@ -67,7 +67,7 @@ export default function Product({ item }) {
                   }}
                   className={`${
                     selectedVariantId === variant.id
-                      ? "bg-transparent text-black font-bold underline-offset-[3px] decoration-[1.5px] underline opacity-65"
+                      ? "bg-transparent text-black font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] underline opacity-65"
                       : "bg-white text-black opacity-30"
                   }`}
                 >

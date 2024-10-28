@@ -29,7 +29,7 @@ export default function AddToCartButton({ items }) {
   return (
     <>
       <button
-        className="ml-auto font-bold underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70"
+        className="ml-auto font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] hover:underline active:opacity-70"
         onClick={handleAddToCartAndCheckout}
         disabled={loading}
       >
