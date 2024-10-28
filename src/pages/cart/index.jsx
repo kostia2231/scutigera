@@ -14,20 +14,24 @@ export default function Cart() {
   return (
     <>
       <div className="flex p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="flex flex-col gap-1 w-[50%] max-[640px]:w-[100%] max-[640px]:order-3"
-        >
+        <div className="flex flex-col gap-1 w-[50%] max-[640px]:w-[100%] max-[640px]:order-3">
           {cart.map((product, index) => (
-            <CartProduct key={product.id} product={product} count={index + 1} />
+            <>
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.1,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
+                <CartProduct product={product} count={index + 1} />
+              </motion.div>
+            </>
           ))}
-        </motion.div>
+        </div>
         <div className="w-[50%] pl-1 flex flex-col gap-1 max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:p-0 max-[640px]:pb-10 max-[640px]:px-4 border-b h-fit pb-10 border-black-20 mb-10">
           <div className="flex justify-between">
             TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>

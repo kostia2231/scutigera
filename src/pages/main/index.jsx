@@ -11,8 +11,8 @@ export default function Main() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.4,
+        delay: 0.4,
         ease: [0, 0.71, 0.2, 1.01],
       }}
       className="flex flex-col max-[640px]:mx-4 max-[640px]:pt-[31px] pb-10"
