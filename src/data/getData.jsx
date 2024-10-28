@@ -5,8 +5,8 @@ const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 const URL_ =
   "https://scutigera.online/.netlify/functions/proxy/api/2024-10/graphql.json";
-const URL_2 =
-  "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json";
+// const URL_2 =
+//   "https://idyllic-concha-a54637.netlify.app/.netlify/functions/proxy/api/2024-10/graphql.json";
 
 export const useProducts = () => {
   return useQuery({
@@ -15,7 +15,7 @@ export const useProducts = () => {
       try {
         const response = await axios.post(
           // "https://scutigera.net/.netlify/functions/proxy/api/2024-10/graphql.json",
-          URL_2,
+          URL_,
           {
             query: `
               {
