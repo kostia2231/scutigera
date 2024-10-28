@@ -10,9 +10,9 @@ export function ImgSlider({ imgUrls }) {
 
   return (
     <>
-      <div className="h-auto mb-1">
+      <div className="mb-1">
         <img
-          className="h-auto cursor-pointer"
+          className="cursor-pointer h-[70vh]"
           onClick={showNextImg}
           src={imgUrls[imageIndex].url}
         />
