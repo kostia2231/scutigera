@@ -15,8 +15,8 @@ export default function Cart() {
     <>
       <div className="flex p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{
             duration: 0.8,
             delay: 0.5,
