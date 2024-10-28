@@ -12,7 +12,7 @@ export function ImgSlider({ imgUrls }) {
     <>
       <div className="mb-1 max-[640px]:mb-0">
         <img
-          className="cursor-pointer"
+          className="object-cover cursor-pointer h-[60vh]"
           onClick={showNextImg}
           src={imgUrls[imageIndex].url}
         />
