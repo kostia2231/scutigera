@@ -6,7 +6,7 @@ import Cart from "./pages/cart";
 
 function App() {
   return (
-    <div className="flex flex-col m-1 max-[640px]:m-0 justify-between max-[640px]:h-[90vh] h-[100vh]">
+    <div className="flex flex-col max-[640px]:m-0 justify-between max-[640px]:h-[90vh] h-[100vh]">
       <main>
         <Navbar />
         <Routes>
