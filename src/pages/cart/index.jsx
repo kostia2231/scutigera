@@ -18,8 +18,8 @@ export default function Cart() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            duration: 1,
-            delay: 0.3,
+            duration: 0.5,
+            delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
           className="flex flex-col gap-1 w-[50%] max-[640px]:w-[100%] max-[640px]:order-3"
