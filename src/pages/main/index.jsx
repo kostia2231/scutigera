@@ -7,9 +7,13 @@ export default function Main() {
 
   return (
     <div className="flex flex-col max-[640px]:mx-4 max-[640px]:pt-[31px] pb-10">
-      {document.startViewTransition(() =>
-        products?.map((item) => <Product key={item.node.id} item={item.node} />)
-      )}
+      {products?.map((item) => (
+        <Product
+          key={item.node.id}
+          item={item.node}
+          className="product-appear"
+        />
+      ))}
     </div>
   );
 }
