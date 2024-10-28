@@ -6,8 +6,8 @@ import Cart from "./pages/cart";
 
 function App() {
   return (
-    <div className="flex flex-col m-1 max-[640px]:m-0 ">
-      <main className="flex flex-col justify-between">
+    <div className="flex flex-col m-1 max-[640px]:m-0 justify-between">
+      <main>
         <Navbar />
         <Routes>
           <Route path="/" element={<Main />} />
