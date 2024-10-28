@@ -6,7 +6,7 @@ import Cart from "./pages/cart";
 
 function App() {
   return (
-    <div className="flex flex-col m-1 max-[640px]:m-0 justify-between min-h-screen">
+    <div className="flex flex-col m-1 max-[640px]:m-0 justify-between max-[640px]:h-[90vh]">
       <main>
         <Navbar />
         <Routes>
