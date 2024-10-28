@@ -20,8 +20,8 @@ export default function Cart() {
               <motion.div
                 style={{ willChange: "opacity, transform" }}
                 key={product.id}
-                initial={{ y: 15 }}
-                animate={{ y: 0 }}
+                initial={{ opacity: 0.4 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   duration: 0.4,
                   delay: index * 0.2,
