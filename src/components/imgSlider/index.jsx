@@ -22,7 +22,6 @@ export function ImgSlider({ imgUrls, id }) {
 
   return (
     <div className="relative h-[100vh] w-full max-[640px]:h-[60vh]">
-      {/* Предыдущее изображение с эффектом исчезания */}
       <motion.img
         key={`prev-${prevIndex}`}
         initial={{ opacity: 1 }}
@@ -33,7 +32,6 @@ export function ImgSlider({ imgUrls, id }) {
         alt="Previous Image"
       />
 
-      {/* Новое изображение с эффектом появления */}
       <motion.img
         key={`current-${imageIndex}`}
         initial={{ opacity: 0.5 }}
