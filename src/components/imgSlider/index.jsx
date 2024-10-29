@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgIndexStore";
+import useSliderStore from "../../store/imgSliderStore";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -49,6 +49,6 @@ export function ImgSlider({ imgUrls, id }) {
 }
 
 ImgSlider.propTypes = {
-  imgUrls: PropTypes.array.isRequired,
-  id: PropTypes.string.isRequired,
+  imgUrls: PropTypes.array,
+  id: PropTypes.string,
 };
