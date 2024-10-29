@@ -2,6 +2,7 @@ export const babyTShirt = {
   id: "gid://shopify/Product/9656078664003",
   name: "Baby T-Shirt in Pink",
   price: 60,
+  color: "Pink",
   details: {
     fit: "Slim fit",
     material: "95% cotton, 5% elastane",
@@ -21,6 +22,7 @@ export const babyTShirt = {
 export const mutantSweater = {
   id: "gid://shopify/Product/9656257151299",
   name: "Mutant Sweater in Pink",
+  color: "Pink",
   price: 80,
   details: {
     fit: "Oversize fit",
@@ -41,6 +43,7 @@ export const mutantSweater = {
 export const screamerDress = {
   id: "gid://shopify/Product/9656257610051",
   name: "Screamer Dress in Black",
+  color: "Black",
   price: 90,
   details: {
     fit: "Oversize fit",

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { products } from "../../productsClientData";
 import { ImgSlider } from "../imgSlider";
 
-export default function Product({ item }) {
+export default function Product({ item, id }) {
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -163,7 +163,7 @@ export default function Product({ item }) {
           </div>
         </div>
         <div className="w-[50%] max-[640px]:w-[100vw] max-[640px]:order-1 max-[640px]:py-4">
-          <ImgSlider imgUrls={imgUrls} />
+          <ImgSlider imgUrls={imgUrls} id={id} />
         </div>
       </div>
     </>
@@ -172,4 +172,5 @@ export default function Product({ item }) {
 
 Product.propTypes = {
   item: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
 };

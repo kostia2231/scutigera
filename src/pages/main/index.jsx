@@ -12,15 +12,15 @@ export default function Main() {
         <motion.div
           key={item.node.id}
           style={{ willChange: "opacity, transform" }}
-          initial={{ opacity: 0.4 }}
+          initial={{ opacity: 0.5 }}
           animate={{ opacity: 1 }}
           transition={{
-            duration: 0.4,
+            duration: 0,
             delay: index * 0.2,
             ease: "easeOut",
           }}
         >
-          <Product item={item.node} />
+          <Product item={item.node} id={item.node.id} />
         </motion.div>
       ))}
     </div>
