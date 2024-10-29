@@ -37,7 +37,7 @@ export default function Product({ item, id }) {
   return (
     <>
       <div className="flex items-center max-[640px]:flex-col">
-        <div className="p-20 flex flex-col gap-2 w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:py-0 max-[640px]:px-0 max-[640px]:gap-2">
+        <div className="p-20 flex flex-col gap-2 w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:py-0 max-[640px]:px-0 max-[640px]:gap-2 max-[1275px]:px-[100px]">
           <div className="flex">
             <div className="flex gap-2">
               {item.title}
