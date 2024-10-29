@@ -13,7 +13,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className="flex p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:mx-[20px]">
+      <div className="flex p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px]">
         <div className="flex flex-col gap-1 w-[50%] max-[640px]:w-[100%] max-[640px]:order-3">
           {cart.map((product, index) => (
             <>
