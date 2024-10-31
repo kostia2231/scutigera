@@ -16,8 +16,15 @@ export default function ImgSlider({ imgUrls, id }) {
   }, [imageIndex, imgUrls]);
 
   const showNextImg = () => {
+    const nextIndex = (imageIndex + 1) % imgUrls.length;
+    const nextImage = new Image();
+    nextImage.src = imgUrls[nextIndex].url;
     setIsNextImageLoaded(false);
-    setImageIndex(id, (imageIndex + 1) % imgUrls.length);
+    
+    nextImage.onload = () => {
+      setImageIndex(id, nextIndex);
+      setIsNextImageLoaded(true);
+    };
   };
 
   const onClick = () => {
@@ -36,6 +43,7 @@ export default function ImgSlider({ imgUrls, id }) {
         className="absolute top-0 left-0 object-cover w-full h-full cursor-pointer"
         onClick={onClick}
         alt="Product Image"
+        style={{ opacity: isNextImageLoaded ? 1 : 0.5, transition: "opacity 0.3s ease" }}
       />
     </div>
   );
