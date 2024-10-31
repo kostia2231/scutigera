@@ -68,7 +68,7 @@ export default function Product({ item, id }) {
                   className={`${
                     selectedVariantId === variant.id
                       ? "bg-transparent text-black font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] underline opacity-65"
-                      : "bg-white text-black opacity-20"
+                      : "bg-white text-black opacity-20 transition ease-in-out duration-200"
                   }`}
                 >
                   {variant.size}
