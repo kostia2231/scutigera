@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
 import { useState } from "react";
 import { products } from "../../productsClientData";
-import { ImgSlider } from "../imgSlider";
+import ImgSlider from "../imgSlider";
 
 export default function Product({ item, id }) {
   const handleAddToCart = (e) => {
