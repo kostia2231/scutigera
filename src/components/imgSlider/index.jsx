@@ -20,7 +20,7 @@ export default function ImgSlider({ imgUrls, id }) {
     const nextImage = new Image();
     nextImage.src = imgUrls[nextIndex].url;
     setIsNextImageLoaded(false);
-    
+
     nextImage.onload = () => {
       setImageIndex(id, nextIndex);
       setIsNextImageLoaded(true);
@@ -36,14 +36,13 @@ export default function ImgSlider({ imgUrls, id }) {
   };
 
   return (
-    <div className="relative h-[100vh] w-full max-[640px]:h-[60vh]">
+    <div className="h-[100vh] w-full max-[640px]:h-[60vh]">
       <img
         key={imageIndex}
         src={imgUrls[imageIndex].url}
-        className="absolute top-0 left-0 object-cover w-full h-full cursor-pointer"
+        className="object-cover w-full h-full cursor-pointer"
         onClick={onClick}
         alt="Product Image"
-        style={{ opacity: isNextImageLoaded ? 1 : 0.5, transition: "opacity 0.3s ease" }}
       />
     </div>
   );
