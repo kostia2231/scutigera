@@ -81,7 +81,6 @@ export default function Product({ item, id }) {
                   <div>DIMENSIONS (cm):</div>
                 </div>
                 <div className="flex gap-2">
-                  {/* названия */}
                   <div>
                     <div>Size</div>
                     <div>Chest</div>
@@ -92,11 +91,10 @@ export default function Product({ item, id }) {
                     )}
                     <div>Length</div>
                   </div>
-                  {/* первая колонка */}
                   <div
                     className={`${
                       selectedSize === "Medium" || selectedSize === "Large"
-                        ? "opacity-20"
+                        ? "opacity-20 transition ease-in-out duration-200"
                         : null
                     }`}
                   >
@@ -109,10 +107,11 @@ export default function Product({ item, id }) {
                     )}
                     <div>{matchedProduct.dimensions.length.first}</div>
                   </div>
-                  {/* вторая колонка */}
                   <div
                     className={`${
-                      selectedSize === "Small" ? "opacity-20" : null
+                      selectedSize === "Small"
+                        ? "opacity-20 transition ease-in-out duration-200"
+                        : null
                     }`}
                   >
                     <div>{matchedProduct.dimensions.size.second}</div>
@@ -133,7 +132,7 @@ export default function Product({ item, id }) {
                 <div
                   className={`${
                     selectedSize === "Medium" || selectedSize === "Large"
-                      ? "opacity-20"
+                      ? "opacity-20 transition ease-in-out duration-200"
                       : null
                   }`}
                 >
@@ -142,7 +141,9 @@ export default function Product({ item, id }) {
                 </div>
                 <div
                   className={`${
-                    selectedSize === "Small" ? "opacity-20" : null
+                    selectedSize === "Small"
+                      ? "opacity-20 transition ease-in-out duration-200"
+                      : null
                   }`}
                 >
                   <div>{matchedProduct.dimensions.size.second}</div>
