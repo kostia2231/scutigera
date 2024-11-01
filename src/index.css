@@ -8,7 +8,8 @@
 
 body {
   font-size: 10px;
-  font-family: "Azeret Mono", monospace;
+  /* font-family: "Azeret Mono", monospace; */
+  font-family: "IBM Plex Mono", monospace;
   font-optical-sizing: auto;
   color: rgba(0, 0, 0, 0.65);
 }
