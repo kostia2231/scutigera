@@ -3,23 +3,12 @@ import useCartStore from "../../store/storeCart";
 import { useState } from "react";
 import { products } from "../../productsClientData";
 import ImgSlider from "../imgSlider";
+import { Link } from "react-router-dom";
 
 export default function Product({ item, id }) {
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (item) {
-      addItem({
-        id: selectedVariantId,
-        title: item.title,
-        price: item.priceRange.minVariantPrice.amount,
-        size: selectedSize,
-        img: item.featuredImage.url,
-      });
-    }
-  };
   const matchedProduct = products.find((product) => product.id === item.id);
   const addItem = useCartStore((state) => state.addItem);
+  const [isAdded, setIsAdded] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState(
     item.variants.edges[0].node.id
   );
@@ -34,6 +23,21 @@ export default function Product({ item, id }) {
     url: i.node.url,
   }));
 
+  const handleAddToCart = (e) => {
+    setIsAdded(true);
+    e.preventDefault();
+    e.stopPropagation();
+    if (item) {
+      addItem({
+        id: selectedVariantId,
+        title: item.title,
+        price: item.priceRange.minVariantPrice.amount,
+        size: selectedSize,
+        img: item.featuredImage.url,
+      });
+    }
+  };
+
   return (
     <>
       <div className="flex items-center max-[640px]:flex-col">
@@ -46,12 +50,20 @@ export default function Product({ item, id }) {
               </div>
             </div>
             <div className="right-0 ml-auto">
-              <button
-                className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold"
-                onClick={handleAddToCart}
-              >
-                ADD TO CART
-              </button>
+              {!isAdded ? (
+                <button
+                  className="inline-block w-[75px] hover:underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold"
+                  onClick={handleAddToCart}
+                >
+                  ADD TO CART
+                </button>
+              ) : (
+                <Link to="/cart">
+                  <button className="inline-block w-[75px] underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold">
+                    GO TO CART
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-2">
