@@ -5,9 +5,9 @@ export default function Footer() {
     <>
       <div className="relative flex flex-col items-center justify-center gap-1 max-[640px]:p-2 pb-5 pt-20 max-[640px]:pt-20 max-[640px]:pb-10">
         <div>
-          <img className="w-[350px] max-[640px]:w-[250px]" src={S} alt="" />
+          <img className="w-[250px] max-[640px]:w-[200px]" src={S} alt="" />
         </div>
-        <div className="flex gap-10 max-[640px]:gap-5">
+        <div className="flex gap-5 max-[640px]:gap-5">
           <div>ABOUT</div>
           <div>TERMS</div>
           <div>INSTAGRAM</div>
