@@ -11,13 +11,17 @@ export default function AddToCartButton({ items }) {
     setLoading(true);
     try {
       const cartResponse = await addToCart(items);
+      console.log("cartResponse: ", cartResponse);
+
       const cartId = cartResponse.cartCreate.cart.id;
+      console.log("cartId: ", cartId);
 
       const checkoutResponse = await getCheckoutUrl(cartId);
+      console.log("checkoutResponse: ", checkoutResponse);
       const checkoutUrl = checkoutResponse.cart.checkoutUrl;
 
       console.log(checkoutUrl);
-      window.open(checkoutUrl, "_blank");
+      window.open(checkoutUrl, "_self");
     } catch (error) {
       console.log(error);
     } finally {
