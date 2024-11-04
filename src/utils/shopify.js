@@ -11,10 +11,7 @@ const graphQLClient = new GraphQLClient(
     },
   }
 );
-function lol() {
-  console.log(storefrontAccessToken);
-}
-lol();
+
 export async function getProducts() {
   const getAllProductsQuery = gql`
     {
