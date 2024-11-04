@@ -9,9 +9,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  # /////
-[[redirects]]
-  from = "https://scutigera.online/*"
-  to = "https://www.scutigera.online/:splat"
-  status = 301
-  force = true
+#   # /////
+# [[redirects]]
+#   from = "https://scutigera.online/*"
+#   to = "https://www.scutigera.online/:splat"
+#   status = 301
+#   force = true
