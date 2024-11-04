@@ -5,7 +5,7 @@ const storefrontAccessToken = import.meta.env
 // "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json",
 
 const graphQLClient = new GraphQLClient(
-  "https://scutigera.online/api/2024-10/graphql.json",
+  "https://4hmm5a-ih.myshopify.com/api/2024-10/graphql.json",
   {
     headers: {
       "X-Shopify-Storefront-Access-Token": storefrontAccessToken,
