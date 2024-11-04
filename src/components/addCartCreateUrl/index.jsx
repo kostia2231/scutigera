@@ -7,7 +7,6 @@ export default function AddToCartButton({ items }) {
   const clearCart = useCartStore((state) => state.clearCart);
 
   const [loading, setLoading] = useState(false);
-  // console.log(items);
   const handleAddToCartAndCheckout = async () => {
     setLoading(true);
     try {
