@@ -3,7 +3,7 @@ export default function Terms() {
     <div className="grid grid-cols-2 max-[640px]:grid-cols-1 p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px] max-[640px]:px-4">
       <div></div>
       <div className="pl-2 max-[640px]:pl-0">
-        <div>TERMS</div>
+        <div className="font-bold">TERMS</div>
         <div>
           This Privacy Policy describes how SCUTIGERA (the &quot;Site&quot;,
           &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
@@ -17,7 +17,51 @@ export default function Terms() {
           Privacy Policy. Please read this Privacy Policy carefully.
         </div>
         <br />
-        <div>HOW WE COLLECT AND USE YOUR PERSONAL DATA</div>
+        <div className="font-bold">SHIPPING</div>
+        <div className="flex flex-col">
+          <p>Shipping Prices:</p>
+          <p>EUROPEAN UNION</p>
+          <p>€15 Small package</p>
+          <p>€17 Large package</p>
+          <p>3-7 business days</p>
+          <br />
+          <p>GERMANY</p>
+          <p>€7</p>
+          <p>3-5 business days</p>
+          <p>EUROPE (NON-EU)</p>
+          <p>€30</p>
+          <p>5-7 business days</p>
+          <br />
+          <p>UNITED STATES</p>
+          <p>€20 Small package</p>
+          <p>€35 Large package</p>
+          <p>5-7 business days</p>
+          <br />
+          <p>UKRAINE</p>
+          <p>€15</p>
+          <p>5-10 business days</p>
+          <br />
+          <div>
+            Free shipping within the EU for orders over €130. You will receive a
+            tracking number via email as soon as your order is processed,
+            usually within 48 hours.
+          </div>
+          <br />
+          <div className="font-bold">RETURNS</div>
+          <div>
+            We accept returns within 14 days of receiving your order, provided
+            the item is in its original condition, with tags attached, and has
+            not been worn. Please note that shipping costs are non-refundable.
+            Refunds will be processed within 14 days of receiving the returned
+            item and will be issued to the original payment method used for the
+            purchase. If you have any questions, please contact our customer
+            service team for further assistance. Info@scutigera.online
+          </div>
+        </div>
+        <br />
+        <div className="font-bold">
+          HOW WE COLLECT AND USE YOUR PERSONAL DATA
+        </div>
         <div>
           To provide the Services, we collect personal information about you
           from a variety of sources, as set out below. The information that we
@@ -29,7 +73,7 @@ export default function Terms() {
           Services, our rights, and the rights of our users or others.
         </div>
         <br />
-        <div>WHAT PERSONAL DATA WE COLLECT</div>
+        <div className="font-bold">WHAT PERSONAL DATA WE COLLECT</div>
         <div>
           The types of personal information we obtain about you depends on how
           you interact with our Site and use our Services. When we use the term
@@ -39,7 +83,7 @@ export default function Terms() {
           personal information we collect.
         </div>
         <br />
-        <div>DATA WE COLLECT DIRECTLY FROM YOU</div>
+        <div className="font-bold">DATA WE COLLECT DIRECTLY FROM YOU</div>
         <div>
           <ul className="list-disc">
             <li>
@@ -67,7 +111,56 @@ export default function Terms() {
             provide this information, but doing so may prevent you from using or
             accessing these features.
           </div>
+        </div>
+        <br />
+        <div className="font-bold">
+          LEGAL BASIS FOR PROCESSING PERSONAL DATA
+        </div>
+        <div>
+          We process your personal data based on your consent, the necessity of
+          processing for the performance of a contract, compliance with legal
+          obligations, and legitimate interests pursued by us or a third party.
+        </div>
+        <br />
+        <div className="font-bold">COOKIES AND SIMILAR TECHNOLOGIES</div>
+        <div>
+          We use cookies and similar technologies to enhance your experience on
+          our Site. You can manage your cookie preferences through your browser
+          settings.
+        </div>
+        <br />
+        <div className="font-bold">DATA RETENTION</div>
+        <div>
+          We will retain your personal information for as long as necessary to
+          fulfill the purposes outlined in this Privacy Policy or as required by
+          law.
+        </div>
+        <br />
+        <div className="font-bold">USER RIGHTS</div>
+        <div>
+          You have the right to access, correct, or delete your personal
+          information. You can also object to the processing of your data under
+          certain conditions.
+        </div>
+        <br />
+        <div className="font-bold">SECURITY OF PERSONAL DATA</div>
+        <div>
+          We implement reasonable security measures to protect your personal
+          information from unauthorized access or disclosure.
+        </div>
+        <br />
+        <div className="font-bold">CHANGES TO THIS PRIVACY POLICY</div>
+        <div>
+          We may update this Privacy Policy from time to time. We will notify
+          you of any changes by posting the new Privacy Policy on our Site.
+        </div>
+        <br />
+        <div className="font-bold">CONTACT US</div>
+        <div>
+          If you have any questions about this Privacy Policy or our practices
+          regarding your personal information, please contact us at:
           <br />
+          info@scutigera.online
         </div>
       </div>
     </div>
