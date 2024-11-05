@@ -5,15 +5,17 @@ export default function Terms() {
         <div>
           <div>TERMS</div>
           <div>
-            This Privacy Policy describes how SCUTIGERA (the "Site", "we", "us",
-            or "our") collects, uses, and discloses your personal information
-            when you visit, use our services, or make a purchase from
-            www.scutigera.online (the "Site") or otherwise communicate with us
-            regarding the Site (collectively, the "Services"). For purposes of
-            this Privacy Policy, "you" and "your" means you as the user of the
-            Services, whether you are a customer, website visitor, or another
-            individual whose information we have collected pursuant to this
-            Privacy Policy. Please read this Privacy Policy carefully.
+            This Privacy Policy describes how SCUTIGERA (the &quot;Site&quot;,
+            &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
+            and discloses your personal information when you visit, use our
+            services, or make a purchase from www.scutigera.online (the
+            &quot;Site&quot;) or otherwise communicate with us regarding the
+            Site (collectively, the &quot;Services&quot;). For purposes of this
+            Privacy Policy, &quot;you&quot; and &quot;your&quot; means you as
+            the user of the Services, whether you are a customer, website
+            visitor, or another individual whose information we have collected
+            pursuant to this Privacy Policy. Please read this Privacy Policy
+            carefully.
           </div>
           <br />
           <div>HOW WE COLLECT AND USE YOUR PERSONAL DATA</div>
@@ -32,10 +34,10 @@ export default function Terms() {
           <div>
             The types of personal information we obtain about you depends on how
             you interact with our Site and use our Services. When we use the
-            term "personal information", we are referring to information that
-            identifies, relates to, describes or can be associated with you. The
-            following sections describe the categories and specific types of
-            personal information we collect.
+            term &quot;personal information&quot;, we are referring to
+            information that identifies, relates to, describes or can be
+            associated with you. The following sections describe the categories
+            and specific types of personal information we collect.
           </div>
           <br />
           <div>DATA WE COLLECT DIRECTLY FROM YOU</div>
