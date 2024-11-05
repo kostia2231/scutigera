@@ -85,24 +85,25 @@ export default function Terms() {
         <br />
         <div className="font-bold">DATA WE COLLECT DIRECTLY FROM YOU</div>
         <div>
-          <ul className="list-disc">
+          <ul>
             <li>
-              Contact details including your name, address, phone number, and
+              -- Contact details including your name, address, phone number, and
               email.
             </li>
             <li>
-              Order information including your name, billing address, shipping
-              address, payment confirmation, email address, and phone number.
+              -- Order information including your name, billing address,
+              shipping address, payment confirmation, email address, and phone
+              number.
             </li>
             <li>
-              Account information including your username, password, security
+              -- Account information including your username, password, security
               questions and other information used for account security
               purposes.
             </li>
             <li>
-              Customer support information including the information you choose
-              to include in communications with us, for example, when sending a
-              message through the Services.
+              -- Customer support information including the information you
+              choose to include in communications with us, for example, when
+              sending a message through the Services.
             </li>
           </ul>
           <div>
