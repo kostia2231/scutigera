@@ -19,7 +19,6 @@ export default function Terms() {
         <br />
         <div className="font-bold">SHIPPING</div>
         <div className="flex flex-col">
-          <p>Shipping Prices:</p>
           <p>EUROPEAN UNION</p>
           <p>€15 Small package</p>
           <p>€17 Large package</p>
@@ -28,6 +27,7 @@ export default function Terms() {
           <p>GERMANY</p>
           <p>€7</p>
           <p>3-5 business days</p>
+          <br />
           <p>EUROPE (NON-EU)</p>
           <p>€30</p>
           <p>5-7 business days</p>
