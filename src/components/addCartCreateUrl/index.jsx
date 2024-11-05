@@ -21,7 +21,7 @@ export default function AddToCartButton({ items }) {
       const checkoutUrl = checkoutResponse.cart.checkoutUrl;
 
       console.log(checkoutUrl);
-      window.open(checkoutUrl, "_blank");
+      window.open(checkoutUrl, "_self");
     } catch (error) {
       console.log(error);
     } finally {
