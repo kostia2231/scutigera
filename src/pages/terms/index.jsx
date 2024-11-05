@@ -41,7 +41,7 @@ export default function Terms() {
         <br />
         <div>DATA WE COLLECT DIRECTLY FROM YOU</div>
         <div>
-          <ul>
+          <ul className="list-disc">
             <li>
               Contact details including your name, address, phone number, and
               email.
