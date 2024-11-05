@@ -3,8 +3,8 @@ export default function Terms() {
     <>
       <div className="w-[50%]">
         <div>
-          <div>TERMS</div>
           <div>
+            <p>TERMS</p>
             This Privacy Policy describes how SCUTIGERA (the &quot;Site&quot;,
             &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
             and discloses your personal information when you visit, use our
