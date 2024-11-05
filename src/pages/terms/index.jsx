@@ -29,10 +29,9 @@ export default function Terms() {
       <div></div>
       <div className="pl-2 max-[640px]:pl-0">
         <div className="font-bold">TERMS</div>
-        <div>
+        <div className="opacity-20">
           Effective Date: {formattedDate}, {time}
         </div>
-        <br />
         <div>
           These Terms of Use (&quot;Terms&quot;) are a legal agreement between
           you and SCUTIGERA (the &quot;Site,&quot; &quot;we,&quot;
