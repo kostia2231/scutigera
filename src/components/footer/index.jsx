@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import S from "../../assets/svg/Scutigera.svg";
 
 export default function Footer() {
@@ -10,7 +11,11 @@ export default function Footer() {
         <div className="flex gap-5 max-[640px]:gap-5">
           <div>ABOUT</div>
           <div>TERMS</div>
-          <div>INSTAGRAM</div>
+          <Link to="https://www.instagram.com/scutigeraa/">
+            <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
+              INSTAGRAM
+            </div>
+          </Link>
         </div>
       </div>
     </>
