@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import S from "../../assets/svg/Scutigera.svg";
-import Terms from "../../pages/terms";
 
 export default function Footer() {
   return (
