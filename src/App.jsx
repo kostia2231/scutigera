@@ -3,6 +3,7 @@ import Main from "./pages/main";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Cart from "./pages/cart";
+import Terms from "./pages/terms";
 import RestoreScrollWrapper from "./utils/restoreScrollWrapper";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/404" element={<Main />} />
           </Routes>
