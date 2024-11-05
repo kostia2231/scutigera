@@ -29,17 +29,20 @@ export default function Terms() {
       <div></div>
       <div className="pl-2 max-[640px]:pl-0">
         <div className="font-bold">TERMS</div>
-        <div>Effective Date: {formattedDate}</div>
-        <div>{time}</div>
         <div>
-          This Privacy Policy describes how SCUTIGERA (the &quot;Site&quot;,
-          &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
-          and discloses your personal information when you visit, use our
-          services, or make a purchase from www.scutigera.online (the
-          &quot;Site&quot;) or otherwise communicate with us regarding the Site
-          (collectively, the &quot;Services&quot;). For purposes of this Privacy
-          Policy, &quot;you&quot; and &quot;your&quot; means you as the user of
-          the Services, whether you are a customer, website visitor, or another
+          Effective Date: {formattedDate}, {time}
+        </div>
+        <br />
+        <div>
+          These Terms of Use (&quot;Terms&quot;) are a legal agreement between
+          you and ______ (the &quot;Site&quot;,&quot;SCUTIGERA&quot;
+          ,&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). The Site
+          collects, uses, and discloses your personal information when you
+          visit, use our services, or make a purchase from www.scutigera.online
+          or otherwise communicate with us regarding the Site (collectively, the
+          &quot;Services&quot;). For purposes of this Privacy Policy,
+          &quot;you&quot; and &quot;your&quot; means you as the user of the
+          Services, whether you are a customer, website visitor, or another
           individual whose information we have collected pursuant to this
           Privacy Policy. Please read this Privacy Policy carefully.
         </div>
