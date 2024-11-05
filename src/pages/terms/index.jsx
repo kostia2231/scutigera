@@ -1,8 +1,8 @@
 export default function Terms() {
   return (
-    <div className="grid grid-cols-2 p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px]">
+    <div className="grid grid-cols-2 max-[640px]:grid-cols-1 p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px] max-[640px]:px-4">
       <div></div>
-      <div className="pl-2">
+      <div className="pl-2 max-[640px]:pl-0">
         <div>TERMS</div>
         <div>
           This Privacy Policy describes how SCUTIGERA (the &quot;Site&quot;,
