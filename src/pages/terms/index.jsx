@@ -1,9 +1,36 @@
+import { useEffect, useState } from "react";
+
 export default function Terms() {
+  const date = new Date();
+  const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
+
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const formattedTime = `${now.getHours().toString().padStart(2, "0")}:${now
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}`;
+      setTime(formattedTime);
+    };
+
+    updateTime();
+
+    const intervalId = setInterval(updateTime, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="grid grid-cols-2 max-[640px]:grid-cols-1 p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px] max-[640px]:px-4">
       <div></div>
       <div className="pl-2 max-[640px]:pl-0">
         <div className="font-bold">TERMS</div>
+        <div>Effective Date: {formattedDate}</div>
+        <div>{time}</div>
         <div>
           This Privacy Policy describes how SCUTIGERA (the &quot;Site&quot;,
           &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
