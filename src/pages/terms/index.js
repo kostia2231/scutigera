@@ -1,7 +1,7 @@
 export default function Terms() {
   return (
     <>
-      <div className="grid grid-cols-2">
+      <div className="w-[50%]">
         <div>
           <div>TERMS</div>
           <div>
