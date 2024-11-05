@@ -15,8 +15,8 @@
 #   to = "https://www.scutigera.online/:splat"
 #   status = 301
 #   force = true
-[[redirects]]
-  from = "https://www.scutigera.online"
-  to = "https://scutigera.online"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "https://www.scutigera.online"
+#   to = "https://scutigera.online"
+#   status = 301
+#   force = true
