@@ -10,9 +10,9 @@ export default function Footer() {
         </div>
         <div className="flex gap-5 max-[640px]:gap-5">
           <div>ABOUT</div>
-          <Link to="/terms">
-            <div>TERMS</div>
-          </Link>
+
+          <div>TERMS</div>
+
           <Link to="https://www.instagram.com/scutigeraa/">
             <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
               INSTAGRAM
