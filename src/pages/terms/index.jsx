@@ -86,7 +86,12 @@ export default function Terms() {
             purchase. If you have any questions, please contact our customer
             service team for further assistance.
             <br />
-            <a href="mailto:info@scutigera.online">info@scutigera.online</a>
+            <a
+              className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
+              href="mailto:info@scutigera.online"
+            >
+              info@scutigera.online
+            </a>
           </div>
         </div>
         <br />
@@ -192,7 +197,12 @@ export default function Terms() {
           If you have any questions about this Privacy Policy or our practices
           regarding your personal information, please contact us at:
           <br />
-          <a href="mailto:info@scutigera.online">info@scutigera.online</a>
+          <a
+            className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
+            href="mailto:info@scutigera.online"
+          >
+            info@scutigera.online
+          </a>
         </div>
       </div>
     </div>
