@@ -4,7 +4,6 @@ export default function About() {
       <div></div>
       <div className="pl-2 max-[640px]:pl-0">
         <div className="font-bold">ABOUT SCUTIGERA</div>
-        <br />
         <div>
           Scutigera is a conceptual art project where fashion acts as the
           primary medium of expression. Each new product or photographic series
