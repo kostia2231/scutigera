@@ -17,7 +17,7 @@ export default function About() {
         </div>
         <br />
         <div>
-          For collaboration inquiries or general questions, contact:{" "}
+          For collaboration inquiries or general questions:{" "}
           <a
             className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
             href="mailto:info@scutigera.online"
