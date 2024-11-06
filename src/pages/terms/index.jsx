@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Terms() {
   const date = new Date();
@@ -34,16 +35,16 @@ export default function Terms() {
         </div>
         <div>
           These Terms of Use (&quot;Terms&quot;) are a legal agreement between
-          you and SCUTIGERA (the &quot;Site,&quot; &quot;we,&quot;
-          &quot;us,&quot; or &quot;our&quot;). The Site collects, uses, and
-          discloses your personal information when you visit, use our services,
-          or make a purchase from www.scutigera.online or otherwise communicate
-          with us regarding the Site (collectively, the &quot;Services&quot;).
-          For the purposes of this Privacy Policy, &quot;you&quot; and
-          &quot;your&quot; refer to you as the user of the Services, whether you
-          are a customer, website visitor, or another individual whose
-          information we have collected pursuant to this Privacy Policy. Please
-          read these Terms carefully.
+          you and www.scutigera.online (the &quot;Site&quot;,
+          &quot;SCUTIGERA&quot;, &quot;we&quot;, &quot;us&quot; or
+          &quot;our&quot;). The Site collects, uses, and discloses your personal
+          information when you visit, use our services, or make a purchase from
+          www.scutigera.online or otherwise communicate with us regarding the
+          Site (collectively, the &quot;Services&quot;). For the purposes of
+          this Privacy Policy, &quot;you&quot; and &quot;your&quot; refer to you
+          as the user of the Services, whether you are a customer, website
+          visitor, or another individual whose information we have collected
+          pursuant to this Privacy Policy. Please read these Terms carefully.
         </div>
         <br />
         <div className="font-bold">SHIPPING</div>
@@ -84,7 +85,11 @@ export default function Terms() {
             Refunds will be processed within 14 days of receiving the returned
             item and will be issued to the original payment method used for the
             purchase. If you have any questions, please contact our customer
-            service team for further assistance. Info@scutigera.online
+            service team for further assistance.
+            <br />
+            <Link to="info@scutigera.online">
+              <div>info@scutigera.online</div>
+            </Link>
           </div>
         </div>
         <br />
@@ -190,7 +195,9 @@ export default function Terms() {
           If you have any questions about this Privacy Policy or our practices
           regarding your personal information, please contact us at:
           <br />
-          info@scutigera.online
+          <Link to="info@scutigera.online">
+            <div>info@scutigera.online</div>
+          </Link>
         </div>
       </div>
     </div>
