@@ -43,7 +43,6 @@ export const handler = async () => {
       }
     }
   `;
-
   const options = {
     hostname: "4hmm5a-ih.myshopify.com",
     path: "/api/2024-10/graphql.json",

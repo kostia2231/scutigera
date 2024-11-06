@@ -9,7 +9,11 @@ export default function Footer() {
           <img className="w-[250px] max-[640px]:w-[200px]" src={S} alt="" />
         </div>
         <div className="flex gap-5 max-[640px]:gap-5">
-          <div>ABOUT</div>
+          <Link to="/about">
+            <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
+              ABOUT
+            </div>
+          </Link>
           <Link to="/terms">
             <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
               TERMS
