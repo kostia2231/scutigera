@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Terms() {
   const date = new Date();
@@ -87,9 +86,7 @@ export default function Terms() {
             purchase. If you have any questions, please contact our customer
             service team for further assistance.
             <br />
-            <Link to="info@scutigera.online">
-              <div>info@scutigera.online</div>
-            </Link>
+            <a href="mailto:info@scutigera.online">info@scutigera.online</a>
           </div>
         </div>
         <br />
@@ -195,9 +192,7 @@ export default function Terms() {
           If you have any questions about this Privacy Policy or our practices
           regarding your personal information, please contact us at:
           <br />
-          <Link to="info@scutigera.online">
-            <div>info@scutigera.online</div>
-          </Link>
+          <a href="mailto:info@scutigera.online">info@scutigera.online</a>
         </div>
       </div>
     </div>
