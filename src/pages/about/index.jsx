@@ -15,6 +15,16 @@ export default function About() {
           Inspired by the creator’s personal experiences and reflections,
           Scutigera explores themes of contradiction and complexity.
         </div>
+        <br />
+        <div>
+          Inquire collaboration or ask a general questions:{" "}
+          <a
+            className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
+            href="mailto:info@scutigera.online"
+          >
+            info@scutigera.online
+          </a>
+        </div>
       </div>
     </div>
   );
