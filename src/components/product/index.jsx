@@ -80,7 +80,7 @@ export default function Product({ item, id }) {
                       ? "opacity-20 cursor-not-allowed hover:no-underline"
                       : "hover:underline"
                   }`}
-                  onClick={handleAddToCart}
+                  onClick={!selectedAvailableForSale ? null : handleAddToCart}
                 >
                   {!selectedAvailableForSale ? "SOLD OUT" : "ADD TO CART"}
                 </button>
