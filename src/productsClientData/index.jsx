@@ -52,7 +52,7 @@ export const screamerDress = {
     madeIn: "Ukraine",
   },
   dimensions: {
-    size: { first: "Small", second: "Large" },
+    size: { first: "Small", second: "Medium" },
     chest: { first: 60, second: 63 },
     waist: { first: 50, second: 53 },
     length: { first: 132, second: 143 },
