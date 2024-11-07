@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { products } from "../../productsClientData";
 import ImgSlider from "../imgSlider";
 import { Link } from "react-router-dom";
@@ -15,9 +15,13 @@ export default function Product({ item, id }) {
   const [selectedSize, setSelectedSize] = useState(
     item.variants.edges[0].node.title
   );
+  const [selectedAvailableForSale, setSelectedAvailableForSale] = useState(
+    item.variants.edges[0].node.availableForSale
+  );
   const variants = item.variants.edges.map((v) => ({
     size: v.node.title,
     id: v.node.id,
+    availableForSale: v.node.availableForSale,
   }));
   const imgUrls = item.images.edges.map((i) => ({
     url: i.node.url,
@@ -38,6 +42,25 @@ export default function Product({ item, id }) {
     }
   };
 
+  useEffect(() => {
+    if (!selectedAvailableForSale) {
+      const availableVariant = variants.find(
+        (variant) => variant.availableForSale
+      );
+      if (availableVariant) {
+        setSelectedVariantId(availableVariant.id);
+        setSelectedSize(availableVariant.size);
+        setSelectedAvailableForSale(availableVariant.availableForSale);
+      }
+    }
+  }, []);
+
+  const handleSizeClick = (variant) => {
+    setSelectedAvailableForSale(variant.availableForSale);
+    setSelectedVariantId(variant.id);
+    setSelectedSize(variant.size);
+  };
+
   return (
     <>
       <div className="flex items-center max-[640px]:flex-col">
@@ -52,10 +75,14 @@ export default function Product({ item, id }) {
             <div className="right-0 ml-auto">
               {!isAdded ? (
                 <button
-                  className="text-right inline-block w-[75px] hover:underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold"
+                  className={`inline-block w-[75px] active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold ${
+                    !selectedAvailableForSale
+                      ? "opacity-20 cursor-not-allowed hover:no-underline"
+                      : "hover:underline"
+                  }`}
                   onClick={handleAddToCart}
                 >
-                  ADD TO CART
+                  {!selectedAvailableForSale ? "SOLD OUT" : "ADD TO CART"}
                 </button>
               ) : (
                 <Link to="/cart">
@@ -72,11 +99,7 @@ export default function Product({ item, id }) {
               {variants.map((variant) => (
                 <button
                   key={variant.id}
-                  onClick={() => {
-                    setSelectedVariantId(variant.id);
-                    setSelectedSize(variant.size);
-                    console.log(variant.size);
-                  }}
+                  onClick={() => handleSizeClick(variant)}
                   className={`${
                     selectedVariantId === variant.id
                       ? "bg-transparent text-black font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] underline opacity-65"
