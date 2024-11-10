@@ -7,17 +7,17 @@ import { fetchCart } from "../../data/getCart";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-  function onClick() {
-    setIsOpen(false);
-    localStorage.removeItem("cartId");
-  }
-
   const [currentCartId, setCurrentCartId] = useState(null);
   const [currentCartUrl, setCurrentCartUrl] = useState(null);
   const [isOpen, setIsOpen] = useState(true);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  console.log(currentCartUrl);
+  function onClick() {
+    setIsOpen(false);
+    localStorage.removeItem("cartId");
+  }
+
+  // console.log(currentCartUrl);
 
   useEffect(() => {
     setCurrentCartId(localStorage.getItem("cartId"));
