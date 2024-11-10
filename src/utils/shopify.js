@@ -91,10 +91,10 @@ export async function addToCart(items) {
     },
   };
 
-  console.log(
-    "Variables for cart creation:",
-    JSON.stringify(variables, null, 2)
-  );
+  // console.log(
+  //   "Variables for cart creation:",
+  //   JSON.stringify(variables, null, 2)
+  // );
 
   try {
     const result = await graphQLClient.request(createCartMutation, variables);
@@ -106,7 +106,7 @@ export async function addToCart(items) {
       );
     }
 
-    console.log("Cart creation result:", JSON.stringify(result, null, 2));
+    // console.log("Cart creation result:", JSON.stringify(result, null, 2));
     return result;
   } catch (error) {
     console.error("Error creating cart:", error);
