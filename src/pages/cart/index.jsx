@@ -17,6 +17,8 @@ export default function Cart() {
   const [isOpen, setIsOpen] = useState(true);
   const clearCart = useCartStore((state) => state.clearCart);
 
+  console.log(currentCartUrl);
+
   useEffect(() => {
     setCurrentCartId(localStorage.getItem("cartId"));
     if (currentCartId) {
