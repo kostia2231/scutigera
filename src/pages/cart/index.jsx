@@ -77,15 +77,7 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        <motion.div
-          initial={{ y: 25 }}
-          animate={{ y: 0 }}
-          transition={{
-            duration: 0.4,
-            ease: "easeOut",
-          }}
-          className="fixed bottom-0 left-0 right-0 m-1 text-center text-white bg-black z-11"
-        >
+        <div className="fixed bottom-0 left-0 right-0 m-1 text-center text-white bg-black z-11">
           {currentCartUrl && isOpen ? (
             <motion.div className="flex justify-between px-2">
               <Link to={currentCartUrl}>
@@ -94,7 +86,7 @@ export default function Cart() {
               <button onClick={onClick}>(X)</button>
             </motion.div>
           ) : null}
-        </motion.div>
+        </div>
       </div>
     </>
   );
