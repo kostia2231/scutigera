@@ -15,7 +15,7 @@ export default function Main() {
           initial={{ opacity: 0.6 }}
           animate={{ opacity: 1 }}
           transition={{
-            duration: 0.5,
+            duration: 0.4,
             delay: index * 0.2,
             ease: "easeOut",
           }}

@@ -33,7 +33,7 @@ export default function Terms() {
         initial={{ opacity: 0.6 }}
         animate={{ opacity: 1 }}
         transition={{
-          duration: 0.5,
+          duration: 0.4,
           ease: "easeInOut",
         }}
         className="pl-2 max-[640px]:pl-0"
