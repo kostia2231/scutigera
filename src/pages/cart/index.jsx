@@ -84,7 +84,7 @@ export default function Cart() {
             duration: 0.4,
             ease: "easeOut",
           }}
-          className="fixed bottom-0 left-0 right-0 m-1 text-center text-white bg-black"
+          className="fixed bottom-0 left-0 right-0 m-1 text-center text-white bg-black z-11"
         >
           {currentCartUrl && isOpen ? (
             <motion.div className="flex justify-between px-2">
