@@ -59,6 +59,7 @@ export default function Product({ item, id }) {
     setSelectedAvailableForSale(variant.availableForSale);
     setSelectedVariantId(variant.id);
     setSelectedSize(variant.size);
+    setIsAdded(false);
   };
 
   return (
