@@ -77,16 +77,16 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        <div className="fixed bottom-0 left-0 right-0 z-20 m-1 text-center text-white  max-[640px]:mx-4 border-b-[1.5px] border-black">
+        <div className="fixed bottom-0 left-0 right-0 z-20 m-1 text-center text-white  max-[640px]:mx-4 ">
           {currentCartUrl && isOpen ? (
-            <motion.div className="flex justify-between ">
+            <div className="flex justify-between border-b-[1.5px] border-black">
               <Link to={currentCartUrl}>
                 <div className="bg-black">---&gt; UNFINISHED CHECKOUT</div>
               </Link>
               <button className="bg-black" onClick={onClick}>
                 (X)
               </button>
-            </motion.div>
+            </div>
           ) : null}
         </div>
       </div>
