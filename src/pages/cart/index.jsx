@@ -77,7 +77,7 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        <div className="fixed bottom-0 left-0 right-0 z-20 m-1 text-center text-white  max-[640px]:mx-4 border-b-[1.5px]">
+        <div className="fixed bottom-0 left-0 right-0 z-20 m-1 text-center text-white  max-[640px]:mx-4 border-b-[1.5px] border-black">
           {currentCartUrl && isOpen ? (
             <motion.div className="flex justify-between ">
               <Link to={currentCartUrl}>
