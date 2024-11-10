@@ -2,8 +2,37 @@ import useCartStore from "../../store/storeCart";
 import CartProduct from "../../components/cartProduct";
 import AddToCartButton from "../../components/addCartCreateUrl";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { fetchCart } from "../../data/getCart";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
+  function onClick() {
+    setIsOpen(false);
+    localStorage.removeItem("cartId");
+  }
+
+  const [currentCartId, setCurrentCartId] = useState(null);
+  const [currentCartUrl, setCurrentCartUrl] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
+  const clearCart = useCartStore((state) => state.clearCart);
+
+  useEffect(() => {
+    setCurrentCartId(localStorage.getItem("cartId"));
+    if (currentCartId) {
+      fetchCart(currentCartId)
+        .then((data) => setCurrentCartUrl(data.data.cart.checkoutUrl))
+        .catch(
+          (error) => (
+            console.log(error.message),
+            console.clear(),
+            localStorage.removeItem("cartId"),
+            clearCart()
+          )
+        );
+    }
+  }, [currentCartId]);
+
   const cart = useCartStore((state) => state.cart);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
   const cartData = cart.map((item) => ({
@@ -46,6 +75,24 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
+        <motion.div
+          initial={{ y: 25 }}
+          animate={{ y: 0 }}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+          }}
+          className="fixed bottom-0 left-0 right-0 m-1 text-center text-white bg-black"
+        >
+          {currentCartUrl && isOpen ? (
+            <motion.div className="flex justify-between px-2">
+              <Link to={currentCartUrl}>
+                <div>---&gt; UNFINISHED CHECKOUT</div>
+              </Link>
+              <button onClick={onClick}>(X)</button>
+            </motion.div>
+          ) : null}
+        </motion.div>
       </div>
     </>
   );
