@@ -44,8 +44,8 @@ export default function Cart() {
 
   return (
     <>
-      <div className="flex p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px]">
-        <div className="flex flex-col gap-1 w-[50%] max-[640px]:w-[100%] max-[640px]:order-3">
+      <div className="flex py-20 px-[150px] max-[540px]:p-0 max-[540px]:pt-20 max-[870px]:flex-col max-[1200px]:px-[100px] max-[1100px]:px-[50px] max-[980px]:px-1">
+        <div className="flex flex-col gap-1 w-[50%] max-[870px]:w-[100%] max-[870px]:order-3 h-fit">
           {cart.map((product, index) => (
             <>
               <motion.div
@@ -64,7 +64,7 @@ export default function Cart() {
             </>
           ))}
         </div>
-        <div className="w-[50%] ml-2 max-[640px]:ml-0  flex flex-col gap-1 max-[640px]:w-[100%] max-[640px]:order-1 max-[640px]:p-0 max-[640px]:pb-10 max-[640px]:px-4 border-b h-fit pb-10 border-black-20 mb-10">
+        <div className="w-[50%] pl-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-10 border-black-20 mb-10">
           <div className="flex justify-between">
             TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>
           </div>

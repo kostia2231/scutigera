@@ -10,13 +10,10 @@ export default function AddToCartButton({ items }) {
 
     try {
       const cartResponse = await addToCart(items);
-
       const cartId = cartResponse.cartCreate.cart.id;
       localStorage.setItem("cartId", cartId);
-
       const checkoutResponse = await getCheckoutUrl(cartId);
       const checkoutUrl = checkoutResponse.cart.checkoutUrl;
-
       window.open(checkoutUrl, "_self");
     } catch (error) {
       console.log(error);

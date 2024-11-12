@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import useCartStore from "../../store/storeCart";
+import ImgSlider from "../imgSlider";
 import { useState, useEffect } from "react";
 import { products } from "../../productsClientData";
-import ImgSlider from "../imgSlider";
 import { Link } from "react-router-dom";
 
 export default function Product({ item, id }) {
@@ -64,8 +64,8 @@ export default function Product({ item, id }) {
 
   return (
     <>
-      <div className="flex items-center max-[640px]:flex-col">
-        <div className="p-20 flex flex-col gap-2 w-[50%] max-[640px]:w-[100%] max-[640px]:order-2 max-[640px]:py-0 max-[640px]:px-0 max-[640px]:gap-2 min-[1275px]:px-[100px]">
+      <div className="flex items-center max-[980px]:flex-col">
+        <div className="p-20 flex flex-col gap-2 w-[50%] max-[980px]:w-[100%] max-[980px]:order-2 max-[980px]:py-0 max-[980px]:px-1 max-[980px]:gap-2 px-[150px] max-[1200px]:px-[100px] max-[1100px]:px-[50px]">
           <div className="flex">
             <div className="flex gap-2">
               {item.title}
@@ -111,7 +111,7 @@ export default function Product({ item, id }) {
                 </button>
               ))}
             </div>
-            <div className="flex gap-2 max-[1124px]:flex-col max-[640px]:flex-row">
+            <div className="flex gap-2 max-[1124px]:flex-col max-[980px]:flex-row">
               <div>
                 <div className="flex">
                   <div>DIMENSIONS (cm):</div>
@@ -199,7 +199,7 @@ export default function Product({ item, id }) {
             </div>
           </div>
         </div>
-        <div className="w-[50%] max-[640px]:w-[100vw] max-[640px]:order-1 max-[640px]:py-4">
+        <div className="w-[50%] max-[980px]:w-[100vw] max-[980px]:order-1 max-[980px]:py-4">
           <ImgSlider imgUrls={imgUrls} id={id} />
         </div>
       </div>

@@ -5,7 +5,6 @@ const storefrontAccessToken = import.meta.env
   .VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 const URL_ =
   "https://scutigera.online/.netlify/functions/proxy/api/2024-10/graphql.json";
-  // https://scutigera.online/.netlify/functions/proxy/api/2024-10/graphql.json
 
 export const useProducts = () => {
   return useQuery({
