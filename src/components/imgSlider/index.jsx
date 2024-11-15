@@ -56,7 +56,7 @@ export default function ImgSlider({ imgUrls, id }) {
   };
 
   return (
-    <div className="h-[100vh] w-full max-[640px]:h-[60vh] relative">
+    <div className="h-[100vh] w-fit max-[640px]:h-[60vh] relative">
       <div
         onClick={onClick}
         className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center mix-blend-difference"
