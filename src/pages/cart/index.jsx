@@ -78,7 +78,7 @@ export default function Cart() {
           )}
         </div>
         {currentCartUrl && isOpen ? (
-          <div className="flex justify-between bg-black z-20 fixed text-white bottom-0 left-0 right-0 max-[640px]:px-4 ">
+          <div className="flex justify-between bg-black z-20 fixed text-white bottom-0 left-0 right-0 max-[640px]:px-4 py-1 pt-1 px-1">
             <Link to={currentCartUrl}>
               <div className="bg-black">---&gt; UNFINISHED CHECKOUT</div>
             </Link>
