@@ -77,7 +77,7 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        {currentCartUrl && isOpen ? (
+        {/* {currentCartUrl && isOpen ? (
           <div className="flex justify-between bg-black z-20 fixed text-white bottom-0 left-0 right-0 max-[980px]:px-4 max-[980px]:py-1 max-[980px]:pt-1 px-1">
             <Link to={currentCartUrl}>
               <div className="bg-black">---&gt; UNFINISHED CHECKOUT</div>
@@ -86,7 +86,7 @@ export default function Cart() {
               (X)
             </button>
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     </>
   );
