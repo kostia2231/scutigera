@@ -70,7 +70,7 @@ export default function ImgSlider({ imgUrls, id }) {
         className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center justify-start"
       >
         <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference  p-4">
-          {imageIndex + "/" + imgUrls.length}
+          {imageIndex + 1 + "/" + imgUrls.length}
         </div>
       </div>
 
