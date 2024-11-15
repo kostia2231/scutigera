@@ -11,12 +11,26 @@ export default function ImgSlider({ imgUrls, id }) {
   const isSwiping = useRef(false);
 
   useEffect(() => {
-    // Предзагрузка текущего изображения
-    const preloadImage = new Image();
-    preloadImage.src = imgUrls[imageIndex].url;
+    // Предзагрузка текущего, следующего и предыдущего изображений
+    const preloadImages = () => {
+      const nextIndex = (imageIndex + 1) % imgUrls.length;
+      const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
 
-    // Устанавливаем URL после загрузки изображения
-    preloadImage.onload = () => setCurrentImage(preloadImage.src);
+      // Текущее изображение
+      const currentImg = new Image();
+      currentImg.src = imgUrls[imageIndex].url;
+      currentImg.onload = () => setCurrentImage(currentImg.src);
+
+      // Следующее изображение
+      const nextImg = new Image();
+      nextImg.src = imgUrls[nextIndex].url;
+
+      // Предыдущее изображение
+      const prevImg = new Image();
+      prevImg.src = imgUrls[prevIndex].url;
+    };
+
+    preloadImages();
   }, [imageIndex, imgUrls]);
 
   const showNextImg = () => {
@@ -98,7 +112,7 @@ export default function ImgSlider({ imgUrls, id }) {
 
       <img
         key={imageIndex}
-        src={currentImage} // Используем предзагруженный URL
+        src={currentImage}
         className={`object-cover h-full cursor-pointer w-fit max-[640px]:w-[100vw] transition-opacity duration-700`}
         alt="Product Image"
       />
