@@ -56,20 +56,20 @@ export default function ImgSlider({ imgUrls, id }) {
   };
 
   return (
-    <div className="flex h-[100vh] w-full max-[640px]:h-[60vh] relative justify-center items-center">
+    <div className="flex h-[100vh] w-full max-[980px]:h-[60vh] relative justify-center items-center">
       <div
         onClick={onClick}
-        className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center justify-start pl-[40%] mr-auto"
+        className="cursor-pointer absolute right-0 h-full w-[50%] flex items-baseline justify-end pl-2"
       >
-        <div className=" text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference">
+        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
           ---&gt;
         </div>
       </div>
       <div
         onClick={onClickPrev}
-        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center justify-end pr-[40%]"
+        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-baseline justify-start pr-2"
       >
-        <div className=" text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference">
+        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
           &lt;---
         </div>
       </div>
