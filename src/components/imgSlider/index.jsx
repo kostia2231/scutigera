@@ -54,12 +54,12 @@ export default function ImgSlider({ imgUrls, id }) {
     const currentX = e.clientX || e.touches[0].clientX;
     const diff = startX.current - currentX;
 
-    if (diff > 100) {
+    if (diff > 80) {
       showNextImg();
       resetSliders(id);
       setActiveSlider(id);
       isSwiping.current = false;
-    } else if (diff < -100) {
+    } else if (diff < -80) {
       showPrevImg();
       resetSliders(id);
       setActiveSlider(id);
