@@ -59,17 +59,17 @@ export default function ImgSlider({ imgUrls, id }) {
     <div className="flex h-[100vh] w-full max-[640px]:h-[60vh] relative justify-center items-center">
       <div
         onClick={onClick}
-        className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center"
+        className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center justify-start pl-[40%] mr-auto"
       >
-        <div className="p-4 text-right text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference">
+        <div className=" text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference">
           ---&gt;
         </div>
       </div>
       <div
         onClick={onClickPrev}
-        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center"
+        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center justify-end pr-[40%]"
       >
-        <div className="p-4 text-left  text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference">
+        <div className=" text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference">
           &lt;---
         </div>
       </div>
@@ -77,7 +77,7 @@ export default function ImgSlider({ imgUrls, id }) {
       <img
         key={imageIndex}
         src={imgUrls[imageIndex].url}
-        className="object-cover w-full h-full cursor-pointer"
+        className="object-cover h-full cursor-pointer w-fit max-[980px]:w-[100vw]"
         alt="Product Image"
       />
     </div>
