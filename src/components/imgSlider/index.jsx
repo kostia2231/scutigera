@@ -61,17 +61,17 @@ export default function ImgSlider({ imgUrls, id }) {
         onClick={onClick}
         className="cursor-pointer absolute right-0 h-full w-[50%] flex items-baseline justify-end pl-2"
       >
-        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
+        {/* <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
           ---&gt;
-        </div>
+        </div> */}
       </div>
       <div
         onClick={onClickPrev}
         className="cursor-pointer absolute left-0 h-full w-[50%] flex items-baseline justify-start pr-2"
       >
-        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
+        {/* <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
           &lt;---
-        </div>
+        </div> */}
       </div>
 
       <img
