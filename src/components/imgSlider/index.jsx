@@ -86,7 +86,7 @@ export default function ImgSlider({ imgUrls, id }) {
 
   return (
     <div
-      className="relative flex h-[100vh] w-full max-[980px]:h-[60vh] justify-center"
+      className="relative flex h-[100vh] w-full max-[640px]:h-[60vh] justify-center"
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
       onMouseUp={onMouseUp}
@@ -102,7 +102,7 @@ export default function ImgSlider({ imgUrls, id }) {
         onClick={onClickPrev}
         className="cursor-pointer left-0 absolute h-full w-[50%] flex"
       >
-        <div className="text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference pl-4 mr-auto mt-auto">
+        <div className="text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference pl-4 mr-auto mt-auto">
           {imageIndex + 1 + "/" + imgUrls.length}
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function ImgSlider({ imgUrls, id }) {
       <img
         key={imageIndex}
         src={imgUrls[imageIndex].url}
-        className={`object-cover h-full cursor-pointer w-fit max-[980px]:w-[100vw] transition-opacity duration-700`}
+        className={`object-cover h-full cursor-pointer w-fit max-[640px]:w-[100vw] transition-opacity duration-700`}
         alt="Product Image"
       />
     </div>

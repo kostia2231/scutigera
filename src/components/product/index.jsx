@@ -199,7 +199,7 @@ export default function Product({ item, id }) {
             </div>
           </div>
         </div>
-        <div className="w-[50%] max-[980px]:w-[100vw] max-[980px]:order-1 max-[980px]:py-4">
+        <div className="w-[50%] max-[640px]:w-[100vw] max-[980px]:order-1 max-[980px]:py-4">
           <ImgSlider imgUrls={imgUrls} id={id} />
         </div>
       </div>
