@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgSliderStore";
+import useSliderStore from "../../store/imgIndexStore";
 import { useEffect, useState } from "react";
 
 export default function ImgSlider({ imgUrls, id }) {
@@ -27,6 +27,18 @@ export default function ImgSlider({ imgUrls, id }) {
     };
   };
 
+  const showPrevImg = () => {
+    const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
+    const prevImage = new Image();
+    prevImage.src = imgUrls[prevIndex].url;
+    setIsNextImageLoaded(false);
+
+    prevImage.onload = () => {
+      setImageIndex(id, prevIndex);
+      setIsNextImageLoaded(true);
+    };
+  };
+
   const onClick = () => {
     resetSliders(id);
     setActiveSlider(id);
@@ -35,13 +47,37 @@ export default function ImgSlider({ imgUrls, id }) {
     }
   };
 
+  const onClickPrev = () => {
+    resetSliders(id);
+    setActiveSlider(id);
+    if (isNextImageLoaded) {
+      showPrevImg();
+    }
+  };
+
   return (
-    <div className="h-[100vh] w-full max-[640px]:h-[60vh]">
+    <div className="h-[100vh] w-full max-[640px]:h-[60vh] relative">
+      <div
+        onClick={onClick}
+        className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center mix-blend-difference"
+      >
+        <div className="p-4 ml-auto text-white/20 min-[640px]:hidden">
+          ---&gt;
+        </div>
+      </div>
+      <div
+        onClick={onClickPrev}
+        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center mix-blend-difference"
+      >
+        <div className="p-4 mr-auto text-white/20 min-[640px]:hidden">
+          &lt;---
+        </div>
+      </div>
+
       <img
         key={imageIndex}
         src={imgUrls[imageIndex].url}
         className="object-cover w-full h-full cursor-pointer"
-        onClick={onClick}
         alt="Product Image"
       />
     </div>
