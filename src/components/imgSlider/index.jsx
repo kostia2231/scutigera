@@ -6,31 +6,40 @@ export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
     useSliderStore();
   const imageIndex = sliders[id] || 0;
-  const [isNextImageLoaded, setIsNextImageLoaded] = useState(true);
+  const [isPrevNextImageLoaded, setIsPrevNextImageLoaded] = useState(true);
   const startX = useRef(0);
   const isSwiping = useRef(false);
 
   useEffect(() => {
     const nextIndex = (imageIndex + 1) % imgUrls.length;
+    const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
+    const prevImage = new Image();
     const nextImage = new Image();
+    prevImage.src = imgUrls[prevIndex].url;
     nextImage.src = imgUrls[nextIndex].url;
-    nextImage.onload = () => setIsNextImageLoaded(true);
+    nextImage.onload = () => setIsPrevNextImageLoaded(true);
   }, [imageIndex, imgUrls]);
 
   const showNextImg = () => {
     const nextIndex = (imageIndex + 1) % imgUrls.length;
     setImageIndex(id, nextIndex);
+    const nextImage = new Image();
+    nextImage.src = imgUrls[nextIndex].url;
+    setIsPrevNextImageLoaded(false);
   };
 
   const showPrevImg = () => {
     const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
     setImageIndex(id, prevIndex);
+    const prevImage = new Image();
+    prevImage.src = imgUrls[prevIndex].url;
+    setIsPrevNextImageLoaded(false);
   };
 
   const onClick = () => {
     resetSliders(id);
     setActiveSlider(id);
-    if (isNextImageLoaded) {
+    if (isPrevNextImageLoaded) {
       showNextImg();
     }
   };
@@ -38,7 +47,7 @@ export default function ImgSlider({ imgUrls, id }) {
   const onClickPrev = () => {
     resetSliders(id);
     setActiveSlider(id);
-    if (isNextImageLoaded) {
+    if (isPrevNextImageLoaded) {
       showPrevImg();
     }
   };
