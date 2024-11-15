@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgIndexStore";
+import useSliderStore from "../../store/imgSliderStore";
 import { useEffect, useState } from "react";
 
 export default function ImgSlider({ imgUrls, id }) {
