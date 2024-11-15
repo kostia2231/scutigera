@@ -22,14 +22,16 @@ export default function Cart() {
   useEffect(() => {
     setCurrentCartId(localStorage.getItem("cartId"));
     if (currentCartId) {
-      fetchCart(currentCartId).then.catch(
-        (error) => (
-          console.log(error.message),
-          console.clear(),
-          localStorage.removeItem("cartId"),
-          clearCart()
-        )
-      );
+      fetchCart(currentCartId)
+        .then((data) => console.log(data.data.cart.checkoutUrl))
+        .catch(
+          (error) => (
+            console.log(error.message),
+            console.clear(),
+            localStorage.removeItem("cartId"),
+            clearCart()
+          )
+        );
     }
   }, [currentCartId]);
 
