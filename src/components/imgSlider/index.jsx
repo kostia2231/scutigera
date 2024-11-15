@@ -61,7 +61,7 @@ export default function ImgSlider({ imgUrls, id }) {
         onClick={onClick}
         className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center mix-blend-difference"
       >
-        <div className="p-4 ml-auto text-white/20 min-[640px]:hidden">
+        <div className="p-4 ml-auto text-[rgb(51,51,51)] min-[640px]:hidden">
           ---&gt;
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function ImgSlider({ imgUrls, id }) {
         onClick={onClickPrev}
         className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center mix-blend-difference"
       >
-        <div className="p-4 mr-auto text-white/20 min-[640px]:hidden">
+        <div className="p-4 mr-auto text-[rgb(51,51,51)] min-[640px]:hidden">
           &lt;---
         </div>
       </div>
