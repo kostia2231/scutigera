@@ -63,6 +63,10 @@ export default function ImgSlider({ imgUrls, id }) {
     const currentX = e.clientX || e.touches[0].clientX;
     const diff = startX.current - currentX;
 
+    if (Math.abs(diff) > 10) {
+      e.preventDefault();
+    }
+
     if (diff > 80) {
       showNextImg();
       resetSliders(id);
