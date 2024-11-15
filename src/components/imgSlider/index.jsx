@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgSliderStore";
-import { useEffect, useState } from "react";
+import useSliderStore from "../../store/imgIndexStore";
+import { useEffect, useState, useRef } from "react";
 
 export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
     useSliderStore();
   const imageIndex = sliders[id] || 0;
   const [isNextImageLoaded, setIsNextImageLoaded] = useState(true);
+  const startX = useRef(0);
+  const isSwiping = useRef(false);
 
   useEffect(() => {
     const nextIndex = (imageIndex + 1) % imgUrls.length;
@@ -55,21 +57,49 @@ export default function ImgSlider({ imgUrls, id }) {
     }
   };
 
+  const onMouseDown = (e) => {
+    startX.current = e.clientX || e.touches[0].clientX;
+    isSwiping.current = true;
+  };
+
+  const onMouseMove = (e) => {
+    if (!isSwiping.current) return;
+
+    const currentX = e.clientX || e.touches[0].clientX;
+    const diff = startX.current - currentX;
+
+    if (diff > 50) {
+      showNextImg();
+      isSwiping.current = false;
+    } else if (diff < -50) {
+      showPrevImg();
+      isSwiping.current = false;
+    }
+  };
+
+  const onMouseUp = () => {
+    isSwiping.current = false;
+  };
+
   return (
-    <div className="flex h-[100vh] w-full max-[980px]:h-[60vh] relative justify-center items-center">
+    <div
+      className="relative flex h-[100vh] w-full max-[980px]:h-[60vh] justify-center"
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onMouseUp={onMouseUp}
+      onTouchStart={onMouseDown}
+      onTouchMove={onMouseMove}
+      onTouchEnd={onMouseUp}
+    >
       <div
         onClick={onClick}
         className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center justify-start"
-      >
-        {/* <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference">
-          ---&gt;
-        </div> */}
-      </div>
+      ></div>
       <div
         onClick={onClickPrev}
-        className="cursor-pointer left-0  absolute  h-full w-[50%] flex"
+        className="cursor-pointer left-0 absolute h-full w-[50%] flex"
       >
-        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference pl-4 mr-auto mt-auto">
+        <div className="text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference pl-4 mr-auto mt-auto">
           {imageIndex + 1 + "/" + imgUrls.length}
         </div>
       </div>
