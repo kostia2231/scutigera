@@ -4,18 +4,18 @@ import AddToCartButton from "../../components/addCartCreateUrl";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCart } from "../../data/getCart";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Cart() {
   const [currentCartId, setCurrentCartId] = useState(null);
-  const [currentCartUrl, setCurrentCartUrl] = useState(null);
-  const [isOpen, setIsOpen] = useState(true);
+  // const [currentCartUrl, setCurrentCartUrl] = useState(null);
+  // const [isOpen, setIsOpen] = useState(true);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  function onClick() {
-    setIsOpen(false);
-    localStorage.removeItem("cartId");
-  }
+  // function onClick() {
+  //   setIsOpen(false);
+  //   localStorage.removeItem("cartId");
+  // }
 
   // console.log(currentCartUrl);
 
@@ -23,7 +23,7 @@ export default function Cart() {
     setCurrentCartId(localStorage.getItem("cartId"));
     if (currentCartId) {
       fetchCart(currentCartId)
-        .then((data) => setCurrentCartUrl(data.data.cart.checkoutUrl))
+        .then((data) => data.data.cart.checkoutUrl)
         .catch(
           (error) => (
             console.log(error.message),
