@@ -1,23 +1,90 @@
-import { create } from "zustand";
+import PropTypes from "prop-types";
+import useSliderStore from "../../store/imgIndexStore";
+import { useEffect, useState } from "react";
 
-const useSliderStore = create((set) => ({
-  sliders: {},
-  activeSlider: null,
-  setActiveSlider: (id) => set({ activeSlider: id }),
-  setImageIndex: (id, index) => {
-    set((state) => ({
-      sliders: { ...state.sliders, [id]: index },
-    }));
-  },
-  resetSliders: (id) => {
-    set((state) => {
-      const newSliders = { ...state.sliders };
-      for (const key in newSliders) {
-        newSliders[key] = key === id ? newSliders[key] : 0;
-      }
-      return { sliders: newSliders };
-    });
-  },
-}));
+export default function ImgSlider({ imgUrls, id }) {
+  const { sliders, setActiveSlider, setImageIndex, resetSliders } =
+    useSliderStore();
+  const imageIndex = sliders[id] || 0;
+  const [isNextImageLoaded, setIsNextImageLoaded] = useState(true);
 
-export default useSliderStore;
+  useEffect(() => {
+    const nextIndex = (imageIndex + 1) % imgUrls.length;
+    const nextImage = new Image();
+    nextImage.src = imgUrls[nextIndex].url;
+    nextImage.onload = () => setIsNextImageLoaded(true);
+  }, [imageIndex, imgUrls]);
+
+  const showNextImg = () => {
+    const nextIndex = (imageIndex + 1) % imgUrls.length;
+    const nextImage = new Image();
+    nextImage.src = imgUrls[nextIndex].url;
+    setIsNextImageLoaded(false);
+
+    nextImage.onload = () => {
+      setImageIndex(id, nextIndex);
+      setIsNextImageLoaded(true);
+    };
+  };
+
+  const showPrevImg = () => {
+    const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
+    const prevImage = new Image();
+    prevImage.src = imgUrls[prevIndex].url;
+    setIsNextImageLoaded(false);
+
+    prevImage.onload = () => {
+      setImageIndex(id, prevIndex);
+      setIsNextImageLoaded(true);
+    };
+  };
+
+  const onClick = () => {
+    resetSliders(id);
+    setActiveSlider(id);
+    if (isNextImageLoaded) {
+      showNextImg();
+    }
+  };
+
+  const onClickPrev = () => {
+    resetSliders(id);
+    setActiveSlider(id);
+    if (isNextImageLoaded) {
+      showPrevImg();
+    }
+  };
+
+  return (
+    <div className="h-[100vh] w-full max-[640px]:h-[60vh] relative">
+      <div
+        onClick={onClick}
+        className="cursor-pointer absolute right-0 h-full w-[50%] flex items-center mix-blend-difference"
+      >
+        <div className="p-4 ml-auto text-white/20 min-[640px]:hidden">
+          ---&gt;
+        </div>
+      </div>
+      <div
+        onClick={onClickPrev}
+        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center mix-blend-difference"
+      >
+        <div className="p-4 mr-auto text-white/20 min-[640px]:hidden">
+          &lt;---
+        </div>
+      </div>
+
+      <img
+        key={imageIndex}
+        src={imgUrls[imageIndex].url}
+        className="object-cover w-full h-full cursor-pointer"
+        alt="Product Image"
+      />
+    </div>
+  );
+}
+
+ImgSlider.propTypes = {
+  imgUrls: PropTypes.array.isRequired,
+  id: PropTypes.string.isRequired,
+};
