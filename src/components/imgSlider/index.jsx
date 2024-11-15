@@ -67,9 +67,9 @@ export default function ImgSlider({ imgUrls, id }) {
       </div>
       <div
         onClick={onClickPrev}
-        className="cursor-pointer absolute left-0 h-full w-[50%] flex items-center "
+        className="cursor-pointer absolute  h-full w-[50%] flex"
       >
-        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference p-4 bottom-0">
+        <div className=" text-[rgb(51,51,51)] min-[980px]:hidden mix-blend-difference p-4 ml-auto mt-auto">
           {imageIndex + 1 + "/" + imgUrls.length}
         </div>
       </div>
