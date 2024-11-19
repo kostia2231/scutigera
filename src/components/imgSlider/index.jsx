@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
 import useSliderStore from "../../store/imgSliderStore";
@@ -61,6 +61,9 @@ export default function ImgSlider({ imgUrls, id }) {
   const showNextImg = () => {
     const nextIndex = (imageIndex + 1) % imgUrls.length;
     setImageIndex(id, nextIndex);
+    if (emblaApi) {
+      emblaApi.scrollTo(nextIndex, true);
+    }
   };
 
   const onClick = () => {
