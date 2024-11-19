@@ -106,8 +106,10 @@ export default function ImgSlider({ imgUrls, id }) {
           <div
             key={index}
             onClick={() => setImageIndex(id, index)}
-            className={`embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer   ${
-              index === imageIndex ? "bg-black" : "bg-black/20"
+            className={`embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer ${
+              index === imageIndex
+                ? "bg-[rgb(30, 30, 33)]"
+                : "bg-[rgba(30, 30, 33, 0.2)]"
             }`}
           />
         ))}
