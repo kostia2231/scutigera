@@ -15,6 +15,17 @@ export default function ImgSlider({ imgUrls, id }) {
   });
 
   useEffect(() => {
+    const preloadImages = () => {
+      imgUrls.forEach((img) => {
+        const image = new Image();
+        image.src = img.url;
+      });
+    };
+
+    preloadImages();
+  }, [imgUrls]);
+
+  useEffect(() => {
     if (!emblaApi) return;
 
     const onScroll = () => {
