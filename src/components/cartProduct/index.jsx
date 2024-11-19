@@ -34,7 +34,7 @@ export default function CartProduct({ product, count }) {
       ></div>
       <div className="flex flex-col gap-1 max-[540px]:w-[50%] w-[40%] max-[870px]:w-[50%]">
         <div className="flex justify-between gap-4">
-          <div> {product.title}</div> <div>{product.price}€</div>
+          <div>&quot;{product.title}&quot;</div> <div>{product.price}€</div>
         </div>
         <div className="flex justify-between">
           SIZE <div>{product.size.toUpperCase()}</div>
