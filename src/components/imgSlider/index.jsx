@@ -7,31 +7,12 @@ export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
     useSliderStore();
   const imageIndex = sliders[id] || 0;
-  const cleanUrl = (url) => url.split("?")[0];
   const [emblaRef, emblaApi] = EmblaCarouselReact({
     loop: true,
     speed: 0,
     draggable: true,
     align: "start",
   });
-
-  useEffect(() => {
-    const preloadImages = () => {
-      const nextIndex = (imageIndex + 1) % imgUrls.length;
-      const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
-
-      const currentImg = new Image();
-      currentImg.src = imgUrls[imageIndex].url;
-
-      const nextImg = new Image();
-      nextImg.src = imgUrls[nextIndex].url;
-
-      const prevImg = new Image();
-      prevImg.src = imgUrls[prevIndex].url;
-    };
-
-    preloadImages();
-  }, [imageIndex, imgUrls]);
 
   useEffect(() => {
     if (!emblaApi) return;
