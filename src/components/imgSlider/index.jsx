@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
 import useSliderStore from "../../store/imgSliderStore";
@@ -7,6 +7,8 @@ export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
     useSliderStore();
   const imageIndex = sliders[id] || 0;
+  const [currentImage, setCurrentImage] = useState(imgUrls[0].url); // Храним URL текущего изображения
+
   const [emblaRef, emblaApi] = EmblaCarouselReact({
     loop: true,
     speed: 0,
@@ -15,18 +17,27 @@ export default function ImgSlider({ imgUrls, id }) {
   });
 
   useEffect(() => {
-    const preloadImages = async () => {
-      const promises = imgUrls.map((img) => {
-        return new Promise((resolve) => {
-          const imgPreload = new Image();
-          imgPreload.src = img.url;
-          imgPreload.onload = resolve;
-        });
-      });
-      await Promise.all(promises);
+    // Предзагрузка текущего, следующего и предыдущего изображений
+    const preloadImages = () => {
+      const nextIndex = (imageIndex + 1) % imgUrls.length;
+      const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
+
+      // Текущее изображение
+      const currentImg = new Image();
+      currentImg.src = imgUrls[imageIndex].url;
+      currentImg.onload = () => setCurrentImage(currentImg.src);
+
+      // Следующее изображение
+      const nextImg = new Image();
+      nextImg.src = imgUrls[nextIndex].url;
+
+      // Предыдущее изображение
+      const prevImg = new Image();
+      prevImg.src = imgUrls[prevIndex].url;
     };
+
     preloadImages();
-  }, [imgUrls]);
+  }, [imageIndex, imgUrls]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -73,7 +84,7 @@ export default function ImgSlider({ imgUrls, id }) {
         {imgUrls.map((img, index) => (
           <div key={index} className="embla__slide">
             <img
-              src={img.url}
+              src={img.url || currentImage}
               onClick={onClick}
               className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
               alt={`Image ${index + 1}`}
