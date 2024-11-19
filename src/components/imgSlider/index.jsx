@@ -101,7 +101,8 @@ export default function ImgSlider({ imgUrls, id }) {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-0 left-0 flex justify-center p-0 mb-1 ml-4 embla__dots min-[640px]:hidden">
+      <div className="absolute bottom-0 flex justify-center p-0 mb-1 embla__dots min-[640px]:hidden">
+        {/* <div className="absolute bottom-0 left-0 flex justify-center p-0 mb-1 ml-4 embla__dots min-[640px]:hidden"> */}
         {imgUrls.map((_, index) => (
           <div
             key={index}
