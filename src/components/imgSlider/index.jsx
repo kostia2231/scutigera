@@ -101,8 +101,7 @@ export default function ImgSlider({ imgUrls, id }) {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-0 flex justify-center p-0 mb-4 embla__dots min-[640px]:hidden">
-        {/* <div className="absolute bottom-0 left-0 flex justify-center p-0 mb-1 ml-4 embla__dots min-[640px]:hidden"> */}
+      <div className="absolute bottom-0 flex justify-center p-0 mb-4 embla__dots">
         {imgUrls.map((_, index) => (
           <div
             key={index}
@@ -113,7 +112,7 @@ export default function ImgSlider({ imgUrls, id }) {
           />
         ))}
       </div>
-      <div className="absolute right-0 flex justify-center mt-2 embla__dots max-[640px]:hidden">
+      {/* <div className="absolute right-0 flex justify-center mt-2 embla__dots max-[640px]:hidden">
         {imgUrls.map((_, index) => (
           <div
             key={index}
@@ -123,7 +122,7 @@ export default function ImgSlider({ imgUrls, id }) {
             }`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
