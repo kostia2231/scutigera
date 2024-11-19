@@ -65,12 +65,23 @@ export default function ImgSlider({ imgUrls, id }) {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-0 left-0 flex justify-center p-0 mb-1 ml-4 embla__dots">
+      <div className="absolute bottom-0 left-0 flex justify-center p-0 mb-1 ml-4 embla__dots min-[640px]:hidden">
         {imgUrls.map((_, index) => (
           <div
             key={index}
             onClick={() => setImageIndex(id, index)}
             className={`hidden max-[640px]:block embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer   ${
+              index === imageIndex ? "bg-black" : "bg-black/20"
+            }`}
+          />
+        ))}
+      </div>
+      <div className="absolute right-0 flex justify-center mt-2 embla__dots max-[640px]:hidden">
+        {imgUrls.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setImageIndex(id, index)}
+            className={`embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer   ${
               index === imageIndex ? "bg-black" : "bg-black/20"
             }`}
           />
