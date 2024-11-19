@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgSliderStore";
+import useSliderStore from "../../store/imgIndexStore";
 
 export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
     useSliderStore();
   const imageIndex = sliders[id] || 0;
+
   const [emblaRef, emblaApi] = EmblaCarouselReact({
     loop: true,
     speed: 0,
@@ -37,27 +38,16 @@ export default function ImgSlider({ imgUrls, id }) {
     }
   }, [emblaApi, imageIndex]);
 
-  const showNextImg = () => {
+  const showNextImg = useCallback(() => {
     const nextIndex = (imageIndex + 1) % imgUrls.length;
     setImageIndex(id, nextIndex);
-  };
+  }, [imageIndex, imgUrls.length, id, setImageIndex]);
 
-  // const showPrevImg = () => {
-  //   const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
-  //   setImageIndex(id, prevIndex);
-  // };
-
-  const onClick = () => {
+  const onClick = useCallback(() => {
     resetSliders(id);
     setActiveSlider(id);
     showNextImg();
-  };
-
-  // const onClickPrev = () => {
-  //   resetSliders(id);
-  //   setActiveSlider(id);
-  //   showPrevImg();
-  // };
+  }, [id, resetSliders, setActiveSlider, showNextImg]);
 
   return (
     <div className="embla relative flex flex-col h-[100vh] w-full max-[640px]:h-[60vh] justify-center">
@@ -73,6 +63,7 @@ export default function ImgSlider({ imgUrls, id }) {
                 onClick={onClick}
                 className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
                 alt={`Image ${index + 1}`}
+                loading="lazy"
               />
             </div>
           ))}
@@ -83,7 +74,7 @@ export default function ImgSlider({ imgUrls, id }) {
           <div
             key={index}
             onClick={() => setImageIndex(id, index)}
-            className={`hidden max-[640px]:block embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer   ${
+            className={`hidden max-[640px]:block embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer ${
               index === imageIndex ? "bg-black" : "bg-black/20"
             }`}
           />
