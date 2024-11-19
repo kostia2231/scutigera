@@ -93,7 +93,7 @@ export default function ImgSlider({ imgUrls, id }) {
             <img
               src={img.url}
               onClick={onClick}
-              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-500 ${
+              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
                 !loaded ? "opacity-0" : "opacity-100"
               }`}
               alt={`Image ${index + 1}`}
