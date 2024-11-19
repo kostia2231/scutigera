@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
 import useSliderStore from "../../store/imgSliderStore";
@@ -14,6 +14,8 @@ export default function ImgSlider({ imgUrls, id }) {
     align: "start",
   });
 
+  const [loaded, setLoaded] = useState(false);
+
   useEffect(() => {
     const head = document.head;
     imgUrls.forEach((img) => {
@@ -27,9 +29,16 @@ export default function ImgSlider({ imgUrls, id }) {
 
   useEffect(() => {
     const preloadImages = () => {
+      let loadedImages = 0;
       imgUrls.forEach((img) => {
         const image = new Image();
         image.src = img.url;
+        image.onload = () => {
+          loadedImages++;
+          if (loadedImages === imgUrls.length) {
+            setLoaded(true);
+          }
+        };
       });
     };
 
@@ -84,7 +93,9 @@ export default function ImgSlider({ imgUrls, id }) {
             <img
               src={img.url}
               onClick={onClick}
-              className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
+              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-500 ${
+                !loaded ? "opacity-0" : "opacity-100"
+              }`}
               alt={`Image ${index + 1}`}
             />
           </div>
