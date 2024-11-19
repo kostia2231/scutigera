@@ -15,6 +15,17 @@ export default function ImgSlider({ imgUrls, id }) {
   });
 
   useEffect(() => {
+    const head = document.head;
+    imgUrls.forEach((img) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = img.url;
+      head.appendChild(link);
+    });
+  }, [imgUrls]);
+
+  useEffect(() => {
     const preloadImages = () => {
       imgUrls.forEach((img) => {
         const image = new Image();
