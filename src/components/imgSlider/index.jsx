@@ -1,47 +1,51 @@
+import { useEffect } from "react";
+import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgSliderStore";
-import { useEffect, useState, useRef } from "react";
+import useSliderStore from "../../store/imgIndexStore";
 
 export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
     useSliderStore();
   const imageIndex = sliders[id] || 0;
-  const [currentImage, setCurrentImage] = useState(imgUrls[0].url); // Храним URL текущего изображения
-  const startX = useRef(0);
-  const isSwiping = useRef(false);
+  const [emblaRef, emblaApi] = EmblaCarouselReact({
+    loop: true,
+    speed: 0,
+  });
 
   useEffect(() => {
-    // Предзагрузка текущего, следующего и предыдущего изображений
-    const preloadImages = () => {
-      const nextIndex = (imageIndex + 1) % imgUrls.length;
-      const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
+    if (!emblaApi) return;
 
-      // Текущее изображение
-      const currentImg = new Image();
-      currentImg.src = imgUrls[imageIndex].url;
-      currentImg.onload = () => setCurrentImage(currentImg.src);
-
-      // Следующее изображение
-      const nextImg = new Image();
-      nextImg.src = imgUrls[nextIndex].url;
-
-      // Предыдущее изображение
-      const prevImg = new Image();
-      prevImg.src = imgUrls[prevIndex].url;
+    const onScroll = () => {
+      const newIndex = emblaApi.selectedScrollSnap();
+      if (newIndex !== imageIndex) {
+        setImageIndex(id, newIndex);
+        resetSliders(id);
+        setActiveSlider(id);
+      }
     };
 
-    preloadImages();
-  }, [imageIndex, imgUrls]);
+    emblaApi.on("select", onScroll);
+
+    return () => {
+      emblaApi.off("select", onScroll);
+    };
+  }, [emblaApi, id, imageIndex, setImageIndex, resetSliders, setActiveSlider]);
+
+  useEffect(() => {
+    if (emblaApi && emblaApi.selectedScrollSnap() !== imageIndex) {
+      emblaApi.scrollTo(imageIndex, true);
+    }
+  }, [emblaApi, imageIndex]);
 
   const showNextImg = () => {
     const nextIndex = (imageIndex + 1) % imgUrls.length;
     setImageIndex(id, nextIndex);
   };
 
-  const showPrevImg = () => {
-    const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
-    setImageIndex(id, prevIndex);
-  };
+  // const showPrevImg = () => {
+  //   const prevIndex = (imageIndex - 1 + imgUrls.length) % imgUrls.length;
+  //   setImageIndex(id, prevIndex);
+  // };
 
   const onClick = () => {
     resetSliders(id);
@@ -49,73 +53,42 @@ export default function ImgSlider({ imgUrls, id }) {
     showNextImg();
   };
 
-  const onClickPrev = () => {
-    resetSliders(id);
-    setActiveSlider(id);
-    showPrevImg();
-  };
-
-  const onMouseDown = (e) => {
-    startX.current = e.clientX || e.touches[0].clientX;
-    isSwiping.current = true;
-  };
-
-  const onMouseMove = (e) => {
-    if (!isSwiping.current) return;
-
-    const currentX = e.clientX || e.touches[0].clientX;
-    const diff = startX.current - currentX;
-
-    if (Math.abs(diff) > 10) {
-      e.preventDefault();
-    }
-
-    if (diff > 80) {
-      showNextImg();
-      resetSliders(id);
-      setActiveSlider(id);
-      isSwiping.current = false;
-    } else if (diff < -80) {
-      showPrevImg();
-      resetSliders(id);
-      setActiveSlider(id);
-      isSwiping.current = false;
-    }
-  };
-
-  const onMouseUp = () => {
-    isSwiping.current = false;
-  };
+  // const onClickPrev = () => {
+  //   resetSliders(id);
+  //   setActiveSlider(id);
+  //   showPrevImg();
+  // };
 
   return (
-    <div
-      className="relative flex h-[100vh] w-full max-[640px]:h-[60vh] justify-center"
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
-      onTouchStart={onMouseDown}
-      onTouchMove={onMouseMove}
-      onTouchEnd={onMouseUp}
-    >
+    <div className="embla relative flex flex-col h-[100vh] w-full max-[640px]:h-[60vh] justify-center">
       <div
-        onClick={onClick}
-        className="cursor-pointer absolute right-0 h-full w-[50%] flex"
-      ></div>
-      <div
-        onClick={onClickPrev}
-        className="cursor-pointer left-0 absolute h-full w-[50%] flex"
+        className="embla relative flex h-[100vh] w-full max-[640px]:h-[60vh] justify-center"
+        ref={emblaRef}
       >
-        <div className="text-[rgb(51,51,51)] min-[640px]:hidden mix-blend-difference pl-4 mr-auto mt-auto">
-          {imageIndex + 1 + "/" + imgUrls.length}
+        <div className="embla__container">
+          {imgUrls.map((img, index) => (
+            <div key={index} className="embla__slide">
+              <img
+                src={img.url}
+                onClick={onClick}
+                className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
+                alt={`Image ${index + 1}`}
+              />
+            </div>
+          ))}
         </div>
       </div>
-
-      <img
-        key={imageIndex}
-        src={currentImage}
-        className={`object-cover h-full cursor-pointer w-fit max-[640px]:w-[100vw] transition-opacity duration-700`}
-        alt="Product Image"
-      />
+      <div className="absolute bottom-0 flex justify-center p-0 mb-1 ml-4 embla__dots">
+        {imgUrls.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setImageIndex(id, index)}
+            className={`hidden max-[640px]:block embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer   ${
+              index === imageIndex ? "bg-black" : "bg-black/20"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

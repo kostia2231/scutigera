@@ -2,14 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-  @apply bg-gray-400 text-black;
-}
-
 body {
   font-size: 10px;
   font-family: "Azeret Mono", monospace;
-  /* font-family: "IBM Plex Mono", monospace; */
   font-optical-sizing: auto;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0);
+  /* color: rgba(0, 0, 0, 0.65); */
+
+  box-sizing: border-box;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  width: 100%;
 }
