@@ -15,6 +15,20 @@ export default function ImgSlider({ imgUrls, id }) {
   });
 
   useEffect(() => {
+    const preloadImages = async () => {
+      const promises = imgUrls.map((img) => {
+        return new Promise((resolve) => {
+          const imgPreload = new Image();
+          imgPreload.src = img.url;
+          imgPreload.onload = resolve;
+        });
+      });
+      await Promise.all(promises);
+    };
+    preloadImages();
+  }, [imgUrls]);
+
+  useEffect(() => {
     if (!emblaApi) return;
 
     const onScroll = () => {
