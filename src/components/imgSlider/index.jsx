@@ -79,7 +79,7 @@ export default function ImgSlider({ imgUrls, id }) {
         {imgUrls.map((img, index) => (
           <div key={index} className="embla__slide">
             <img
-              src={cleanUrl(img.url)}
+              src={img.url}
               onClick={onClick}
               className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
               alt={`Image ${index + 1}`}
