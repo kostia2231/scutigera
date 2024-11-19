@@ -10,6 +10,8 @@ export default function ImgSlider({ imgUrls, id }) {
   const [emblaRef, emblaApi] = EmblaCarouselReact({
     loop: true,
     speed: 0,
+    draggable: true,
+    align: "start",
   });
 
   useEffect(() => {
