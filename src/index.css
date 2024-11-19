@@ -6,8 +6,7 @@ body {
   font-size: 10px;
   font-family: "Azeret Mono", monospace;
   font-optical-sizing: auto;
-  color: rgba(0, 0, 0);
-  /* color: rgba(0, 0, 0, 0.65); */
+  color: rgb(0, 0, 0);
 
   box-sizing: border-box;
 }
@@ -22,9 +21,10 @@ body * {
 
 .embla__container {
   display: flex;
+  transition: none;
+  animation: none;
 }
 
 .embla__slide {
   flex: 0 0 100%;
-  width: 100%;
 }
