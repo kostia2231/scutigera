@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
-import useSliderStore from "../../store/imgIndexStore";
+import useSliderStore from "../../store/imgSliderStore";
 
 export default function ImgSlider({ imgUrls, id }) {
   const { sliders, setActiveSlider, setImageIndex, resetSliders } =
