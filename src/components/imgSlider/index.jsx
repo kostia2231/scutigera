@@ -59,10 +59,8 @@ export default function ImgSlider({ imgUrls, id }) {
   }, [emblaApi, imageIndex]);
 
   const showNextImg = () => {
-    const nextIndex = (imageIndex + 1) % imgUrls.length;
-    setImageIndex(id, nextIndex);
     if (emblaApi) {
-      emblaApi.scrollTo(nextIndex, true);
+      emblaApi.scrollNext(true);
     }
   };
 
