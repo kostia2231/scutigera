@@ -21,7 +21,7 @@ export default function ImgSlider({ imgUrls, id }) {
     imgUrls.forEach((img) => {
       const link = document.createElement("link");
       link.rel = "preload";
-      link.as = "image";
+      link.as = "fetch";
       link.href = img.url;
       head.appendChild(link);
     });
@@ -91,6 +91,7 @@ export default function ImgSlider({ imgUrls, id }) {
         {imgUrls.map((img, index) => (
           <div key={index} className="embla__slide">
             <img
+              rel="preload"
               src={img.url}
               onClick={onClick}
               className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
