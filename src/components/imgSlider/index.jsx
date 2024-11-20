@@ -17,7 +17,6 @@ export default function ImgSlider({ imgUrls, id }) {
   const [loadedImages, setLoadedImages] = useState(0);
 
   useEffect(() => {
-    // Preload images by adding them to the <head> tag
     const head = document.head;
     imgUrls.forEach((img) => {
       const link = document.createElement("link");
@@ -37,11 +36,8 @@ export default function ImgSlider({ imgUrls, id }) {
   };
 
   useEffect(() => {
-    // Preload all images
     imgUrls.forEach((img) => preloadImage(img.url));
   }, [imgUrls]);
-
-  const allImagesLoaded = loadedImages === imgUrls.length;
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -94,15 +90,12 @@ export default function ImgSlider({ imgUrls, id }) {
               backgroundImage: `url(${img.url})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundColor: !allImagesLoaded ? "#f0f0f0" : "transparent", // Light gray background until image is loaded
             }}
           >
             <img
               src={img.url}
               onClick={onClick}
-              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
-                !allImagesLoaded ? "opacity-0" : "opacity-100"
-              }`}
+              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200`}
               alt={`Image ${index + 1}`}
             />
           </div>
