@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
 import useSliderStore from "../../store/imgSliderStore";
@@ -9,12 +9,12 @@ export default function ImgSlider({ imgUrls, id }) {
   const imageIndex = sliders[id] || 0;
   const [emblaRef, emblaApi] = EmblaCarouselReact({
     loop: true,
-    speed: 10,
+    speed: 0,
     draggable: true,
     align: "start",
   });
 
-  console.log(sliders);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const head = document.head;
@@ -26,6 +26,24 @@ export default function ImgSlider({ imgUrls, id }) {
       head.appendChild(link);
     });
   }, [imgUrls]);
+
+  const preloadImage = (url) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = function () {
+      setLoaded(true);
+    };
+  };
+
+  const handleImageLoad = (url) => {
+    if (!loaded) {
+      preloadImage(url);
+    }
+  };
+
+  useEffect(() => {
+    imgUrls.forEach((img) => handleImageLoad(img.url));
+  }, [imgUrls, loaded]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -71,23 +89,18 @@ export default function ImgSlider({ imgUrls, id }) {
     >
       <div className="embla__container">
         {imgUrls.map((img, index) => (
-          <div key={`${img.url}-${index}`} className="embla__slide">
-            <picture>
-              <source
-                srcSet={img.url.replace(".jpeg", ".webp")}
-                type="image/webp"
-              />
-              <img
-                src={img.url}
-                onClick={onClick}
-                className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
-                alt={`Image ${index + 1}`}
-              />
-            </picture>
+          <div key={index} className="embla__slide">
+            <img
+              src={img.url}
+              onClick={onClick}
+              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
+                !loaded ? "opacity-0" : "opacity-100"
+              }`}
+              alt={`Image ${index + 1}`}
+            />
           </div>
         ))}
       </div>
-
       <div className="absolute bottom-0 flex justify-center p-0 mb-4 embla__dots">
         {imgUrls.map((_, index) => (
           <div
