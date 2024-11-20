@@ -14,9 +14,10 @@ export default function ImgSlider({ imgUrls, id }) {
     align: "start",
   });
 
-  const [loaded, setLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState(0);
 
   useEffect(() => {
+    // Preload images by adding them to the <head> tag
     const head = document.head;
     imgUrls.forEach((img) => {
       const link = document.createElement("link");
@@ -31,19 +32,16 @@ export default function ImgSlider({ imgUrls, id }) {
     const img = new Image();
     img.src = url;
     img.onload = function () {
-      setLoaded(true);
+      setLoadedImages((prev) => prev + 1);
     };
   };
 
-  const handleImageLoad = (url) => {
-    if (!loaded) {
-      preloadImage(url);
-    }
-  };
-
   useEffect(() => {
-    imgUrls.forEach((img) => handleImageLoad(img.url));
-  }, [imgUrls, loaded]);
+    // Preload all images
+    imgUrls.forEach((img) => preloadImage(img.url));
+  }, [imgUrls]);
+
+  const allImagesLoaded = loadedImages === imgUrls.length;
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -89,12 +87,21 @@ export default function ImgSlider({ imgUrls, id }) {
     >
       <div className="embla__container">
         {imgUrls.map((img, index) => (
-          <div key={index} className="embla__slide">
+          <div
+            key={index}
+            className="embla__slide"
+            style={{
+              backgroundImage: `url(${img.url})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundColor: !allImagesLoaded ? "#f0f0f0" : "transparent", // Light gray background until image is loaded
+            }}
+          >
             <img
               src={img.url}
               onClick={onClick}
               className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
-                !loaded ? "opacity-0" : "opacity-100"
+                !allImagesLoaded ? "opacity-0" : "opacity-100"
               }`}
               alt={`Image ${index + 1}`}
             />
