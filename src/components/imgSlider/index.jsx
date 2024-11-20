@@ -21,7 +21,7 @@ export default function ImgSlider({ imgUrls, id }) {
     imgUrls.forEach((img) => {
       const link = document.createElement("link");
       link.rel = "preload";
-      link.as = "fetch";
+      link.as = "image";
       link.href = img.url;
       head.appendChild(link);
     });
@@ -90,18 +90,24 @@ export default function ImgSlider({ imgUrls, id }) {
       <div className="embla__container">
         {imgUrls.map((img, index) => (
           <div key={index} className="embla__slide">
-            <img
-              rel="preload"
-              src={img.url}
-              onClick={onClick}
-              className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
-                !loaded ? "opacity-0" : "opacity-100"
-              }`}
-              alt={`Image ${index + 1}`}
-            />
+            <picture>
+              <source
+                srcSet={img.url.replace(".jpeg", ".webp")}
+                type="image/webp"
+              />
+              <img
+                src={img.url}
+                onClick={onClick}
+                className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
+                  !loaded ? "opacity-0" : "opacity-100"
+                }`}
+                alt={`Image ${index + 1}`}
+              />
+            </picture>
           </div>
         ))}
       </div>
+
       <div className="absolute bottom-0 flex justify-center p-0 mb-4 embla__dots">
         {imgUrls.map((_, index) => (
           <div
@@ -113,17 +119,6 @@ export default function ImgSlider({ imgUrls, id }) {
           />
         ))}
       </div>
-      {/* <div className="absolute right-0 flex justify-center mt-2 embla__dots max-[640px]:hidden">
-        {imgUrls.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => setImageIndex(id, index)}
-            className={`embla__dot w-1 h-1 mr-2 rounded-full cursor-pointer   ${
-              index === imageIndex ? "bg-black" : "bg-black/20"
-            }`}
-          />
-        ))}
-      </div> */}
     </div>
   );
 }
