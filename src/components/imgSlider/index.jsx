@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import EmblaCarouselReact from "embla-carousel-react";
 import PropTypes from "prop-types";
 import useSliderStore from "../../store/imgSliderStore";
@@ -9,12 +9,12 @@ export default function ImgSlider({ imgUrls, id }) {
   const imageIndex = sliders[id] || 0;
   const [emblaRef, emblaApi] = EmblaCarouselReact({
     loop: true,
-    speed: 0,
+    speed: 10,
     draggable: true,
     align: "start",
   });
 
-  const [loaded, setLoaded] = useState(false);
+  console.log(sliders);
 
   useEffect(() => {
     const head = document.head;
@@ -25,24 +25,6 @@ export default function ImgSlider({ imgUrls, id }) {
       link.href = img.url;
       head.appendChild(link);
     });
-  }, [imgUrls]);
-
-  useEffect(() => {
-    const preloadImages = () => {
-      let loadedImages = 0;
-      imgUrls.forEach((img) => {
-        const image = new Image();
-        image.src = img.url;
-        image.onload = () => {
-          loadedImages++;
-          if (loadedImages === imgUrls.length) {
-            setLoaded(true);
-          }
-        };
-      });
-    };
-
-    preloadImages();
   }, [imgUrls]);
 
   useEffect(() => {
@@ -89,7 +71,7 @@ export default function ImgSlider({ imgUrls, id }) {
     >
       <div className="embla__container">
         {imgUrls.map((img, index) => (
-          <div key={index} className="embla__slide">
+          <div key={`${img.url}-${index}`} className="embla__slide">
             <picture>
               <source
                 srcSet={img.url.replace(".jpeg", ".webp")}
@@ -98,9 +80,7 @@ export default function ImgSlider({ imgUrls, id }) {
               <img
                 src={img.url}
                 onClick={onClick}
-                className={`object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw] transition-opacity duration-200 ${
-                  !loaded ? "opacity-0" : "opacity-100"
-                }`}
+                className="object-cover h-full cursor-pointer w-full max-[640px]:w-[100vw]"
                 alt={`Image ${index + 1}`}
               />
             </picture>
