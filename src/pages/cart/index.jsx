@@ -92,7 +92,7 @@ export default function Cart() {
                   )}`}
                   className="text-center w-fit text-bold active:opacity-70"
                 >
-                  ORDER BY EMAIL
+                  <div className="text-bold">ORDER BY EMAIL NOW</div>
                 </a>
               ) : null}
             </div>
