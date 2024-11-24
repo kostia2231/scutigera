@@ -4,6 +4,7 @@ import AddToCartButton from "../../components/addCartCreateUrl";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCart } from "../../data/getCart";
+import { stringify } from "postcss";
 // import { Link } from "react-router-dom";
 
 export default function Cart() {
@@ -42,6 +43,8 @@ export default function Cart() {
     quantity: item.quantity,
   }));
 
+  const mailCartData = stringify(cartData);
+
   return (
     <>
       <div className="flex py-20 px-[150px] max-[540px]:p-0 max-[540px]:pt-20 max-[870px]:flex-col max-[1200px]:px-[100px] max-[1100px]:px-[50px] max-[980px]:px-1">
@@ -74,6 +77,13 @@ export default function Cart() {
           <div className="border-dashed border-black px-auto border-[1px] w-full">
             <div className="py-1 mx-auto font-bold w-fit">
               CHECKOUT IS COMING SOON. STAY TUNED
+              <br />
+              <a
+                href={`mailto:info@scutigera.online?subject=Order&body=Hey! I'd like to order: ${mailCartData}`}
+                className="w-fit mx-auto text-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] hover:underline active:opacity-70"
+              >
+                Order by E-mail now
+              </a>
             </div>
           </div>
           {cart.length <= 0 ? (
