@@ -64,7 +64,7 @@ export default function Cart() {
             </>
           ))}
         </div>
-        <div className="w-[50%] pl-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-10 border-black-20 mb-10">
+        <div className="w-[50%] ml-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-10 border-black-20 mb-10 border-dashed">
           <div className="flex justify-between">
             TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>
           </div>
