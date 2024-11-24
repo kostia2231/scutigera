@@ -1,6 +1,6 @@
 import useCartStore from "../../store/storeCart";
 import CartProduct from "../../components/cartProduct";
-import AddToCartButton from "../../components/addCartCreateUrl";
+// import AddToCartButton from "../../components/addCartCreateUrl";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCart } from "../../data/getCart";
@@ -38,10 +38,10 @@ export default function Cart() {
 
   const cart = useCartStore((state) => state.cart);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
-  const cartData = cart.map((item) => ({
-    id: item.id,
-    quantity: item.quantity,
-  }));
+  // const cartData = cart.map((item) => ({
+  //   id: item.id,
+  //   quantity: item.quantity,
+  // }));
 
   const withMailCartData = cart
     .map(
@@ -83,7 +83,7 @@ export default function Cart() {
           </div>
           <div className="border-dashed border-black px-auto border-[1px] w-full">
             <div className="py-1 mx-auto text-center w-fit">
-              CHECKOUT IS COMING SOON. STAY TUNED
+              CHECKOUT IS COMING SOON. STAY TUNED.
               <br />
               {cart.length > 0 ? (
                 <a
