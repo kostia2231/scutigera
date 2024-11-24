@@ -83,14 +83,16 @@ export default function Cart() {
             <div className="py-1 mx-auto font-bold text-center w-fit">
               CHECKOUT IS COMING SOON. STAY TUNED
               <br />
-              <a
-                href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER:\n${encodeURIComponent(
-                  withMailCartData
-                )}`}
-                className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] underline active:opacity-70"
-              >
-                ORDER BY EMAIL
-              </a>
+              {cart.length <= 0 ? (
+                <a
+                  href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER:\n${encodeURIComponent(
+                    withMailCartData
+                  )}`}
+                  className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] underline active:opacity-70"
+                >
+                  ORDER BY EMAIL
+                </a>
+              ) : null}
             </div>
           </div>
           {cart.length <= 0 ? (
