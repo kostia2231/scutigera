@@ -43,7 +43,10 @@ export default function Cart() {
   }));
 
   const withMailCartData = cart
-    .map((item) => `ID: ${item.id}, Quantity: ${item.quantity}`)
+    .map(
+      (item) =>
+        `ID: ${item.id}, Quantity: ${item.quantity}, Quantity: ${item.size}`
+    )
     .join("\n");
 
   return (
@@ -76,16 +79,16 @@ export default function Cart() {
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           <div className="border-dashed border-black px-auto border-[1px] w-full">
-            <div className="py-1 mx-auto font-bold w-fit">
+            <div className="py-1 mx-auto font-bold text-center w-fit">
               CHECKOUT IS COMING SOON. STAY TUNED
               <br />
               <a
                 href={`mailto:info@scutigera.online?subject=Order&body=Hey! I'd like to order:\n${encodeURIComponent(
                   withMailCartData
                 )}`}
-                className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] underline active:opacity-70"
+                className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] underline active:opacity-70"
               >
-                ORDER NOW BY EMAIL
+                ORDER BY EMAIL
               </a>
             </div>
           </div>
