@@ -43,11 +43,10 @@ export default function Cart() {
     quantity: item.quantity,
   }));
 
-  console.log(cart);
-
   const withMailCartData = cart
     .map(
-      (item) => `ID: ${item.id}, Quantity: ${item.quantity}, Size: ${item.size}`
+      (item) =>
+        `TITLE: ${item.title}, QUANTITY: ${item.quantity}, SIZE: ${item.size}. `
     )
     .join("\n");
 
@@ -85,7 +84,7 @@ export default function Cart() {
               CHECKOUT IS COMING SOON. STAY TUNED
               <br />
               <a
-                href={`mailto:info@scutigera.online?subject=Order&body=Hey! I'd like to order:\n${encodeURIComponent(
+                href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER:\n${encodeURIComponent(
                   withMailCartData
                 )}`}
                 className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] underline active:opacity-70"
