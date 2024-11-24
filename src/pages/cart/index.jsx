@@ -71,7 +71,7 @@ export default function Cart() {
           <div className="z-10 flex justify-between">
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
-          <div className="py-1 mx-auto font-bold border-black border-dashed w-fit">
+          <div className="py-1 mx-auto font-bold border-dashed border-black-20 w-fit px-auto border-[1px]">
             CHECKOUT IS COMING SOON. STAY TUNED
           </div>
           {cart.length <= 0 ? (
