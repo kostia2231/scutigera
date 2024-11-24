@@ -42,6 +42,10 @@ export default function Cart() {
     quantity: item.quantity,
   }));
 
+  const withMailCartData = cart
+    .map((item) => `ID: ${item.id}, Quantity: ${item.quantity}`)
+    .join("\n");
+
   return (
     <>
       <div className="flex py-20 px-[150px] max-[540px]:p-0 max-[540px]:pt-20 max-[870px]:flex-col max-[1200px]:px-[100px] max-[1100px]:px-[50px] max-[980px]:px-1">
@@ -77,7 +81,7 @@ export default function Cart() {
               <br />
               <a
                 href={`mailto:info@scutigera.online?subject=Order&body=Hey! I'd like to order:\n${encodeURIComponent(
-                  cartData
+                  withMailCartData
                 )}`}
                 className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] underline active:opacity-70"
               >
