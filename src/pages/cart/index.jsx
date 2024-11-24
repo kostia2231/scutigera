@@ -46,7 +46,7 @@ export default function Cart() {
   const withMailCartData = cart
     .map(
       (item) =>
-        `TITLE: ${item.title}, QUANTITY: ${
+        `${item.title}, QUANTITY: ${
           item.quantity
         }, SIZE: ${item.size.toUpperCase()}. `
     )
@@ -88,7 +88,7 @@ export default function Cart() {
                 <br />
                 <a
                   href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER: 
-                    \n ${encodeURIComponent(withMailCartData)}`}
+                    \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
                   className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70"
                 >
                   ORDER BY EMAIL NOW
