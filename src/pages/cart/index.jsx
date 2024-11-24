@@ -4,7 +4,6 @@ import AddToCartButton from "../../components/addCartCreateUrl";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCart } from "../../data/getCart";
-import { stringify } from "postcss";
 // import { Link } from "react-router-dom";
 
 export default function Cart() {
@@ -77,10 +76,12 @@ export default function Cart() {
               CHECKOUT IS COMING SOON. STAY TUNED
               <br />
               <a
-                href={`mailto:info@scutigera.online?subject=Order&body=Hey! I'd like to order: ${cartData}`}
-                className="w-fit mx-auto text-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] hover:underline active:opacity-70"
+                href={`mailto:info@scutigera.online?subject=Order&body=Hey! I'd like to order:\n${encodeURIComponent(
+                  cartData
+                )}`}
+                className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] underline active:opacity-70"
               >
-                Order by E-mail now
+                ORDER NOW BY EMAIL
               </a>
             </div>
           </div>
