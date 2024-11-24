@@ -82,15 +82,15 @@ export default function Cart() {
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           <div className="border-dashed border-black px-auto border-[1px] w-full">
-            <div className="py-1 mx-auto font-bold text-center w-fit">
+            <div className="py-1 mx-auto text-center w-fit">
               CHECKOUT IS COMING SOON. STAY TUNED
               <br />
-              {cart.length <= 0 ? (
+              {cart.length > 0 ? (
                 <a
                   href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER: \n${encodeURIComponent(
                     withMailCartData
                   )}`}
-                  className="w-fit text-center text-bold underline-offset-[3px] decoration-[1.5px] underline active:opacity-70"
+                  className="text-center w-fit text-bold active:opacity-70"
                 >
                   ORDER BY EMAIL
                 </a>
