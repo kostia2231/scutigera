@@ -90,9 +90,9 @@ export default function Cart() {
                   href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER: \n${encodeURIComponent(
                     withMailCartData
                   )}`}
-                  className="text-center w-fit text-bold active:opacity-70"
+                  className="font-bold text-center w-fit active:opacity-70"
                 >
-                  <div className="text-bold">ORDER BY EMAIL NOW</div>
+                  ORDER BY EMAIL NOW
                 </a>
               ) : null}
             </div>
