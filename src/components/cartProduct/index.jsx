@@ -43,14 +43,14 @@ export default function CartProduct({ product, count }) {
           QUANTITY
           <div className="flex gap-1">
             <button
-              className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:no-underline"
+              className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
               onClick={handleRemoveItem}
             >
               LESS
             </button>
             ({product.quantity})
             <button
-              className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:no-underline"
+              className="underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
               onClick={handleAddToCart}
             >
               MORE
