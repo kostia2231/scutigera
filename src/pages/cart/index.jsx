@@ -99,9 +99,9 @@ export default function Cart() {
           </div>
           {cart.length <= 0 ? (
             <div className="ml-auto">CART IS EMPTY </div>
-          ) : (
-            <AddToCartButton items={cartData} />
-          )}
+          ) : null
+          // <AddToCartButton items={cartData} />
+          }
         </div>
         {/* {currentCartUrl && isOpen ? (
           <div className="flex justify-between bg-black z-20 fixed text-white bottom-0 left-0 right-0 max-[980px]:px-4 max-[980px]:py-1 max-[980px]:pt-1 px-1">
