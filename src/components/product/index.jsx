@@ -79,7 +79,7 @@ export default function Product({ item, id }) {
                   className={`inline-block w-fit active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:no-underline ${
                     !selectedAvailableForSale
                       ? "opacity-20 cursor-not-allowed hover:no-underline"
-                      : "hover:underline"
+                      : "hover:underline max-[640px]:hover:no-underline"
                   }`}
                   onClick={!selectedAvailableForSale ? null : handleAddToCart}
                 >
