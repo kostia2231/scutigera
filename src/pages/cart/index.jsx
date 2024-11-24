@@ -72,7 +72,10 @@ export default function Cart() {
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           {cart.length <= 0 ? (
-            <div className="ml-auto">CART IS EMPTY</div>
+            <div className="ml-auto">
+              CART IS EMPTY <br />
+              CHECKOUT IS COMING SOON. STAY TUNED
+            </div>
           ) : (
             <AddToCartButton items={cartData} />
           )}
