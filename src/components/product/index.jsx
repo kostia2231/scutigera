@@ -76,7 +76,7 @@ export default function Product({ item, id }) {
             <div className="right-0 ml-auto">
               {!isAdded ? (
                 <button
-                  className={`inline-block w-fit active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold ${
+                  className={`inline-block w-fit active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:no-underline ${
                     !selectedAvailableForSale
                       ? "opacity-20 cursor-not-allowed hover:no-underline"
                       : "hover:underline"
