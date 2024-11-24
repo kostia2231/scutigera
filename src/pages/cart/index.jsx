@@ -81,11 +81,11 @@ export default function Cart() {
           <div className="z-10 flex justify-between">
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
-          <div className="border-dashed border-black px-auto border-[1px] w-full">
-            <div className="py-1 mx-auto text-center w-fit">
-              CHECKOUT IS COMING SOON. STAY TUNED.
-              <br />
-              {cart.length > 0 ? (
+          {cart.length > 0 ? (
+            <div className="border-dashed border-black px-auto border-[1px] w-full">
+              <div className="py-1 mx-auto text-center w-fit">
+                CHECKOUT IS COMING SOON. STAY TUNED.
+                <br />
                 <a
                   href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER: 
                     \n ${encodeURIComponent(withMailCartData)}`}
@@ -93,9 +93,9 @@ export default function Cart() {
                 >
                   ORDER BY EMAIL NOW
                 </a>
-              ) : null}
+              </div>
             </div>
-          </div>
+          ) : null}
           {
             cart.length <= 0 ? (
               <div className="ml-auto">CART IS EMPTY </div>
