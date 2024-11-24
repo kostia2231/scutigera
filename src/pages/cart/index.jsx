@@ -87,9 +87,8 @@ export default function Cart() {
               <br />
               {cart.length > 0 ? (
                 <a
-                  href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER: \n${encodeURIComponent(
-                    withMailCartData
-                  )}`}
+                  href={`mailto:info@scutigera.online?subject=ORDER&body=HEY! I'D LIKE TO ORDER: 
+                    \n ${encodeURIComponent(withMailCartData)}`}
                   className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70"
                 >
                   ORDER BY EMAIL NOW

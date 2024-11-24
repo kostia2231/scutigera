@@ -103,7 +103,7 @@ export default function Product({ item, id }) {
                   onClick={() => handleSizeClick(variant)}
                   className={`${
                     selectedVariantId === variant.id
-                      ? "bg-transparent text-[rgb(30, 30, 33)] font-bold underline-offset-[3px] decoration-[1.5px] underline"
+                      ? "bg-transparent text-[rgb(30, 30, 33)] font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline  "
                       : "bg-white text-[rgb(30, 30, 33)] opacity-20 transition ease-in-out duration-200"
                   }`}
                 >
