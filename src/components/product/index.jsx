@@ -87,7 +87,7 @@ export default function Product({ item, id }) {
                 </button>
               ) : (
                 <Link to="/cart">
-                  <button className="inline-block w-fit underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:border-b-2 max-[640px]:no-underline border-black">
+                  <button className="inline-block h-[15px] w-fit underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:border-b-2 max-[640px]:no-underline border-black">
                     GO TO CART
                   </button>
                 </Link>
