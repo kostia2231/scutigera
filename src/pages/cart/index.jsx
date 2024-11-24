@@ -71,11 +71,9 @@ export default function Cart() {
           <div className="z-10 flex justify-between">
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
+          <div className="font-bold"> CHECKOUT IS COMING SOON. STAY TUNED</div>
           {cart.length <= 0 ? (
-            <div className="ml-auto">
-              CART IS EMPTY <br />
-              CHECKOUT IS COMING SOON. STAY TUNED
-            </div>
+            <div className="ml-auto">CART IS EMPTY </div>
           ) : (
             <AddToCartButton items={cartData} />
           )}
