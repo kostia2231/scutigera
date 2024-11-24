@@ -76,7 +76,7 @@ export default function Product({ item, id }) {
             <div className="right-0 ml-auto">
               {!isAdded ? (
                 <button
-                  className={`underline inline-block w-fit active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold ${
+                  className={`inline-block w-fit active:opacity-70 underline-offset-[3px] decoration-[2px] font-bold ${
                     !selectedAvailableForSale
                       ? "opacity-20 cursor-not-allowed hover:no-underline"
                       : "hover:underline"
@@ -87,7 +87,7 @@ export default function Product({ item, id }) {
                 </button>
               ) : (
                 <Link to="/cart">
-                  <button className="inline-block w-fit underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold">
+                  <button className="inline-block w-fit underline active:opacity-70 underline-offset-[3px] decoration-[2px] font-bold">
                     GO TO CART
                   </button>
                 </Link>
