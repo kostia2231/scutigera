@@ -68,7 +68,7 @@ export default function Cart() {
           <div className="flex justify-between">
             TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>
           </div>
-          <div className="z-10 flex justify-between">
+          <div className="z-10 flex justify-between py-1 border-dashed">
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           <div className="mx-auto font-bold w-fit">
