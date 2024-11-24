@@ -4,6 +4,7 @@ import AddToCartButton from "../../components/addCartCreateUrl";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCart } from "../../data/getCart";
+
 // import { Link } from "react-router-dom";
 
 export default function Cart() {
@@ -42,10 +43,11 @@ export default function Cart() {
     quantity: item.quantity,
   }));
 
+  console.log(cart);
+
   const withMailCartData = cart
     .map(
-      (item) =>
-        `ID: ${item.id}, Quantity: ${item.quantity}, Quantity: ${item.size}`
+      (item) => `ID: ${item.id}, Quantity: ${item.quantity}, Size: ${item.size}`
     )
     .join("\n");
 
