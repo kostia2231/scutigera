@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (max-width: 768px) {
-  body * {
-    text-decoration-thickness: 2px;
-  }
-}
-
 body {
   font-size: 10px;
   font-family: "Azeret Mono", monospace;

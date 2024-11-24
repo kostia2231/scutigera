@@ -97,10 +97,11 @@ export default function Cart() {
               ) : null}
             </div>
           </div>
-          {cart.length <= 0 ? (
-            <div className="ml-auto">CART IS EMPTY </div>
-          ) : null
-          // <AddToCartButton items={cartData} />
+          {
+            cart.length <= 0 ? (
+              <div className="ml-auto">CART IS EMPTY </div>
+            ) : null
+            // <AddToCartButton items={cartData} />
           }
         </div>
         {/* {currentCartUrl && isOpen ? (
