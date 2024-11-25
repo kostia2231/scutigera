@@ -6,8 +6,8 @@ body {
   font-size: 10px;
   font-family: "Azeret Mono", monospace;
   font-optical-sizing: auto;
-  color: rgb(30, 30, 33);
-
+  /* color: rgb(30, 30, 33); */
+  color: rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
 }
 

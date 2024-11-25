@@ -87,7 +87,7 @@ export default function Product({ item, id }) {
                 </button>
               ) : (
                 <Link to="/cart">
-                  <button className="inline-block  w-fit underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:border-b-2 max-[640px]:no-underline border-black">
+                  <button className="inline-block  w-fit underline active:opacity-70 underline-offset-[3px] decoration-[1.5px] font-bold max-[640px]:border-b-2 max-[640px]:no-underline border-black/80">
                     GO TO CART
                   </button>
                 </Link>
@@ -95,7 +95,7 @@ export default function Product({ item, id }) {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
+            <div className="flex gap-2 h-[15px]">
               SIZE:
               {variants.map((variant) => (
                 <button
@@ -103,8 +103,8 @@ export default function Product({ item, id }) {
                   onClick={() => handleSizeClick(variant)}
                   className={`${
                     selectedVariantId === variant.id
-                      ? "bg-transparent text-[rgb(30, 30, 33)] font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline border-black"
-                      : "bg-white text-[rgb(30, 30, 33)] opacity-20 transition ease-in-out duration-200"
+                      ? "bg-transparent text-black/80 font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline border-black"
+                      : "bg-white text-black/80 opacity-20 transition ease-in-out duration-200"
                   }`}
                 >
                   {variant.size}

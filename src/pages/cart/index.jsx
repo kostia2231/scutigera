@@ -82,7 +82,7 @@ export default function Cart() {
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           {cart.length > 0 ? (
-            <div className="border-dashed border-black px-auto border-[1px] w-full">
+            <div className="border-dashed border-black/80 px-auto border-[1px] w-full">
               <div className="py-1 mx-auto text-center w-fit">
                 CHECKOUT IS COMING SOON. STAY TUNED.
                 <br />
