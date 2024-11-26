@@ -1,19 +1,8 @@
-import { motion } from "framer-motion";
-
 export default function About() {
   return (
     <div className="grid grid-cols-2 max-[640px]:grid-cols-1 p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px] max-[640px]:px-4">
       <div></div>
-      <motion.div
-        style={{ willChange: "opacity, transform" }}
-        initial={{ opacity: 0.6 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.4,
-          ease: "easeInOut",
-        }}
-        className="pl-2 max-[640px]:pl-0"
-      >
+      <div className="pl-2 max-[640px]:pl-0">
         <div className="font-bold">ABOUT SCUTIGERA</div>
         <div>
           Scutigera is a conceptual art project where fashion acts as the
@@ -33,10 +22,11 @@ export default function About() {
             className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
             href="mailto:info@scutigera.online"
           >
+            <br />
             info@scutigera.online
           </a>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
