@@ -95,19 +95,17 @@ export default function Product({ item, id }) {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-2 h-[15px]">
+            <div className="flex gap-2">
               SIZE:
               {variants.map((variant) => (
                 <button
                   key={variant.id}
                   onClick={() => handleSizeClick(variant)}
-                  className={
-                    `${
-                      selectedVariantId === variant.id
-                        ? "bg-transparent text-black/80 font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline border-black"
-                        : "bg-white text-black/80 opacity-20 transition ease-in-out duration-200"
-                    }` + ` max-[640px]:p-[3px]`
-                  }
+                  className={`${
+                    selectedVariantId === variant.id
+                      ? "bg-transparent text-black/80 font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline border-black"
+                      : "bg-white text-black/80 opacity-20 transition ease-in-out duration-200"
+                  }`}
                 >
                   {variant.size}
                 </button>
