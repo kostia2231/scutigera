@@ -101,7 +101,7 @@ export default function Product({ item, id }) {
                 <button
                   key={variant.id}
                   onClick={() => handleSizeClick(variant)}
-                  className={`max-[640px]:p-[3px]  ${
+                  className={`max-[640px]:pb-[3px]  ${
                     selectedVariantId === variant.id
                       ? "bg-transparent text-black/80 font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline border-black"
                       : "bg-white text-black/80 opacity-20 transition ease-in-out duration-200"
