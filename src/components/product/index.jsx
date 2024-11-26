@@ -95,7 +95,7 @@ export default function Product({ item, id }) {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-2">
+            <div className="flex gap-2 h-[15px]">
               SIZE:
               {variants.map((variant) => (
                 <button
