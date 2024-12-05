@@ -203,11 +203,14 @@ export default function Terms() {
           >
             info@scutigera.online
           </a>
+          <br />
+          <div className="font-bold">LEGAL INFORMATION</div>
           <div>
-            Parkhomenko Mariia Romanivna
+            Individual Entrepreneur Parkhomenko Mariia Romanivna
             <br />
             36A Lyudviga Svobody Avenue, 61000 Kharkiv, Ukraine
-            <br />+ 380738248051
+            <br />
+            +380738248051
           </div>
         </div>
       </div>
