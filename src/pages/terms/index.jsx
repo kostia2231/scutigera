@@ -204,6 +204,7 @@ export default function Terms() {
             info@scutigera.online
           </a>
           <br />
+          <br />
           <div className="font-bold">LEGAL INFORMATION</div>
           <div>
             Individual Entrepreneur Parkhomenko Mariia Romanivna
