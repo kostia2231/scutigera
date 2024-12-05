@@ -25,6 +25,12 @@ export default function About() {
             <br />
             info@scutigera.online
           </a>
+          <div>
+            Parkhomenko Mariia Romanivna
+            <br />
+            36A Lyudviga Svobody Avenue, 61000 Kharkiv, Ukraine
+            <br />+ 380738248051
+          </div>
         </div>
       </div>
     </div>
