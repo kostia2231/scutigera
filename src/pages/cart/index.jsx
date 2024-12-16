@@ -74,7 +74,7 @@ export default function Cart() {
             </>
           ))}
         </div>
-        <div className="w-[50%] min-[980px]:ml-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-10 border-black-20 mb-10 border-dashed">
+        <div className="w-[50%] min-[980px]:ml-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-5 border-black-20 mb-10 border-dashed">
           <div className="flex justify-between">
             TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>
           </div>
@@ -93,11 +93,11 @@ export default function Cart() {
                   CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
                 <br />
-                <div className="w-full ml-auto">
+                <div className="text-end">
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="font-bold ml-auto w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
+                    className="font-bold w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                   >
                     ORDER NOW
                   </a>
