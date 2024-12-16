@@ -203,7 +203,7 @@ export default function Terms() {
           >
             info@scutigera.online
           </a>
-          <br />
+          {/* <br />
           <br />
           <div className="font-bold">LEGAL INFORMATION</div>
           <div>
@@ -212,7 +212,7 @@ export default function Terms() {
             36A Lyudviga Svobody Avenue, 61000 Kharkiv, Ukraine
             <br />
             +380738248051
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
