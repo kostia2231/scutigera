@@ -85,9 +85,8 @@ export default function Cart() {
             <div className="border-dashed border-black/80 px-auto border-[1px] w-full">
               <div className="py-1 mx-auto text-center w-fit">
                 <div className="opacity-20">
-                  CHECKOUT IS COMING SOON. STAY TUNED.
+                  CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
-                <br />
                 <a
                   href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
