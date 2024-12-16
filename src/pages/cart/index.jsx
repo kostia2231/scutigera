@@ -86,6 +86,7 @@ export default function Cart() {
               <div className="py-1 mx-auto w-fit">
                 <div className="opacity-20">
                   -- SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
+                  <br />
                   BUT DON’T WORRY — YOU CAN STILL PLACE YOUR ORDER VIA EMAIL
                   RIGHT NOW!
                   <br />
