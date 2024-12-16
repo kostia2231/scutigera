@@ -92,11 +92,11 @@ export default function Cart() {
                   CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
                 <br />
-                <div className="flex justify-center items-center">
+                <div>
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
+                    className="font-bold text-right w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                   >
                     ORDER NOW
                   </a>
