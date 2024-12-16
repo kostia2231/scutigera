@@ -83,14 +83,14 @@ export default function Cart() {
           </div>
           {cart.length > 0 ? (
             <div className="px-auto w-full">
-              <div className="py-1 mr-auto w-fit">
+              <div className="py-1 w-full">
                 <div className="opacity-20">
-                  -- SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
+                  -- Sadly, direct card payments aren’t available at the moment,
                   <br />
-                  BUT DON’T WORRY — YOU CAN STILL PLACE YOUR ORDER VIA EMAIL
-                  RIGHT NOW!
+                  but don’t worry — you can still place your order via email
+                  right now!
                   <br />
-                  CHECKOUT IS COMING SOON. STAY TUNED
+                  Checkout is coming soon. Stay tuned.
                 </div>
                 <br />
                 <div className="text-end">
