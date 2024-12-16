@@ -89,15 +89,15 @@ export default function Cart() {
                   moment,&nbsp;
                   <br className="max-[870px]:hidden" />
                   but don’t worry — you can still place your order via email
-                  right now!
+                  right now!&nbsp;
                   <br className="max-[870px]:hidden" />
                   Checkout is coming soon. Stay tuned.
                 </div>
-                <div className="text-end">
+                <div className="text-end border border-black/20 border-dotted">
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="font-bold w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
+                    className="p-1 font-bold w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                   >
                     ORDER NOW
                   </a>
