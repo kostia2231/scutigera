@@ -83,8 +83,12 @@ export default function Cart() {
           </div>
           {cart.length > 0 ? (
             <div className="border-dashed border-black/80 px-auto border-[1px] w-full">
-              <div className="py-1 mx-auto text-center w-fit">
+              <div className="py-1 mx-auto w-fit">
                 <div className="opacity-20">
+                  SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
+                  BUT DON’T WORRY — YOU CAN STILL PLACE YOUR ORDER VIA EMAIL
+                  RIGHT NOW!
+                  <br />
                   CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
                 <a
@@ -92,7 +96,7 @@ export default function Cart() {
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
                   className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                 >
-                  ORDER BY EMAIL NOW
+                  ORDER NOW
                 </a>
               </div>
             </div>
