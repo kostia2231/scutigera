@@ -19,7 +19,7 @@ export default function Footer() {
               TERMS
             </div>
           </Link>
-          <Link to="https://www.instagram.com/scutigeraa/">
+          <Link to="https://www.instagram.com/scutigera.online/">
             <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
               INSTAGRAM
             </div>
