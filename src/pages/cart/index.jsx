@@ -83,7 +83,7 @@ export default function Cart() {
           </div>
           {cart.length > 0 ? (
             <div className="px-auto w-full">
-              <div className="py-1 mx-auto w-fit">
+              <div className="py-1 mr-auto w-fit">
                 <div className="opacity-20">
                   -- SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
                   <br />
@@ -93,11 +93,11 @@ export default function Cart() {
                   CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
                 <br />
-                <div className="w-full">
+                <div className="w-full ml-auto">
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="font-bold ml-auto w-full underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
+                    className="font-bold ml-auto w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                   >
                     ORDER NOW
                   </a>
