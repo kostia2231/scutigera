@@ -93,7 +93,7 @@ export default function Cart() {
                   <br className="max-[870px]:hidden" />
                   Checkout is coming soon. Stay tuned.
                 </div>
-                <div className="text-center bg-black/80 w-full text-white cursor-pointer hover:bg-black/20">
+                <div className="pt-5 text-center bg-black/80 w-full text-white cursor-pointer hover:bg-black/20">
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
