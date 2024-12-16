@@ -93,11 +93,11 @@ export default function Cart() {
                   <br className="max-[870px]:hidden" />
                   Checkout is coming soon. Stay tuned.
                 </div>
-                <div className="text-center bg-black/80 w-full text-white">
+                <div className="text-center bg-black/80 w-full text-white cursor-pointer hover:bg-black/20">
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="p-1 font-bold w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
+                    className="p-1 font-bold w-fit"
                   >
                     ORDER NOW
                   </a>
