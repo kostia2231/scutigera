@@ -83,7 +83,7 @@ export default function Cart() {
           </div>
           {cart.length > 0 ? (
             <div className="px-auto w-full">
-              <div className="py-1 w-full">
+              <div className="w-full">
                 <div className="opacity-20">
                   -- Sadly, direct card payments aren’t available at the
                   moment,&nbsp
