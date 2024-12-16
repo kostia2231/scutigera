@@ -82,7 +82,7 @@ export default function Cart() {
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           {cart.length > 0 ? (
-            <div className="px-auto w-full">
+            <div className="border-dashed border-white px-auto border-[1px] w-full">
               <div className="py-1 mx-auto w-fit">
                 <div className="opacity-20">
                   SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
@@ -91,7 +91,6 @@ export default function Cart() {
                   <br />
                   CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
-                <br />
                 <a
                   href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
