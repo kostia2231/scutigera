@@ -97,7 +97,7 @@ export default function Cart() {
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="p-1 font-bold w-fit bg-black/80 text-white cursor-pointer hover:bg-black/20 hover:text-black/80"
+                    className="p-1 font-bold w-full bg-black/80 text-white cursor-pointer hover:bg-black/20 hover:text-black/80"
                   >
                     ORDER NOW
                   </a>
