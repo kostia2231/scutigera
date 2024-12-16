@@ -31,7 +31,7 @@ export default function Cart() {
             console.clear(),
             localStorage.removeItem("cartId"),
             clearCart()
-          )
+          ),
         );
     }
   }, [currentCartId]);
@@ -48,7 +48,7 @@ export default function Cart() {
       (item) =>
         `${item.title}, QUANTITY: ${
           item.quantity
-        }, SIZE: ${item.size.toUpperCase()}. `
+        }, SIZE: ${item.size.toUpperCase()}. `,
     )
     .join("\n");
 
@@ -84,10 +84,12 @@ export default function Cart() {
           {cart.length > 0 ? (
             <div className="border-dashed border-black/80 px-auto border-[1px] w-full">
               <div className="py-1 mx-auto text-center w-fit">
-                CHECKOUT IS COMING SOON. STAY TUNED.
+                <div className="opacity-20">
+                  CHECKOUT IS COMING SOON. STAY TUNED.
+                </div>
                 <br />
                 <a
-                  href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER: 
+                  href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
                   className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                 >
