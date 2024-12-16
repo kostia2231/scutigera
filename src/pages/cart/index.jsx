@@ -82,22 +82,25 @@ export default function Cart() {
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
           {cart.length > 0 ? (
-            <div className="border-dashed border-white px-auto border-[1px] w-full">
+            <div className="px-auto w-full">
               <div className="py-1 mx-auto w-fit">
                 <div className="opacity-20">
-                  SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
+                  -- SADLY, DIRECT CARD PAYMENTS AREN’T AVAILABLE AT THE MOMENT,
                   BUT DON’T WORRY — YOU CAN STILL PLACE YOUR ORDER VIA EMAIL
                   RIGHT NOW!
                   <br />
                   CHECKOUT IS COMING SOON. STAY TUNED
                 </div>
-                <a
-                  href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
+                <br />
+                <div className="flex justify-center items-center">
+                  <a
+                    href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
                     \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                  className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
-                >
-                  ORDER NOW
-                </a>
+                    className="font-bold text-center w-fit underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
+                  >
+                    ORDER NOW
+                  </a>
+                </div>
               </div>
             </div>
           ) : null}
