@@ -86,13 +86,12 @@ export default function Cart() {
               <div className="py-1 w-full">
                 <div className="opacity-20">
                   -- Sadly, direct card payments aren’t available at the moment,
-                  <br />
+                  <br className="max-[870px]:hidden" />
                   but don’t worry — you can still place your order via email
                   right now!
-                  <br />
+                  <br className="max-[870px]:hidden" />
                   Checkout is coming soon. Stay tuned.
                 </div>
-                <br />
                 <div className="text-end">
                   <a
                     href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
