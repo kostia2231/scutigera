@@ -86,7 +86,7 @@ export default function Cart() {
               <div className="w-full">
                 <div className="opacity-20">
                   -- Sadly, direct card payments aren’t available at the
-                  moment,&nbsp
+                  moment,&nbsp;
                   <br className="max-[870px]:hidden" />
                   but don’t worry — you can still place your order via email
                   right now!
