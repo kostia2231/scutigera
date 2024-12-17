@@ -88,8 +88,8 @@ export default function Cart() {
                   -- Sadly, direct card payments aren’t available at the
                   moment,&nbsp;
                   <br className="max-[870px]:hidden" />
-                  but don’t worry — you can still place your order via email
-                  right now!&nbsp;
+                  but don’t worry — you can still place your order via Email or
+                  Instagram right now!&nbsp;
                   <br className="max-[870px]:hidden" />
                   Checkout is coming soon. Stay tuned.
                 </div>
