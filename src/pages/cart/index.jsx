@@ -88,14 +88,15 @@ export default function Cart() {
                   -- Sadly, direct card payments aren’t available at the
                   moment,&nbsp;
                   <br className="max-[870px]:hidden" />
-                  but don’t worry — you can still place your order via Email or
+                  but don’t worry — you can still place your order via Email
+                  or&nbsp;
                   <a
                     href="https://www.instagram.com/scutigera.online/"
                     className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
                   >
                     Instagram
                   </a>
-                  right now!&nbsp;
+                  &nbsp;right now!&nbsp;
                   <br className="max-[870px]:hidden" />
                   Checkout is coming soon. Stay tuned.
                 </div>
