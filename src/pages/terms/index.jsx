@@ -48,136 +48,134 @@ export default function Terms() {
         <br />
         <div className="font-bold">SHIPPING</div>
         <div className="flex flex-col">
-          <p>EUROPEAN UNION</p>
-          <p>€15 Small package</p>
-          <p>€17 Large package</p>
-          <p>3-7 business days</p>
-          <br />
-          <p>GERMANY</p>
-          <p>€7</p>
-          <p>3-5 business days</p>
-          <br />
-          <p>EUROPE (NON-EU)</p>
-          <p>€30</p>
-          <p>5-7 business days</p>
-          <br />
-          <p>UNITED STATES</p>
-          <p>€20 Small package</p>
-          <p>€35 Large package</p>
-          <p>5-7 business days</p>
-          <br />
-          <p>UKRAINE</p>
-          <p>€15</p>
-          <p>5-10 business days</p>
-          <br />
           <div>
-            Free shipping within the EU for orders over €130. You will receive a
-            tracking number via email as soon as your order is processed,
-            usually within 48 hours.
+            Shipping costs are calculated at checkout. Orders are shipped from
+            Germany via reliable courier services. Estimated delivery times
+            depend on the destination and are displayed at checkout. Depending
+            on the destination country, additional customs duties or taxes may
+            apply. Please check your local regulations to determine if any
+            additional fees apply to your order. These charges are the
+            responsibility of the customer.
           </div>
           <br />
           <div className="font-bold">RETURNS</div>
           <div>
-            We accept returns within 14 days of receiving your order, provided
-            the item is in its original condition, with tags attached, and has
-            not been worn. Please note that shipping costs are non-refundable.
-            Refunds will be processed within 14 days of receiving the returned
-            item and will be issued to the original payment method used for the
-            purchase. If you have any questions, please contact our customer
-            service team for further assistance.
-            <br />
+            We accept returns within 14 days of receiving your order. If you
+            would like to request a return, please contact us at{" "}
             <a
               className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
               href="mailto:info@scutigera.online"
             >
               info@scutigera.online
-            </a>
+            </a>{" "}
+            to receive return instructions.
+            <br /> <br />
+            <div>
+              The item must be in its original condition, free from signs of
+              wear, use, stains, or damage. All tags, labels, and packaging must
+              be intact. Refunds will be processed within 14 days after we
+              receive the returned item. The customer is responsible for the
+              return shipping costs.
+            </div>
+            <br />
+            <div>
+              Items marked as Final Sale cannot be returned or refunded. Please
+              check product details before purchasing.
+            </div>
+            <br />
+            <div>
+              Once your return request is received, we will provide detailed
+              instructions, including the return address.
+            </div>
           </div>
         </div>
         <br />
-        <div className="font-bold">
-          HOW WE COLLECT AND USE YOUR PERSONAL DATA
-        </div>
+        <div className="font-bold">PRIVACY POLICY</div>
         <div>
-          To provide the Services, we collect personal information about you
-          from a variety of sources, as set out below. The information that we
-          collect and use varies depending on how you interact with us. In
-          addition to the specific uses set out below, we may use information we
-          collect about you to communicate with you, provide or improve or
-          improve the Services, comply with any applicable legal obligations,
-          enforce any applicable terms of service, and to protect or defend the
-          Services, our rights, and the rights of our users or others.
+          This Privacy Policy describes how we collect, use, and protect your
+          personal information when you visit or make a purchase from our
+          website.
         </div>
         <br />
-        <div className="font-bold">WHAT PERSONAL DATA WE COLLECT</div>
+        <div className="font-bold">DATA WE COLLECT </div>
         <div>
-          The types of personal information we obtain about you depends on how
-          you interact with our Site and use our Services. When we use the term
-          &quot;personal information&quot;, we are referring to information that
-          identifies, relates to, describes or can be associated with you. The
-          following sections describe the categories and specific types of
-          personal information we collect.
+          When you place an order, we collect certain personal information from
+          you, including your name, billing and shipping address, email address,
+          and payment details. This information is necessary to process and
+          fulfill your order.
         </div>
         <br />
-        <div className="font-bold">DATA WE COLLECT DIRECTLY FROM YOU</div>
         <div>
-          <ul>
-            <li>
-              -- Contact details including your name, address, phone number, and
-              email.
-            </li>
-            <li>
-              -- Order information including your name, billing address,
-              shipping address, payment confirmation, email address, and phone
-              number.
-            </li>
-            <li>
-              -- Account information including your username, password, security
-              questions and other information used for account security
-              purposes.
-            </li>
-            <li>
-              -- Customer support information including the information you
-              choose to include in communications with us, for example, when
-              sending a message through the Services.
-            </li>
-          </ul>
-          <div>
-            Some features of the Services may require you to directly provide us
-            with certain information about yourself. You may elect not to
-            provide this information, but doing so may prevent you from using or
-            accessing these features.
-          </div>
+          Additionally, Shopify, the platform we use to run our store,
+          automatically collects certain technical information, such as your IP
+          address, browser type, and device information. This data is used to
+          ensure the proper functionality of the website and checkout process.
         </div>
         <br />
-        <div className="font-bold">
-          LEGAL BASIS FOR PROCESSING PERSONAL DATA
-        </div>
+        <div className="font-bold">PAYMENT PROCESSING</div>
         <div>
-          We process your personal data based on your consent, the necessity of
-          processing for the performance of a contract, compliance with legal
-          obligations, and legitimate interests pursued by us or a third party.
-        </div>
-        <br />
-        <div className="font-bold">COOKIES AND SIMILAR TECHNOLOGIES</div>
-        <div>
-          We use cookies and similar technologies to enhance your experience on
-          our Site. You can manage your cookie preferences through your browser
-          settings.
-        </div>
-        <br />
-        <div className="font-bold">DATA RETENTION</div>
-        <div>
-          We will retain your personal information for as long as necessary to
-          fulfill the purposes outlined in this Privacy Policy or as required by
-          law.
+          All payments on our website are processed securely through Shopify
+          Payments. We do not store or have access to your payment card details.
+          Shopify Payments processes all transactions in accordance with its own
+          privacy and security policies. For more details, you can review
+          Shopify’s Privacy Policy{" "}
+          <a
+            className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
+            href="https://www.shopify.com/legal/privacy"
+          >
+            here
+          </a>
+          .
         </div>
         <br />
-        <div className="font-bold">USER RIGHTS</div>
+        <div className="font-bold">COOKIES AND SITE TRACKING</div>
         <div>
-          You have the right to access, correct, or delete your personal
-          information. You can also object to the processing of your data under
-          certain conditions.
+          Our website uses only essential cookies that are required for basic
+          functionality, such as adding items to your cart and completing
+          checkout. We do not use third-party tracking, advertising, or
+          analytics services. Because only essential cookies are used, no cookie
+          consent banner is required.
+        </div>
+        <br />
+        <div className="font-bold">HOW WE USE YOUR INFORMATION </div>
+        <div>
+          We use the personal information you provide solely to:
+          <br />
+          • Process and ship your orders.
+          <br />
+          • Send you order confirmations and tracking details.
+          <br />
+          • Respond to customer service inquiries.
+          <br /> <br />
+          We do not use your information for marketing emails or newsletters.
+        </div>
+        <br />
+        <div className="font-bold">SHARING YOUR INFORMATION</div>
+        <div>
+          We do not sell, rent, or share your personal information with third
+          parties except as necessary to fulfill your order (e.g., providing
+          your shipping address to courier services). Shopify acts as our data
+          processor and handles all necessary data in accordance with GDPR.
+        </div>
+        <br />
+        <div className="font-bold">YOUR RIGHTS UNDER GDPR</div>
+        <div>
+          If you are located in the European Union, you have the right to
+          access, correct, or delete your personal data. If you wish to make
+          such a request, please contact us at{" "}
+          <a
+            className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
+            href="mailto:info@scutigera.online"
+          >
+            info@scutigera.online
+          </a>
+          .
+        </div>
+        <br />
+        <div className="font-bold">CHANGES TO THIS PRIVACY POLICY</div>
+        <div>
+          We may update this Privacy Policy from time to time. Any changes will
+          be posted on this page.
         </div>
         <br />
         <div className="font-bold">SECURITY OF PERSONAL DATA</div>
@@ -186,23 +184,17 @@ export default function Terms() {
           information from unauthorized access or disclosure.
         </div>
         <br />
-        <div className="font-bold">CHANGES TO THIS PRIVACY POLICY</div>
-        <div>
-          We may update this Privacy Policy from time to time. We will notify
-          you of any changes by posting the new Privacy Policy on our Site.
-        </div>
-        <br />
         <div className="font-bold">CONTACT US</div>
         <div>
-          If you have any questions about this Privacy Policy or our practices
-          regarding your personal information, please contact us at:
-          <br />
+          If you have any questions about this Privacy Policy or how your
+          personal data is handled, please contact us at{" "}
           <a
             className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
             href="mailto:info@scutigera.online"
           >
             info@scutigera.online
           </a>
+          .
           {/* <br />
           <br />
           <div className="font-bold">LEGAL INFORMATION</div>

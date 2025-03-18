@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <img className="w-[250px] max-[640px]:w-[200px]" src={S} alt="" />
         </div>
-        <div className="flex gap-5 max-[640px]:gap-5">
+        <div className="flex gap-10 max-[640px]:gap-5">
           <Link to="/about">
             <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
               ABOUT
@@ -17,6 +17,11 @@ export default function Footer() {
           <Link to="/terms">
             <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
               TERMS
+            </div>
+          </Link>
+          <Link to="/impressum">
+            <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
+              IMPRESSUM
             </div>
           </Link>
           <Link to="https://www.instagram.com/scutigera.online/">

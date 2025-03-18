@@ -6,6 +6,7 @@ import Cart from "./pages/cart";
 import Terms from "./pages/terms";
 import About from "./pages/about";
 import RestoreScrollWrapper from "./utils/restoreScrollWrapper";
+import Impressum from "./pages/impressum";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Main />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/impressum" element={<Impressum />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/404" element={<Main />} />
