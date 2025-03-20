@@ -81,37 +81,6 @@ export default function Cart() {
           <div className="z-10 flex justify-between">
             SHIPPING <div className="opacity-20">Calculated at checkout</div>
           </div>
-          {cart.length > 0 ? (
-            <div className="px-auto w-full">
-              <div className="w-full">
-                <div className="opacity-20">
-                  -- Sadly, direct card payments aren’t available at the
-                  moment,&nbsp;
-                  <br className="max-[870px]:hidden" />
-                  but don’t worry — you can still place your order via Email
-                  or&nbsp;
-                  <a
-                    href="https://www.instagram.com/scutigera.online/"
-                    className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline"
-                  >
-                    Instagram
-                  </a>
-                  &nbsp;right now!&nbsp;
-                  <br className="max-[870px]:hidden" />
-                  Checkout is coming soon. Stay tuned.
-                </div>
-                <div className="mt-5 grid w-[100%] text-center">
-                  <a
-                    href={`mailto:info@scutigera.online?subject=ORDER <3&body=HEY! I'D LIKE TO ORDER:
-                    \n ${encodeURIComponent(withMailCartData)} \n HIT ME UP!`}
-                    className="p-1 grid font-bold w-[100%] bg-black/80 text-white cursor-pointer hover:bg-black/20 hover:text-black/80"
-                  >
-                    ORDER NOW
-                  </a>
-                </div>
-              </div>
-            </div>
-          ) : null}
           {cart.length <= 0 ? (
             <div className="ml-auto">CART IS EMPTY </div>
           ) : (
