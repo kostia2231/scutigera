@@ -28,7 +28,6 @@ export default function Terms() {
     <div className="grid grid-cols-2 max-[640px]:grid-cols-1 p-20 max-[640px]:p-0 max-[640px]:pt-20 max-[640px]:flex-col min-[1275px]:px-[100px] max-[640px]:px-4">
       <div></div>
       <div className="pl-2 max-[640px]:pl-0">
-        <br />
         <div className="font-bold">PRIVACY POLICY</div>
         <div className="opacity">
           Effective Date: {formattedDate}, {time}.
