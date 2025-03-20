@@ -43,15 +43,6 @@ export default function Cart() {
     quantity: item.quantity,
   }));
 
-  const withMailCartData = cart
-    .map(
-      (item) =>
-        `${item.title}, QUANTITY: ${
-          item.quantity
-        }, SIZE: ${item.size.toUpperCase()}. `,
-    )
-    .join("\n");
-
   return (
     <>
       <div className="flex py-20 px-[150px] max-[540px]:p-0 max-[540px]:pt-20 max-[870px]:flex-col max-[1200px]:px-[100px] max-[1100px]:px-[50px] max-[980px]:px-1">
@@ -74,12 +65,12 @@ export default function Cart() {
             </>
           ))}
         </div>
-        <div className="w-[50%] min-[980px]:ml-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-5 border-black-20 mb-10 border-dashed">
+        <div className="w-[50%] min-[980px]:ml-1 flex flex-col gap-1 max-[870px]:w-[100%] max-[870px]:order-1 max-[540px]:p-0 max-[540px]:pb-10 max-[540px]:px-4 border-b h-fit pb-5 border-black-35 mb-10 border-dashed">
           <div className="flex justify-between">
             TOTAL <div className="font-bold">{getTotalPrice()}.0€</div>
           </div>
           <div className="z-10 flex justify-between">
-            SHIPPING <div className="opacity-20">Calculated at checkout</div>
+            SHIPPING <div className="opacity-40">Calculated at checkout</div>
           </div>
           {cart.length <= 0 ? (
             <div className="ml-auto">CART IS EMPTY </div>

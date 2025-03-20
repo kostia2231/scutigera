@@ -10,13 +10,13 @@ export default function Product({ item, id }) {
   const addItem = useCartStore((state) => state.addItem);
   const [isAdded, setIsAdded] = useState(false);
   const [selectedVariantId, setSelectedVariantId] = useState(
-    item.variants.edges[0].node.id
+    item.variants.edges[0].node.id,
   );
   const [selectedSize, setSelectedSize] = useState(
-    item.variants.edges[0].node.title
+    item.variants.edges[0].node.title,
   );
   const [selectedAvailableForSale, setSelectedAvailableForSale] = useState(
-    item.variants.edges[0].node.availableForSale
+    item.variants.edges[0].node.availableForSale,
   );
   const variants = item.variants.edges.map((v) => ({
     size: v.node.title,
@@ -45,7 +45,7 @@ export default function Product({ item, id }) {
   useEffect(() => {
     if (!selectedAvailableForSale) {
       const availableVariant = variants.find(
-        (variant) => variant.availableForSale
+        (variant) => variant.availableForSale,
       );
       if (availableVariant) {
         setSelectedVariantId(availableVariant.id);
@@ -105,7 +105,7 @@ export default function Product({ item, id }) {
                   className={`${
                     selectedVariantId === variant.id
                       ? "bg-transparent text-black/80 font-bold underline-offset-[3px] decoration-[1.5px] underline max-[640px]:border-b-2 max-[640px]:no-underline border-black"
-                      : "bg-white text-black/80 opacity-20 transition ease-in-out duration-200"
+                      : "bg-white text-black/80 opacity-35 transition ease-in-out duration-200"
                   }`}
                 >
                   {variant.size}
@@ -131,7 +131,7 @@ export default function Product({ item, id }) {
                   <div
                     className={`${
                       selectedSize === "Medium" || selectedSize === "Large"
-                        ? "opacity-20 transition ease-in-out duration-200"
+                        ? "opacity-35 transition ease-in-out duration-200"
                         : null
                     }`}
                   >
@@ -147,7 +147,7 @@ export default function Product({ item, id }) {
                   <div
                     className={`${
                       selectedSize === "Small"
-                        ? "opacity-20 transition ease-in-out duration-200"
+                        ? "opacity-35 transition ease-in-out duration-200"
                         : null
                     }`}
                   >
@@ -169,7 +169,7 @@ export default function Product({ item, id }) {
                 <div
                   className={`${
                     selectedSize === "Medium" || selectedSize === "Large"
-                      ? "opacity-20 transition ease-in-out duration-200"
+                      ? "opacity-35 transition ease-in-out duration-200"
                       : null
                   }`}
                 >
@@ -179,7 +179,7 @@ export default function Product({ item, id }) {
                 <div
                   className={`${
                     selectedSize === "Small"
-                      ? "opacity-20 transition ease-in-out duration-200"
+                      ? "opacity-35 transition ease-in-out duration-200"
                       : null
                   }`}
                 >

@@ -7,6 +7,7 @@ import Terms from "./pages/terms";
 import About from "./pages/about";
 import RestoreScrollWrapper from "./utils/restoreScrollWrapper";
 import Impressum from "./pages/impressum";
+import Shipping from "./pages/shipping";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/impressum" element={<Impressum />} />
+            <Route path="/shipping" element={<Shipping />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/404" element={<Main />} />

@@ -23,13 +23,13 @@ export default function AddToCartButton({ items }) {
 
   return (
     <>
-      <button
-        className={`ml-auto font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] hover:underline active:opacity-70`}
+      <div
+        className={`bg-black/80 p-2 mt-3 text-white cursor-pointer text-center font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] hover:underline active:opacity-70`}
         onClick={handleAddToCartAndCheckout}
         disabled={loading}
       >
         {loading ? "PROCEEDING..." : "PROCEED TO CHECKOUT"}
-      </button>
+      </div>
     </>
   );
 }
