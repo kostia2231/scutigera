@@ -4,6 +4,7 @@ import { fetchCart } from "../../data/getCart";
 import { useProducts } from "../../data/getData";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 export default function Main({ onLoad }) {
   const [currentCartId, setCurrentCartId] = useState(null);
@@ -54,3 +55,7 @@ export default function Main({ onLoad }) {
     </div>
   );
 }
+
+Main.propTypes = {
+  onLoad: PropTypes.func.isRequired,
+};

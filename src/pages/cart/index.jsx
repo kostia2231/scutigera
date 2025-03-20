@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { fetchCart } from "../../data/getCart";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Cart() {
   const [currentCartId, setCurrentCartId] = useState(null);
-  const [currentCartUrl, setCurrentCartUrl] = useState(null);
-  const [isOpen, setIsOpen] = useState(true);
+  // const [currentCartUrl, setCurrentCartUrl] = useState(null);
+  // const [isOpen, setIsOpen] = useState(true);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  function onClick() {
-    setIsOpen(false);
-    localStorage.removeItem("cartId");
-  }
+  // function onClick() {
+  //   setIsOpen(false);
+  //   localStorage.removeItem("cartId");
+  // }
 
-  console.log(currentCartUrl);
+  // console.log(currentCartUrl);
 
   useEffect(() => {
     setCurrentCartId(localStorage.getItem("cartId"));
@@ -78,7 +78,7 @@ export default function Cart() {
             <AddToCartButton items={cartData} />
           )}
         </div>
-        {currentCartUrl && isOpen ? (
+        {/* {currentCartUrl && isOpen ? (
           <div className="flex justify-between bg-black z-20 fixed text-white bottom-0 left-0 right-0 max-[980px]:px-4 max-[980px]:py-1 max-[980px]:pt-1 px-1">
             <Link to={currentCartUrl}>
               <div className="bg-black">---&gt; UNFINISHED CHECKOUT</div>
@@ -87,7 +87,7 @@ export default function Cart() {
               (X)
             </button>
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     </>
   );
