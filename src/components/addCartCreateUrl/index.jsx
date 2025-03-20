@@ -28,7 +28,7 @@ export default function AddToCartButton({ items }) {
           `ml-auto font-bold underline-offset-[3px] decoration-[1.5px] max-[640px]:decoration-[2px] hover:underline active:opacity-70` +
           ` opacity-20 cursor-not-allowed hover:no-underline`
         }
-        // onClick={handleAddToCartAndCheckout}
+        onClick={handleAddToCartAndCheckout}
         disabled={loading}
       >
         {loading ? "PROCEEDING..." : "PROCEED TO CHECKOUT"}
