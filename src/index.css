@@ -3,32 +3,42 @@
 @tailwind utilities;
 
 body {
-  font-size: 10px;
-  font-family: "Azeret Mono", monospace;
-  font-optical-sizing: auto;
-  /* color: rgb(30, 30, 33); */
-  color: rgba(0, 0, 0, 0.8);
-  box-sizing: border-box;
+    font-size: 10px;
+    font-family: "Azeret Mono", monospace;
+    font-optical-sizing: auto;
+    color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
 }
 
 body * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+footer {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+body.loaded footer {
+    opacity: 0.35;
+    visibility: visible;
 }
 
 .embla {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .embla__container {
-  display: flex;
-  transition: none;
-  animation: none;
-  will-change: transform;
+    display: flex;
+    transition: none;
+    animation: none;
+    will-change: transform;
 }
 
 .embla__slide {
-  flex: 0 0 100%;
-  min-width: 100%;
-  height: 100%;
-  will-change: transform;
+    flex: 0 0 100%;
+    min-width: 100%;
+    height: 100%;
+    will-change: transform;
 }

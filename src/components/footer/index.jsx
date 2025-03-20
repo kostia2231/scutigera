@@ -3,7 +3,7 @@ import S from "../../assets/svg/Scutigera.svg";
 
 export default function Footer() {
   return (
-    <div className="opacity-40">
+    <footer className="opacity-40">
       <div className="relative flex flex-col items-center justify-center gap-1 max-[640px]:p-2 pb-5 pt-20 max-[640px]:pt-20 max-[640px]:pb-10 z-10">
         <div>
           <img className="w-[250px] max-[640px]:w-[200px]" src={S} alt="" />
@@ -31,6 +31,6 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
