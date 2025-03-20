@@ -5,7 +5,7 @@ import { useProducts } from "../../data/getData";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function Main() {
+export default function Main({ onLoad }) {
   const [currentCartId, setCurrentCartId] = useState(null);
   const clearCart = useCartStore((state) => state.clearCart);
 
@@ -27,6 +27,12 @@ export default function Main() {
         );
     }
   }, [currentCartId]);
+
+  useEffect(() => {
+    if (products?.length) {
+      onLoad();
+    }
+  }, [products, onLoad]);
 
   return (
     <div className="flex flex-col max-[640px]:mx-4 max-[640px]:pt-[31px] pb-10">
