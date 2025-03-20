@@ -196,7 +196,6 @@ export default function Product({ item, id }) {
                   {matchedProduct.details.material}.
                 </div>
               )}
-              <div>Made in Ukraine.</div>
             </div>
           </div>
         </div>
