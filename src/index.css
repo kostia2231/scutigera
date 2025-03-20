@@ -14,17 +14,6 @@ body * {
     box-sizing: border-box;
 }
 
-footer {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out;
-}
-
-body.loaded footer {
-    opacity: 0.35;
-    visibility: visible;
-}
-
 .embla {
     overflow: hidden;
 }

@@ -1,13 +1,15 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import Main from "./pages/main";
 import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 import Cart from "./pages/cart";
 import Terms from "./pages/terms";
 import About from "./pages/about";
 import RestoreScrollWrapper from "./utils/restoreScrollWrapper";
 import Impressum from "./pages/impressum";
 import Shipping from "./pages/shipping";
+import { Suspense, lazy } from "react";
+
+const Footer = lazy(() => import("./components/footer"));
 
 function App() {
   return (
@@ -27,7 +29,9 @@ function App() {
           </Routes>
         </RestoreScrollWrapper>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

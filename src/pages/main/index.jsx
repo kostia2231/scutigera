@@ -6,10 +6,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Main() {
-  window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-  });
-
   const [currentCartId, setCurrentCartId] = useState(null);
   const clearCart = useCartStore((state) => state.clearCart);
 
