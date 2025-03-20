@@ -16,7 +16,7 @@ export default function Footer() {
           </Link>
           <Link to="/shipping">
             <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
-              SHIPPING AND RETURNS
+              SHIPPING/RETURNS
             </div>
           </Link>
           <Link to="/terms">
