@@ -17,7 +17,7 @@ export default function About() {
         </div>
         <br />
         <div>
-          For collaboration inquiries or general questions:{" "}
+          For collaboration inquiries or general questions:
           <a
             className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
             href="mailto:info@scutigera.online"
@@ -25,6 +25,14 @@ export default function About() {
             <br />
             info@scutigera.online
           </a>
+          {" or "}
+          <a
+            className="pointer underline-offset-[3px] decoration-[1.5px] active:opacity-70 underline"
+            href="https://www.instagram.com/scutigera.online/"
+          >
+            Instagram
+          </a>
+          .
         </div>
       </div>
     </div>
