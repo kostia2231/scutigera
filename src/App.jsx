@@ -10,9 +10,12 @@ import Impressum from "./pages/impressum";
 import Shipping from "./pages/shipping";
 import { Suspense, lazy } from "react";
 const Footer = lazy(() => import("./components/footer"));
+import { useLocation } from "react-router-dom";
 
 function App() {
   const [isProductLoaded, setIsProductLoaded] = useState(false);
+  const location = useLocation();
+  const show = location.pathname !== "/" || isProductLoaded;
 
   return (
     <div className="flex flex-col max-[640px]:m-0 justify-between max-[640px]:h-[90vh] h-[100vh]">
@@ -37,7 +40,7 @@ function App() {
           </Routes>
         </RestoreScrollWrapper>
       </main>
-      {isProductLoaded && (
+      {show && (
         <Suspense fallback={null}>
           <Footer />
         </Suspense>
