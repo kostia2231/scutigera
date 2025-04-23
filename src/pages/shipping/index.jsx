@@ -13,7 +13,9 @@ export default function Shipping() {
           <br />
           <div className="font-bold uppercase">Estimated delivery times</div>
           <div>
-            Germany: 1–3 business days. EU: 2–5 business. days.
+            Germany: 1–3 business days.
+            <br />
+            EU: 2–5 business days.
             <br />
             Rest of the world: 5–14 business days.
           </div>
