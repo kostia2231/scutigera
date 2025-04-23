@@ -11,9 +11,10 @@ export default function Shipping() {
             Free shipping on all orders to the EU above €100.
           </div>
           <br />
+          <div className="font-bold">Estimated delivery times</div>
+          <br />
           <div>
-            Estimated delivery times Germany: 1–3 business days EU: 2–5 business
-            days.
+            Germany: 1–3 business days. EU: 2–5 business. days.
             <br />
             Rest of the world: 5–14 business days.
           </div>
