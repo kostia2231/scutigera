@@ -119,7 +119,7 @@ export default function Product({ item, id }) {
                 </div>
                 <div className="flex gap-2">
                   <div>
-                    <div>Size</div>
+                    {/* <div>Size</div> */}
                     <div>Chest</div>
                     {matchedProduct.dimensions.waist && (
                       <>
@@ -135,7 +135,7 @@ export default function Product({ item, id }) {
                         : null
                     }`}
                   >
-                    <div>{matchedProduct.dimensions.size.first}</div>
+                    {/* <div>{matchedProduct.dimensions.size.first}</div> */}
                     <div>{matchedProduct.dimensions.chest.first}</div>
                     {matchedProduct.dimensions.waist && (
                       <>
@@ -151,7 +151,7 @@ export default function Product({ item, id }) {
                         : null
                     }`}
                   >
-                    <div>{matchedProduct.dimensions.size.second}</div>
+                    {/* <div>{matchedProduct.dimensions.size.second}</div> */}
                     <div>{matchedProduct.dimensions.chest.second}</div>
                     {matchedProduct.dimensions.waist && (
                       <>
@@ -174,7 +174,7 @@ export default function Product({ item, id }) {
                         : null
                     }`}
                   >
-                    <div>{matchedProduct.dimensions.size.first}</div>
+                    {/* <div>{matchedProduct.dimensions.size.first}</div> */}
                     <div>{matchedProduct.sizeRecommendations.first}</div>
                   </div>
                   <div
@@ -184,7 +184,7 @@ export default function Product({ item, id }) {
                         : null
                     }`}
                   >
-                    <div>{matchedProduct.dimensions.size.second}</div>
+                    {/* <div>{matchedProduct.dimensions.size.second}</div> */}
                     <div>{matchedProduct.sizeRecommendations.second}</div>
                   </div>
                 </div>
