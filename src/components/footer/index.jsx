@@ -29,6 +29,11 @@ export default function Footer() {
               IMPRESSUM
             </div>
           </Link>
+          <Link to="https://www.instagram.com/scutigera.online/">
+            <div className="pointer underline-offset-[3px] decoration-[1.5px] hover:underline active:opacity-70 max-[640px]:hover:no-underline">
+              INSTAGRAM
+            </div>
+          </Link>
         </div>
       </div>
     </footer>
