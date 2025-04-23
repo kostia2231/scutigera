@@ -35,8 +35,8 @@ export const mutantSweater = {
     length: { first: 68, second: 72 },
   },
   sizeRecommendations: {
-    first: "160-170 cm (5'3\" - 5'7\")",
-    second: "170-180 cm (5'7\" - 5'11\")",
+    first: "160-170",
+    second: "170-180",
   },
 };
 
@@ -58,8 +58,8 @@ export const screamerDress = {
     length: { first: 132, second: 143 },
   },
   sizeRecommendations: {
-    first: "160-170 cm (5'3\" - 5'7\")",
-    second: "170-180 cm (5'7\" - 5'11\")",
+    first: "160-170",
+    second: "170-180",
   },
 };
 

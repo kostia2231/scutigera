@@ -166,25 +166,27 @@ export default function Product({ item, id }) {
                 <div className="flex">
                   <div>SIZE RECS (cm):</div>
                 </div>
-                <div
-                  className={`${
-                    selectedSize === "Medium" || selectedSize === "Large"
-                      ? "opacity-35 transition ease-in-out duration-200"
-                      : null
-                  }`}
-                >
-                  <div>{matchedProduct.dimensions.size.first}</div>
-                  <div>{matchedProduct.sizeRecommendations.first}</div>
-                </div>
-                <div
-                  className={`${
-                    selectedSize === "Small"
-                      ? "opacity-35 transition ease-in-out duration-200"
-                      : null
-                  }`}
-                >
-                  <div>{matchedProduct.dimensions.size.second}</div>
-                  <div>{matchedProduct.sizeRecommendations.second}</div>
+                <div className="flex gap-2">
+                  <div
+                    className={`${
+                      selectedSize === "Medium" || selectedSize === "Large"
+                        ? "opacity-35 transition ease-in-out duration-200"
+                        : null
+                    }`}
+                  >
+                    <div>{matchedProduct.dimensions.size.first}</div>
+                    <div>{matchedProduct.sizeRecommendations.first}</div>
+                  </div>
+                  <div
+                    className={`${
+                      selectedSize === "Small"
+                        ? "opacity-35 transition ease-in-out duration-200"
+                        : null
+                    }`}
+                  >
+                    <div>{matchedProduct.dimensions.size.second}</div>
+                    <div>{matchedProduct.sizeRecommendations.second}</div>
+                  </div>
                 </div>
               </div>
             </div>
