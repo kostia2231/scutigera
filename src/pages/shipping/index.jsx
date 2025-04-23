@@ -6,13 +6,16 @@ export default function Shipping() {
         <div className="font-bold">SHIPPING</div>
         <div className="flex flex-col">
           <div>
-            Free shipping on all orders to Germany Free shipping on all orders
-            to the EU above €100
+            Free shipping on all orders to Germany.
+            <br />
+            Free shipping on all orders to the EU above €100.
           </div>
           <br />
           <div>
             Estimated delivery times Germany: 1–3 business days EU: 2–5 business
-            days Rest of the world: 5–14 business days
+            days.
+            <br />
+            Rest of the world: 5–14 business days.
           </div>
           <br />
           <div>
