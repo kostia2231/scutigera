@@ -14,8 +14,8 @@ export const babyTShirt = {
     length: { first: 54, second: 56 },
   },
   sizeRecommendations: {
-    first: "160-170 cm (5'3\" - 5'7\")",
-    second: "170-180 cm (5'7\" - 5'11\")",
+    first: "160-170",
+    second: "170-180",
   },
 };
 

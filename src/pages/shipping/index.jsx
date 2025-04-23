@@ -6,13 +6,22 @@ export default function Shipping() {
         <div className="font-bold">SHIPPING</div>
         <div className="flex flex-col">
           <div>
+            Free shipping on all orders to Germany Free shipping on all orders
+            to the EU above €100
+          </div>
+          <br />
+          <div>
+            Estimated delivery times Germany: 1–3 business days EU: 2–5 business
+            days Rest of the world: 5–14 business days
+          </div>
+          <br />
+          <div>
             Shipping costs are calculated at checkout. Orders are shipped from
-            Germany via reliable courier services. Estimated delivery times
-            depend on the destination and are displayed at checkout. Depending
-            on the destination country, additional customs duties or taxes may
-            apply. Please check your local regulations to determine if any
-            additional fees apply to your order. These charges are the
-            responsibility of the customer.
+            Germany via reliable courier services. Order processing takes 1
+            business day before shipping. Please note that additional customs
+            duties or fees may be charged depending on the destination country.
+            These charges are the customer’s responsibility. We recommend
+            checking your local regulations before placing an order.
           </div>
           <br />
           <div className="font-bold">RETURNS</div>

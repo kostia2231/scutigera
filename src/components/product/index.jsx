@@ -164,7 +164,7 @@ export default function Product({ item, id }) {
               </div>
               <div>
                 <div className="flex">
-                  <div>SIZE RECS:</div>
+                  <div>SIZE RECS (cm):</div>
                 </div>
                 <div
                   className={`${
