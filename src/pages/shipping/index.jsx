@@ -50,7 +50,7 @@ export default function Shipping() {
             </div>
             <br />
             <div>
-              Items marked as Final Sale cannot be returned or refunded. Please
+              Items marked as FINAL SALE cannot be returned or refunded. Please
               check product details before purchasing.
             </div>
             <br />
