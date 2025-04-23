@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="opacity-40">
-      <div className="relative z-10">
+      <div className="relative z-10 pt-8">
         {/* <div>
           <img className="w-[250px] max-[640px]:w-[200px]" src={S} alt="" />
         </div> */}
