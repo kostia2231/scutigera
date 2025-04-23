@@ -167,6 +167,7 @@ export default function Product({ item, id }) {
                   <div>SIZE RECS (cm):</div>
                 </div>
                 <div className="flex gap-2">
+                  <div>Hight</div>
                   <div
                     className={`${
                       selectedSize === "Medium" || selectedSize === "Large"
